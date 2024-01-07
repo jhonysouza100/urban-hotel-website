@@ -1,0 +1,26 @@
+.about-container {
+  row-gap: 3rem;
+}
+
+.about-data {
+  text-align: center;
+}
+
+.about-description {
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  position: relative;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.about-img {
+  width: 300px;
+  transition: transform .4s;
+}
+
+.about-image:hover .about-img {
+  transform: scale(1.2);
+}

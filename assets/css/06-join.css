@@ -1,0 +1,41 @@
+.join-container {
+   row-gap: 3rem;
+   padding-bottom: 2.5rem;
+}
+
+.join-data {
+  text-align: center;
+}
+
+.join-description {
+  margin-bottom: 2rem;
+}
+
+.join-form {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.join-input {
+  padding: 1.25rem 1rem;
+  background-color: var(--container-color);
+}
+
+.join-submit {
+  cursor: pointer;
+}
+
+.join-image {
+  position: relative;
+  justify-self: center;
+  overflow: hidden;
+}
+
+.join-img {
+  width: 300px;
+  transition: transform .4s;
+}
+
+.join-image:hover .join-img {
+  transform: scale(1.2);
+}

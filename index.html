@@ -1,181 +1,253 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- custom css link -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/01-navbar.css">
-  <link rel="stylesheet" href="css/02-home.css">
-  <link rel="stylesheet" href="css/03-feature.css">
-  <link rel="stylesheet" href="css/04-holiday.css">
-  <link rel="stylesheet" href="css/05-tour-culture.css">
-  <link rel="stylesheet" href="css/06-newsletter.css">
-  <link rel="stylesheet" href="css/07-footer.css">
-  <link rel="stylesheet" href="css/08-copyright.css">
-  <!-- responsive css -->
-  <link rel="stylesheet" href="css/09-responsive.css">
-  
-  <!-- boxicons link -->
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+      <!--=============== FAVICON ===============-->
+      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
-  <title>Urban Hotel Iguazú</title>
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
-</head>
-<body>
-  <!-- header section design -->
-  <header>
-    <!-- logo image -->
-    <a href="#" class="logo">Urban Hotel <span>Express</span></a>
-    <!-- navbar -->
-    <ul class="navbar">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Información</a></li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-    <!-- header right -->
-    <div class="h-right">
-      <!-- <a href="#">Siguenos</a> -->
-      <!-- social icons -->
-      <a href="#"><i class="ri-instagram-fill"></i></a>
-      <a href="#"><i class="ri-facebook-fill"></i></a>
-      <!-- toggle menu icon -->
-      <div class="bx bx-menu" id="menu-icon"></div>
-    </div>
-  </header>
+      <!--=============== SWIPER CSS ===============-->
+      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-  <!-- home section design -->
-  <section class="home">
-    <div class="home-text">
-      <h5>Vamos</h5>
-      <h1>Planea tu viaje con<br> nosotros</h1>
-      <p>Somos un hotel moderno con todos los servicios para que puedas disfrutar unos dias únicos en Puerto Iguazú, Misiones.</p>
-      <a href="#" class="btn">Reservar</a>
-    </div>
-  </section>
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="assets/css/01-navbar.css">
+      <link rel="stylesheet" href="assets/css/02-home.css">
+      <link rel="stylesheet" href="assets/css/03-about.css">
+      <link rel="stylesheet" href="assets/css/04-popular.css">
+      <link rel="stylesheet" href="assets/css/05-explore.css">
+      <link rel="stylesheet" href="assets/css/06-join.css">
+      <link rel="stylesheet" href="assets/css/07-footer.css">
+      <link rel="stylesheet" href="assets/css/responsive.css">
 
-  <!-- feature section design -->
-  <section class="feature">
-    <div class="feature-content">
-      <div class="row"><div class="row-img"><img src="img/s1.jpg"></div><h4>Desayuno</h4></div>
-      <div class="row"><div class="row-img"><img src="img/s2.jpg"></div><h4>Luna de miel</h4></div>
-      <div class="row"><div class="row-img"><img src="img/s3.jpeg"></div><h4>Piscina</h4></div>
-      <div class="row"><div class="row-img"><img src="img/s4.jpg"></div><h4>Habitaciónes dobles</h4></div>
-    </div>
-  </section>
+      <title>Responsive travel website</title>
+   </head>
+   <body>
+      <!--==================== HEADER ====================-->
+      <header class="header" id="header">
+         <nav class="nav container">
+            <div class="nav-logo">Tavel</div>
+            <div class="nav-menu" id="nav-menu">
+               <ul class="nav-list">
+                  <li class="nav-item"><a href="#home" class="nav-link active-link">Home</a></li>
+                  <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                  <li class="nav-item"><a href="#popular" class="nav-link">Popular</a></li>
+                  <li class="nav-item"><a href="#explore" class="nav-link">Explore</a></li>
+               </ul>
+               <!-- close button -->
+               <div class="nav-close" id="nav-close"><i class="ri-close-line"></i></div>
+            </div>         
+            <!-- toggle button -->
+            <div class="nav-toggle" id="nav-toggle"><i class="ri-menu-fill"></i></div>
+         </nav>
+      </header>
 
-  <!-- holiday section design -->
-  <section class="holiday">
-    <div class="holiday-img"><img src="img/h1.jpg"></div>
-    <div class="holiday-text">
-      <h5>Visita Iguazú</h5>
-      <h2>Fray Luis Beltran 290</h2>
-      <p>Trabajamos para ofrecerte un servicio que cumpla con tus expectativas y puedas disfrutar tu estadía en la selva misionera.</p>
-      <a href="#" class="btn">Saber más</a>
-    </div>
-  </section>
+      <!--==================== MAIN ====================-->
+      <main class="main">
+         <!--==================== HOME ====================-->
+         <section class="home-container container grid" id="home">
+            <div class="swiper home-slider">
+               <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                     <div class="box" style="background: url(assets/img/home-bg.jpg) no-repeat;">
+                        <div class="content">
+                           <span>Never Stop</span>
+                           <h3>Exploring</h3>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nisi aliquid, saepe quidem maxime officiis.</p>
+                           <a href="#" class="button">Get Started</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="box second" style="background: url(assets/img/home-bg.jpg) no-repeat;">
+                        <div class="content">
+                           <span>Make Tour</span>
+                           <h3>Amazing</h3>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nisi aliquid, saepe quidem maxime officiis.</p>
+                           <a href="#" class="button">Get Started</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="box third" style="background: url(assets/img/home-bg.jpg) no-repeat;">
+                        <div class="content">
+                           <span>Explore the</span>
+                           <h3>New World</h3>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nisi aliquid, saepe quidem maxime officiis.</p>
+                           <a href="#" class="button">Get Started</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- social component -->
+            <div class="home-social">
+               <span class="home-social-text">Follow Us</span>
+               <div class="home-social-links">
+                  <a href="#" target="_blank" class="home-social-link"><i class="ri-instagram-fill"></i></a>
+                  <a href="#" target="_blank" class="home-social-link"><i class="ri-facebook-circle-fill"></i></a>
+                  <a href="#" target="_blank" class="home-social-link"><i class="ri-youtube-fill"></i></a>
+               </div>
+            </div>
+         </section>
 
-  <!-- CONTENIDO ELIMINADO ↓↓↓
+         <!--==================== ABOUT ====================-->
+         <section class="about section" id="about">
+            <div class="about-container container grid">
+               <div class="about-data">
+                  <h2 class="section-title">Learn More <br> About Travel</h2>
+                  <p class="about-description">All the trips around the world are a great pleasure and happiness for anymore, enjoy the sights when you travel the world. travel safely and without worries, get your trip and explore the paradises of the world.</p>
+                  <a href="#" class="button">Explore Travel <i class="ri-arrow-right-line"></i></a>
+               </div>
+               <div class="about-image">
+                  <img src="assets/img/about-beach.jpg" class="about-img">
+                  <div class="shadow"></div>
+               </div>
+            </div>
+         </section>
 
-  tour design section
-  <section class="tour">
-    <div class="tour-text">
-      <h2>Popular tours</h2>
-    </div>
+         <!--==================== POPULAR ====================-->
+         <section class="popular section" id="popular">
+            <h2 class="section-title">Enjoy The Beauty <br> of The World</h2>
+            <div class="popular-container container grid">
+               <article class="popular-card">
+                  <div class="popular-image">
+                     <img src="assets/img/popular-mountain.jpg"class="popular-img">
+                     <div class="shadow"></div>
+                  </div>
+                  <h2 class="popular-title">Logan Mountain</h2>
+                  <div class="popular-location"><i class="ri-map-pin-line"></i></div>
+                  <span>Canadá</span>
+               </article>
+               <article class="popular-card">
+                  <div class="popular-image">
+                     <img src="assets/img/popular-forest.jpg"class="popular-img">
+                     <div class="shadow"></div>
+                  </div>
+                  <h2 class="popular-title">Spike Forest</h2>
+                  <div class="popular-location"><i class="ri-map-pin-line"></i></div>
+                  <span>Irland</span>
+               </article>
+               <article class="popular-card">
+                  <div class="popular-image">
+                     <img src="assets/img/popular-lake.jpg"class="popular-img">
+                     <div class="shadow"></div>
+                  </div>
+                  <h2 class="popular-title">Garda Lake</h2>
+                  <div class="popular-location"><i class="ri-map-pin-line"></i></div>
+                  <span>Italy</span>
+               </article>
+            </div>
+         </section>
+         
+         <!--==================== EXPLORE ====================-->
+         <section class="explore section" id="explore">
+            <div class="explore-container">
+               <div class="explore-image">
+                  <img src="assets/img/explore-beach.jpg" class="explore-img">
+                  <div class="explore-shadow"></div>
+               </div>
+               <div class="explore-content container grid">
+                  <div class="explore-data">
+                     <h2 class="section-title">Explore the <br> Best Paradises</h2>
+                     <p class="explore-description">Exploring paradises such as slands and valleys when traveling the world is one of the greatest experiences when you travel, it offers you harmony and peace and you can enjoy it with great confort.</p>
+                  </div>
+                  <div class="explore-user">
+                     <img src="assets/img/explore-perfil.png" class="explore-profile">
+                     <span class="explore-name">Paul James</span>
+                  </div>
+               </div>
+            </div>
+         </section>
+         
+         <!--==================== JOIN ====================-->
+         <section class="join section">
+            <div class="join-container container grid">
+               <div class="join-data">
+                  <h2 class="section-title">Your Journey <br> Starts Here</h2>
+                  <p class="join-description">Get up to date with the latest travel and information from us.</p>
+                  <form action="" class="join-form">
+                     <input type="email" placeholder="Enter your email" id="" class="join-input">
+                     <button class="join-submit button">Subscribe Our Newsletter <i class="ri-arrow-right-line"></i></button>
+                  </form>
+               </div>
+               <div class="join-image">
+                  <img src="assets/img/join-island.jpg" class="join-img">
+                  <div class="shadow"></div>
+               </div>
+            </div>
+         </section>
+      </main>
 
-    <div class="tour-content">
-      <div class="box">
-        <img src="/img/t1.jpg">
-        <h6>East Java</h6>
-        <h4>Mount Bromo</h4>
-      </div>
-      <div class="box">
-        <img src="/img/t2.jpg">
-        <h6>East Java</h6>
-        <h4>Mount Bromo</h4>
-      </div>
-      <div class="box">
-        <img src="/img/t3.jpg">
-        <h6>East Java</h6>
-        <h4>Mount Bromo</h4>
-      </div>
-      
-      <div class="tour-btn"><a href="#" class="btn">See Tours</a></div>
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="footer-container container grid">
+            <div class="footer-content grid">
+               <div>
+                  <a href="#" class="footer-logo">Travel</a>
+                  <p class="footer-description">Travel with us and explore <br> the world without limits.</p>
+               </div>
+               <div class="footer-data grid">
+                  <div>
+                     <h3 class="footer-title">About</h3>
+                     <ul class="footer-links">
+                        <li><a href="#" class="footer-link">About Us</a></li>
+                        <li><a href="#" class="footer-link">Features</a></li>
+                        <li><a href="#" class="footer-link">News & Blog</a></li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3 class="footer-title">Company</h3>
+                     <ul class="footer-links">
+                        <li><a href="#" class="footer-link">FAQs</a></li>
+                        <li><a href="#" class="footer-link">History</a></li>
+                        <li><a href="#" class="footer-link">Testimonial</a></li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3 class="footer-title">Contact</h3>
+                     <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Call Center</a></li>
+                        <li><a href="#" class="footer-link">Support Center</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h3 class="footer-title">Support</h3>
+                     <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link">Terms & Services</a></li>
+                        <li><a href="#" class="footer-link">Payments</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="footer-group">
+               <div class="footer-social">
+                  <a href="#" class="footer-social-link"><i class="ri-facebook-line"></i></a>
+                  <a href="#" class="footer-social-link"><i class="ri-instagram-line"></i></a>
+                  <a href="#" class="footer-social-link"><i class="ri-twitter-line"></i></a>
+                  <a href="#" class="footer-social-link"><i class="ri-youtube-line"></i></a>
+               </div>
+               <span class="footer-copyright">&#169; Copyright Jhony Souza. All rights reserved.</span>
+            </div>
+         </div>
+      </footer>
 
-    </div>
-  </section>
+      <!--========== SCROLL UP ==========-->
+      <a href="#" class="scrollup"><i class="ri-arrow-up-s-line"></i></a>
 
-  culture section design
-  <section class="culture">
-    <div class="culture-text">
-      <h5>INDONESIAN CULTURE</h5>
-      <h2>Our culture here isvery friendly to people</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit delectus doloribus minus aliquid fugit vel excepturi quos provident assumenda id. Libero adipisci laborum blanditiis natus quo cupiditate assumenda excepturi ex.</p>
-      <a href="#" class="btn">Read more</a>
-    </div>
-    <div class="culture-img">
-      <img src="img/c1.png" alt="">
-    </div>
-  </section>
+      <!--=============== SCROLLREVEAL ===============-->
+      <script src="assets/js/scrollreveal.min.js"></script>
 
-  newsletter section design
-  <section class="newsletter">
-    <div class="newsletter-content">
-      <div class="newsletter-text">
-        <h2>Ready to explore?</h2>
-        <p>Let's go on vacation, make your day</p>
-      </div>
+      <!--=============== SWIPER JS ===============-->
+      <script src="assets/js/swiper-bundle.min.js"></script>
 
-      <form action="">
-        <input type="email" name="" id="" placeholder="Enter your email..." required>
-        <input type="submit" value="Get started" class="btn">
-      </form>
-    </div>
-  </section>
-
- ↑↑↑ CONTENIDO ELIMINADO -->
-  
-  <!-- footer section design -->
-  <section class="footer">
-    <div class="footer-box">
-      <h3>Services</h3>
-      <a href="#">Email Marketing</a>
-      <a href="#">Campaings</a>
-      <a href="#">Brandings</a>
-      <a href="#">Offline</a>
-    </div>
-    <div class="footer-box">
-      <h3>About</h3>
-      <a href="#">Our story</a>
-      <a href="#">Benefits</a>
-      <a href="#">Team</a>
-      <a href="#">Carrers</a>
-    </div>
-    <div class="footer-box">
-      <h3>Help</h3>
-      <a href="#">FAQs</a>
-      <a href="#">Cantact us</a>
-    </div>  
-    <div class="footer-box">
-      <h3>Social</h3>
-      <div class="social">
-        <a href="#"><i class="ri-instagram-fill"></i></a>
-        <a href="#"><i class="ri-twitter-fill"></i></a>
-        <a href="#"><i class="ri-facebook-fill"></i></a>
-      </div>
-    </div>  
-  </section>
-
-  <!-- copyright section design -->
-  <div class="copyright">
-    <p>Copyright 2024 By Jhony Souza</p>
-  </div>
-
-  <!-- custom js link -->
-  <script src="js/index.js"></script>
-</body>
+      <!--=============== MAIN JS ===============-->
+      <script src="assets/js/main.js"></script>
+   </body>
 </html>

@@ -1,0 +1,38 @@
+.popular-container {
+  padding-top: 1.5rem;
+  grid-template-columns: 240px;
+  justify-content: center;
+  row-gap: 2.5rem;
+}
+
+.popular-image {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.popular-img {
+  transition: transform .4s;
+}
+
+.popular-image:hover .popular-img {
+  transform: scale(1.2);
+}
+
+.popular-title {
+  font-size: var(--h3-font-size);
+  margin-bottom: .5rem;
+}
+
+.popular-location {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .25rem;
+  font-size: var(--samll-font-size);
+  font-family: var(--second-font);
+  font-weight: 500;
+}
+
+.populra-location i {
+  font-size: 1rem;
+}
