@@ -1,9 +1,8 @@
 /* swiper1 ↓↓↓ */
 /* swiper ↑↑↑ */
 
-.home-container {
+.home {
   position: relative;
-  grid-template-columns: 1fr;
 }
 .box {
   min-height: 100vh;
@@ -78,7 +77,6 @@
   row-gap: 6rem;
   position: absolute;
   top: 9rem;
-  left: -1.5rem;
   z-index: 1;
 }
 
@@ -87,12 +85,13 @@
   rotate: 90deg;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
+  color: #74e170;
 }
  .home-social-text::after {
   content: '';
   width: 48px;
   height: 1px;
-  background-color: var(--text-color);
+  background-color: #74e170;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -107,9 +106,9 @@
 
 .home-social-link {
   font-size: 1.25rem;
-  color: var(--text-color);
+  color: #74e170;
   transition: color .4s;
 }
 .home-social-link:hover {
-  color: var(--main-color);
+  color: var(--title-color);
 }

@@ -8,7 +8,7 @@ NAVTOGGLE.onclick = toggleMenu
 NAVCLOSE.onclick = toggleMenu
 
 /*=============== REMOVE MENU ON LINK CLICK ===============*/
-const NAVLINK = document.querySelectorAll('.nav-link').forEach(el => el.onclick = toggleMenu)
+const NAVLINK = document.querySelectorAll('.nav-link').forEach(el => el.onclick = toggleMenu())
 
 /*=============== ADD BLUR TO HEADER ===============*/
 const HEADER = document.querySelector('.header')
