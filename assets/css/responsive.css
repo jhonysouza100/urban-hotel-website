@@ -49,7 +49,7 @@
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
-  .about-data .section-title {
+  .about-data .section-title, .popular .section-title {
     font-size: var(--h2-font-size);
   }
   .about-data, .about-data .section-title, .join-data, .join-data .section-title {

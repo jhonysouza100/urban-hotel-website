@@ -5,34 +5,34 @@
   row-gap: 2.5rem;
 }
 
+.popular-card {
+  display: inline-block;
+}
+
 .popular-image {
   position: relative;
   overflow: hidden;
   margin-top: 1rem;
-}
 
-.popular-img {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, .2);
   transition: transform .4s;
+
 }
 
-.popular-image:hover .popular-img {
-  transform: scale(1.2);
+.popular-image {
+  transform: rotate(6deg);
 }
 
 .popular-title {
   font-size: var(--h3-font-size);
-  margin-bottom: .5rem;
+  color: #111;
+  text-align: center;
+  line-height: 2rem;
 }
 
-.popular-location {
-  display: inline-flex;
-  align-items: center;
-  column-gap: .25rem;
-  font-size: var(--samll-font-size);
-  font-family: var(--second-font);
-  font-weight: 500;
-}
 
-.populra-location i {
-  font-size: 1rem;
+.popular-image:hover {
+  transform: scale(1.1) rotate(-6deg);
 }

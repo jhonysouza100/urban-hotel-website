@@ -12,28 +12,6 @@
   background-position: center !important;
   justify-content: flex-end;
 }
-.second {
-  justify-content: flex-start;
-}
-.content {
-  width: 50rem;
-}
-.content span {
-  font-size: 4rem;
-  color: black;
-}
-.content h3 {
-  font-size: 6rem;
-  color: green;
-  padding-top: .5rem;
-  text-transform: uppercase;
-}
-.content p {
-  line-height: 2;
-  color: black;
-  font-size: 1.5rem;
-  padding: 1rem 0;
-}
 
 /* .home-cards {
   grid-template-columns: 240px;
@@ -67,7 +45,7 @@
 }
 
 .home-card:hover .home-card-img {
-  transform: scale(1.2);
+  transform: scale(1.1);
 } */
 
 /* home social ↓↓↓ */
