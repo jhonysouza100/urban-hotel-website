@@ -5,6 +5,7 @@
 .explore-image {
   position: absolute;
   overflow: hidden;
+  width: 100%;
 }
 
 .explore-img {

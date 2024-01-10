@@ -165,19 +165,31 @@ img {
   position: fixed;
   right: 1rem;
   bottom: -50%;
-  background: var(--gradient-color);
   display: inline-flex;
-  color: var(--title-color);
-  font-size: 1.25rem;
-  padding: 6px;
-  border-radius: .25rem;
   z-index: var(--z-tooltip);
+  display: grid;
+  grid-template-columns: 1 1fr;
+  gap: 1rem;
   transition: bottom .4s, transform .4s;
-}
-.scrollup:hover {
-  transform: translateY(-.25rem);
 }
 /* Show Scroll Up */
 .scrollup.show {
   bottom: 3rem;
+}
+
+.scrollup-btn {
+  background: var(--gradient-color);
+  color: var(--title-color);
+  font-size: 1.25rem;
+  padding: 6px;
+  border-radius: .25rem;
+  display: inline-flex;
+  transition: bottom .4s, transform .4s;
+}
+.scrollup-btn:hover {
+  transform: translateY(-.25rem);
+}
+
+.scrollup-btn.whatsapp {
+  color: #25d366;
 }

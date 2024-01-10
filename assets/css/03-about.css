@@ -10,6 +10,10 @@
   margin-bottom: 2rem;
 }
 
+.about-data a:hover i {
+  transform: scale(1.2);
+}
+
 .about-image {
   position: relative;
   justify-self: center;
