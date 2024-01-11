@@ -74,21 +74,29 @@
   padding-block: 10rem 0;
 }
 
-.slide-content-container {
+.home-data {
   padding-left: 1.5rem;
+  row-gap: .5rem;
 }
 
-.slide-content-container .home-title {
+.home-data .home-title {
   font-size: var(--h1-font-size);
   text-align: end;
 }
+.home-data .home-title span {
+  color: rgb(23, 204, 87);
+}
 
-.slide-content-container .home-description {
+.home-data .home-description {
   text-align: end;
   font-size: var(--small-font-size);
 }
 
-.slide-content-container .home-button {
+.home-data .home-button {
   display: flex;
   justify-content: flex-end;
+}
+
+.home-data .home-button a:hover i {
+  transform: scale(1.2);
 }

@@ -2,13 +2,13 @@
 const NAVMENU = document.querySelector('.nav-menu'),
 NAVTOGGLE = document.querySelector('.nav-toggle'),
 NAVCLOSE = document.querySelector('.nav-close'),
-toggleMenu = () => NAVMENU.classList.toggle('open')
+toggleMenu = () => { NAVMENU.classList.toggle('open') }
 
 NAVTOGGLE.onclick = toggleMenu
 NAVCLOSE.onclick = toggleMenu
 
 /*=============== REMOVE MENU ON LINK CLICK ===============*/
-const NAVLINK = document.querySelectorAll('.nav-link').forEach(el => el.onclick = toggleMenu())
+const NAVLINK = document.querySelectorAll('.nav-link').forEach(el => el.onclick = toggleMenu)
 
 /*=============== ADD BLUR TO HEADER ===============*/
 const HEADER = document.querySelector('.header')
@@ -53,7 +53,7 @@ const sr = ScrollReveal({
   // reset: true // repetir animacion
 })
 
-sr.reveal(`.home-social, .home-data, .explore-data, .explore-user, .footer-container`)
+sr.reveal(`.home-social, .explore-data, .explore-user, .footer-container`)
 sr.reveal(`.home-card`, {delay: 350, distance: '100px', interval: 100})
 sr.reveal(`.about-data, .join-image`, {origin: 'right'})
 sr.reveal(`.about-image, .join-data`, {origin: 'left'})
@@ -65,8 +65,8 @@ let swiperFavorite = new Swiper('.home-slider', {
   slidesPerView: 'auto',
   centeredSlides: 'auto',
   grabCursor: true,
-  // autoplay: {
-  //   delay: 30000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 30000,
+    disableOnInteraction: false,
+  },
 })
