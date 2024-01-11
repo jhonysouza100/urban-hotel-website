@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.explore-data .section-title {
+  font-family: var(--cursive-font);
+}
+
 .explore-image {
   position: absolute;
   overflow: hidden;

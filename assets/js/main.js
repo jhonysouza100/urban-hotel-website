@@ -64,5 +64,9 @@ let swiperFavorite = new Swiper('.home-slider', {
   loop: true,
   slidesPerView: 'auto',
   centeredSlides: 'auto',
-  grabCursor: true
+  grabCursor: true,
+  // autoplay: {
+  //   delay: 30000,
+  //   disableOnInteraction: false,
+  // },
 })
