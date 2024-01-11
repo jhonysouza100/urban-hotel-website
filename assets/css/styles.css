@@ -101,7 +101,7 @@ img {
 }
 
 .section {
-  padding-block: 5rem 1rem;
+  padding-block: 4rem 1rem;
 }
 
 .section-title {
@@ -118,6 +118,7 @@ img {
 .button {
   background-color: hsla(0, 0%, 100%, .2);
   padding: 1.25rem 1.5rem;
+  border-radius: .25rem;
   color: var(--title-color);
   display: inline-flex;
   align-items: center;

@@ -18,11 +18,23 @@
   padding: 1rem;
   box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, .2);
   transition: transform .4s;
-
 }
 
-.popular-image {
+.popular-image:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.popular-container .popular-card:nth-child(2) .popular-image {
+  transform: rotate(-9deg);
+}
+.popular-container .popular-card:nth-child(2) .popular-image:hover {
+  transform: scale(1.1) rotate(0deg);
+}
+.popular-container .popular-card:nth-child(4) .popular-image {
   transform: rotate(6deg);
+}
+.popular-container .popular-card:nth-child(4) .popular-image:hover {
+  transform: scale(1.1) rotate(0deg);
 }
 
 .popular-title {
@@ -30,9 +42,4 @@
   color: #111;
   text-align: center;
   line-height: 2rem;
-}
-
-
-.popular-image:hover {
-  transform: scale(1.1) rotate(-6deg);
 }
