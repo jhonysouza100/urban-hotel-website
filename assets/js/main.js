@@ -62,11 +62,12 @@ sr.reveal(`.popular-card`, {interval: 200})
 /*=============== SWIPER OPTIONS ===============*/
 let swiperFavorite = new Swiper('.home-slider', {
   loop: true,
+  effect: "fade",
   slidesPerView: 'auto',
   centeredSlides: 'auto',
   grabCursor: true,
   autoplay: {
-    delay: 30000,
+    delay: 25000,
     disableOnInteraction: false,
   },
 })
