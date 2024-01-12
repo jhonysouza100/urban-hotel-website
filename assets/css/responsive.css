@@ -26,6 +26,9 @@
 
 /* For medium devices */
 @media screen and (min-width: 576px) { /* desde 576px hasta ↑ */
+  :root {
+    --shadow-deg-end: 90%;
+  }
   .home-container, .about-container, .explore-content, .join-container {
     grid-template-columns: 380px;
     justify-content: center;
@@ -85,6 +88,9 @@
 
 /* For large devices */
 @media screen and (min-width: 1023px) {
+  :root {
+    --shadow-deg-end: 95%;
+  }
   .nav-toggle, .nav-close {
     display: none;
   }

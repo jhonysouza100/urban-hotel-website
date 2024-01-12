@@ -15,6 +15,7 @@
 
 .home-description {
   margin-bottom: 2rem;
+  color: var(--white-color);
 }
 
 .home-shadow-2 {
@@ -31,7 +32,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(var(--main-deg), var(--body-color) 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg), var(--body-color) var(--shadow-deg-end));
+  /* background: rgba(0, 0, 0, 0.5); */
   /* background: #7a5c3c; */
 }
 
@@ -50,13 +52,13 @@
   rotate: 90deg;
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
-  color: var(--title-color);
+  color: var(--white-color);
 }
  .home-social-text::after {
   content: '';
   width: 48px;
   height: 1px;
-  background-color: var(--title-color);
+  background-color: var(--white-color);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -71,11 +73,11 @@
 
 .home-social-link {
   font-size: 1.25rem;
-  color: var(--title-color);
-  transition: color .4s;
+  color: var(--white-color);
+  transition: transform .4s;
 }
 .home-social-link:hover {
-  color: var(--main-color);
+  transform: scale(1.2);
 }
 
 /* slide content */
@@ -91,6 +93,7 @@
 
 .home-data .home-title {
   font-size: var(--h1-font-size);
+  color: var(--white-color);
   text-align: end;
 }
 .home-data .home-title span {

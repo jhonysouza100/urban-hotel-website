@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   width: 100%;
-  background: transparent;
+  background: var(--nav-transparent);
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
@@ -15,7 +15,7 @@
 }
 
 .nav-logo {
-  color: var(--title-color);
+  color: var(--white-color);
   font-family: var(--second-font);
   font-weight: var(--font-semi-bold);
 }
@@ -23,7 +23,7 @@
 .nav-toggle, .nav-close {
   display: flex;
   font-size: 1.25rem;
-  color: var(--title-color);
+  color: var(--white-color);
   cursor: pointer;
 }
 
@@ -36,17 +36,17 @@
 
 .nav-link {
   position: relative;
-  color: var(--title-color);
+  color: var(--white-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
 }
 
-/* Active link */
+/* Active link ↓↓↓ */
 .nav-link::after {
   content: ''; /* link bottom lines */
   width: 0;
   height: 2px;
-  background-color: var(--title-color);
+  background-color: var(--white-color);
   position: absolute;
   left: 0;
   bottom: -.5rem;
@@ -58,7 +58,7 @@
 .nav-link:hover::after {
   width: 70%; /* las lineas tambien se mostraran in hover */
 }
-/* Active link */
+/* Active link ↑↑↑ */
 
 .nav-close {
   position: absolute;
@@ -86,15 +86,15 @@
   top: 0;
 }
 
-/* Add blur to header */
+/* Add blur to header o color solido segun thema dark/light */
 .header.blur::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: hsla(0, 0%, 0%, .3);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px); /* for safari */
+  background-color: var(--nav-color);
+  backdrop-filter: var(--nav-filter);
+  -webkit-backdrop-filter: var(--nav-filter); /* for safari */
   top: 0;
   left: 0;
   z-index: -1;
