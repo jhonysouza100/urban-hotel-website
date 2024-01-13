@@ -9,6 +9,8 @@
 
       <!--=============== REMIXICONS ===============-->
       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+      <!--=============== BOXICONS ===============-->
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
       <!--=============== SWIPER CSS ===============-->
       <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
@@ -26,24 +28,24 @@
 
       <title>Hotel Urban Express</title>
    </head>
-   <body>
+   <body class="dark-theme">
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <div class="nav-logo"></div>
-            <div class="nav-menu" id="nav-menu">
-               <ul class="nav-list">
-                  <li class="nav-item"><a href="#home" class="nav-link active-link">Inicio</a></li>
-                  <li class="nav-item"><a href="#about" class="nav-link">Ubicación</a></li>
-                  <li class="nav-item"><a href="#popular" class="nav-link">Servivios</a></li>
-                  <li class="nav-item"><a href="#explore" class="nav-link">Iguazú</a></li>
-                  <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+            <div class="theme-button"><i class="ri-lightbulb-fill"></i></div>
+            <div class="navmenu" id="navmenu">
+               <ul class="navmenu-list">
+                  <li class="navmenu-item"><a href="#home" class="navmenu-link active-link">Inicio</a></li>
+                  <li class="navmenu-item"><a href="#about" class="navmenu-link">Ubicación</a></li>
+                  <li class="navmenu-item"><a href="#popular" class="navmenu-link">Servivios</a></li>
+                  <li class="navmenu-item"><a href="#explore" class="navmenu-link">Iguazú</a></li>
+                  <li class="navmenu-item"><a href="#" class="navmenu-link">Login</a></li>
                </ul>
                <!-- close button -->
-               <div class="nav-close" id="nav-close"><i class="ri-close-line"></i></div>
+               <div class="navmenu-close" id="navmenu-close"><i class="ri-close-line"></i></div>
             </div>         
             <!-- toggle button -->
-            <div class="nav-toggle" id="nav-toggle"><i class="ri-menu-fill"></i></div>
+            <div class="navmenu-button" id="navmenu-button"><i class="ri-menu-fill"></i></div>
          </nav>
       </header>
 
@@ -73,7 +75,7 @@
                         <div class="home-content section">
                            <div class="home-data container grid">
                               <h2 class="home-title">Hotel Iguazu <br> Urban <span>Express</span></h2>
-                              <p class="home-description">Como todas las mañanas de invierno el gatito Vladimir está asomado a la ventana ¡Es un minino muy curioso! Le encanta ver nevar sobre los tejados y a los niños jugando sobre el parque cubierto de blanco. A través del cristal escucha sus risas y se entretiene observando cómo hacen divertidos y rechonchos muñecos de nieve.</p>
+                              <p class="home-description">Como todas las mañanas de invierno el gatito Vladimir está asomado a la ventana ¡Es un minino muy curioso! Le encanta ver nevar sobre los tejados y a los niños jugando sobre el parque cubierto de blanco.</p>
                               <div class="home-button">
                                  <a href="#" class="button">Saber mas <i class="ri-information-line"></i></a>
                               </div>
@@ -87,7 +89,7 @@
                         <div class="home-content section">
                            <div class="home-data container grid">
                               <h2 class="home-title">Hotel Iguazu <br> Urban <span>Express</span></h2>
-                              <p class="home-description">Con sus manitas protegidas con guantes de lana, los pequeños forman dos bolas: una grande para el cuerpo y otra más pequeña para la cabeza. Después, le ponen botones en la tripa y dos piedras redonditas en el lugar de los ojos. La nariz es una zanahoria larguirucha y dos palitos son los brazos. Una niña pelirroja se quita la bufanda y la enrosca en el cuello del pasmado muñeco. En su cabeza, ponen un gorro de lana de tres alegres colores ¡Le queda pequeño pero muy gracioso!</p>
+                              <p class="home-description">Con sus manitas protegidas con guantes de lana, los pequeños forman dos bolas: una grande para el cuerpo y otra más pequeña para la cabeza</p>
                               <div class="home-button">
                                  <a href="#" class="button">Saber mas <i class="ri-information-line"></i></a>
                               </div>
@@ -256,7 +258,7 @@
 
       <!--========== SCROLL UP ==========-->
       <div class="scrollup">
-         <a target="_blank" href="https://api.whatsapp.com/send?phone=543757458904&text=Hola, me gustaría hacer una consulta" class="scrollup-btn whatsapp" ><i class="ri-whatsapp-fill"></i></a>
+         <a target="_blank" href="https://api.whatsapp.com/send?phone=543757458904&text=Hola, me gustaría hacer una consulta" class="scrollup-btn" ><img class="whatsapp" src="assets/img/whatsapp.svg"></a>
          <a href="#" class="scrollup-btn"><i class="ri-arrow-up-s-line"></i></a>
       </div>
 

@@ -16,6 +16,7 @@
 .home-description {
   margin-bottom: 2rem;
   color: var(--white-color);
+  text-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
 .home-shadow-2 {
@@ -26,15 +27,14 @@
   height: 100%;
   background: linear-gradient(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%);
 }
+
 .home-shadow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(var(--main-deg), var(--body-color) 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg), var(--body-color) var(--shadow-deg-end));
-  /* background: rgba(0, 0, 0, 0.5); */
-  /* background: #7a5c3c; */
+  background: var(--shadow-bg);
 }
 
 /* home social ↓↓↓ */
@@ -53,12 +53,14 @@
   font-size: var(--small-font-size);
   font-weight: var(--font-medium);
   color: var(--white-color);
+  text-shadow: var(--text-shadow);
 }
  .home-social-text::after {
   content: '';
   width: 48px;
   height: 1px;
   background-color: var(--white-color);
+  text-shadow: var(--text-shadow);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -74,6 +76,7 @@
 .home-social-link {
   font-size: 1.25rem;
   color: var(--white-color);
+  text-shadow: var(--text-shadow);
   transition: transform .4s;
 }
 .home-social-link:hover {
@@ -95,6 +98,7 @@
   font-size: var(--h1-font-size);
   color: var(--white-color);
   text-align: end;
+  text-shadow: var(--text-shadow);
 }
 .home-data .home-title span {
   color: rgb(23, 204, 87);

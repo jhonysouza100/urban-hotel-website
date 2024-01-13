@@ -1,22 +1,22 @@
-/*=============== SHOW MENU ===============*/
-const NAVMENU = document.querySelector('.nav-menu'),
-NAVTOGGLE = document.querySelector('.nav-toggle'),
-NAVCLOSE = document.querySelector('.nav-close'),
-toggleMenu = () => { NAVMENU.classList.toggle('open') }
+/*=============== OPEN MENU ===============*/
+const NAVMENU = document.querySelector('.navmenu'),
+NAVTOGGLE = document.querySelector('.navmenu-button'),
+NAVCLOSE = document.querySelector('.navmenu-close'),
+toggleMenu = () => { NAVMENU.classList.toggle('is-open') }
 
 NAVTOGGLE.onclick = toggleMenu
 NAVCLOSE.onclick = toggleMenu
 
 /*=============== REMOVE MENU ON LINK CLICK ===============*/
-const NAVLINK = document.querySelectorAll('.nav-link').forEach(el => el.onclick = toggleMenu)
+const NAVLINK = document.querySelectorAll('.navmenu-link').forEach(el => el.onclick = toggleMenu)
 
 /*=============== ADD BLUR TO HEADER ===============*/
 const HEADER = document.querySelector('.header')
-const blurHeader = () => this.scrollY >= 50 ? HEADER.classList.add('blur') : HEADER.classList.remove('blur')
+const blurHeader = () => this.scrollY >= 50 ? HEADER.classList.add('is-scroll') : HEADER.classList.remove('is-scroll')
 
 /*=============== SHOW SCROLL UP ===============*/ 
 const SCROLLUP = document.querySelector('.scrollup')
-const scrollUp = () => this.scrollY >= 350 ? SCROLLUP.classList.add('show') : SCROLLUP.classList.remove('show')
+const scrollUp = () => this.scrollY >= 350 ? SCROLLUP.classList.add('is-show') : SCROLLUP.classList.remove('is-show')
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const SECTIONS = document.querySelectorAll('section[id]')
@@ -25,7 +25,7 @@ const activeSections = () => {
     const sectionHght = el.offsetHeight,
     sectionTop = el.offsetTop -58,
     sectionId = el.getAttribute('id'),
-    sectionClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']')
+    sectionClass = document.querySelector('.navmenu a[href*=' + sectionId + ']')
     if(scrollY > sectionTop && scrollY < sectionTop + sectionHght) {
       sectionClass.classList.add('active-link')
     } else {
@@ -33,6 +33,21 @@ const activeSections = () => {
     }
   })
 }
+
+
+/*=============== LIGHT THEME ===============*/
+const THEMEBTN = document.querySelector('.theme-button i')
+const lightTheme = 'light-theme',
+      iconFillTheme = 'ri-lightbulb-fill',
+      iconLineTheme = 'ri-lightbulb-line';
+
+// Activar/Desactivar el tema manualmente con el botón
+THEMEBTN.onclick = () => {
+  // Agregar o eliminar el tema oscuro/icono
+  document.body.classList.toggle(lightTheme);
+  THEMEBTN.classList.toggle(iconFillTheme);
+  THEMEBTN.classList.toggle(iconLineTheme);
+};
 
 /*=============== COMBINE ALL SCROLL FUNCTIONS ===============*/
 const handleScroll = () => {
@@ -67,7 +82,9 @@ let swiperFavorite = new Swiper('.home-slider', {
   centeredSlides: 'auto',
   grabCursor: true,
   autoplay: {
-    delay: 25000,
+    delay: 8000,
     disableOnInteraction: false,
   },
+  speed: 500,
+  ease: 'ease-in-out'
 })

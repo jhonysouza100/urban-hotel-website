@@ -1,0 +1,6 @@
+- colocar button de whatsapp OK
+- programar thema claro. OK
+- colocar button de thema. OK
+- programar theme button. OK
+- programer el footer.
+- programar el area de checklist.

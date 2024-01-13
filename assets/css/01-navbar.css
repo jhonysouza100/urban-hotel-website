@@ -14,36 +14,36 @@
   align-items: center;
 }
 
-.nav-logo {
+.theme-button i {
   color: var(--white-color);
-  font-family: var(--second-font);
-  font-weight: var(--font-semi-bold);
+  font-size: 1.25rem;
 }
 
-.nav-toggle, .nav-close {
+.navmenu-button, .navmenu-close {
   display: flex;
   font-size: 1.25rem;
   color: var(--white-color);
   cursor: pointer;
 }
 
-.nav-list {
+.navmenu-list {
   text-align: center;
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
 }
 
-.nav-link {
+.navmenu-link {
   position: relative;
   color: var(--white-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
+  text-shadow: var(--text-shadow);
 }
 
-/* Active link ↓↓↓ */
-.nav-link::after {
-  content: ''; /* link bottom lines */
+/* crea lineas para el link activo ↓↓↓ */
+.navmenu-link::after {
+  content: '';
   width: 0;
   height: 2px;
   background-color: var(--white-color);
@@ -53,24 +53,24 @@
   transition: width .3s;
 }
 .active-link::after {
-  width: 70%; /* muestra la linea cuando existe this class */
+  width: 70%; /* muestra la linea cuando el link esta activo*/
 }
-.nav-link:hover::after {
+.navmenu-link:hover::after {
   width: 70%; /* las lineas tambien se mostraran in hover */
 }
-/* Active link ↑↑↑ */
+/* lineas para link activo ↑↑↑ */
 
-.nav-close {
+.navmenu-close {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
 }
 
-/* Navigation for mobile devices */
+/* menu despleglable para msmartphones */
 @media screen and (max-width: 1023px) {
-  .nav-menu {
+  .navmenu {
     position: fixed;
-    top: -100%;
+    top: -100%; /* oculto por defecto */
     left: 0;
     background-color: hsla(0, 0%, 0%, .3);
     width: 100%;
@@ -79,15 +79,19 @@
     -webkit-backdrop-filter: blur(24px); /* for safari */
     transition: top .4s;
   }
+  .navmenu-link {
+    text-shadow: unset;
+  }
 }
 
-/* Show menu */
-.nav-menu.open {
+/* open menu */
+.navmenu.is-open { /* abre el menu para smarphones */
   top: 0;
 }
 
-/* Add blur to header o color solido segun thema dark/light */
-.header.blur::after {
+/* cambia el color del header cuando se scrollea */
+.header.is-scroll::after {
+  transition: color .4s;
   content: '';
   position: absolute;
   width: 100%;
@@ -100,3 +104,22 @@
   z-index: -1;
 }
 
+/* cambia el color de los botones de "menu" y "theme" cuando se scrollea */
+.header.is-scroll .navmenu-button i, .header.is-scroll .theme-button i {
+  color: var(--title-color);
+}
+
+
+/* cambia el color y se quita las sombras de los links cuando se scrollea en desktop */
+@media screen and (min-width: 1023px) {
+  .header.is-scroll .navmenu-link {
+    color: var(--title-color);
+    text-shadow: unset;
+  }
+  .header.is-scroll .navmenu-link::after { /* el color de las lineas para los links activos */
+    background-color: var(--title-color);
+  }
+  .header.is-scroll .navmenu-button i, .header.is-scroll .navmenu-link { /* el grosor del texto  y el boton del "menu" */
+    font-weight: 700;
+  }
+}

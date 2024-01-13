@@ -5,10 +5,12 @@
 :root {
   --header-height: 3.5rem;
 
-  /*========== DEG° ==========*/
-  --main-deg: 180deg;
-  --shadow-deg: 35%;
+  /*========== HOME SHADOW ==========*/
+  --shadow-deg-start: 180deg;
+  --shadow-deg-scale: 35%;
   --shadow-deg-end: 75%;
+  --shadow-bg: linear-gradient(var(--shadow-deg-start), #000 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg-scale), #000 var(--shadow-deg-end));
+  --box-shadow: linear-gradient(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%);
   
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
@@ -20,12 +22,13 @@
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 70%);
   --text-color-light: hsl(0, 0%, 50%);
+  --text-shadow: 1px 1px 3px rgb(0, 0, 0);
   --white-color: hsl(0, 0%, 95%);
   --body-color: hsl(0, 0%, 0%);
   --container-color: hsl(0, 0%, 10%);
   --nav-color: hsla(0, 0%, 0%, .3);
   --nav-filter: blur(24px);
-  --nav-transparent: transparent;
+  --nav-transparent: #00000030;
   
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -83,11 +86,11 @@ body.light-theme {
   --title-color: #111;
   --text-color: hsl(24, 3%, 28%);
   --body-color: hsl(0, 0%, 95%);
-  --main-deg: 180deg;
-  --shadow-deg: 80%;
-  /* --nav-color: hsl(0, 0%, 10%); color solido para el navmenu
+  --nav-color: hsl(0, 0%, 95%); /* color solido para el navmenu */
   --nav-filter: unset;
-  --nav-transparent: unset; bg color por defecto del navmenu */
+  --nav-transparent: unset; /* bg color por defecto del navmenu */
+  --shadow-bg: #00000000;
+  --box-shadow: #00000000;
 }
 
 button,
@@ -114,6 +117,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+i {
+  font-weight: var(--font-regular);
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -170,7 +177,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-scrollup(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%);
+  background: var(--box-shadow);
 }
 
 /*=============== SCROLL BAR ===============*/
@@ -201,7 +208,7 @@ img {
   transition: bottom .4s, transform .4s;
 }
 /* Show Scroll Up */
-.scrollup.show {
+.scrollup.is-show {
   bottom: 3rem;
 }
 
@@ -218,6 +225,7 @@ img {
   transform: translateY(-.25rem);
 }
 
-.scrollup-btn.whatsapp {
-  color: var(--main-color);
+.scrollup-btn .whatsapp {
+  width: 20px;
+  height: 20px;
 }
