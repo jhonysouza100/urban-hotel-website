@@ -22,7 +22,7 @@
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 70%);
   --text-color-light: hsl(0, 0%, 50%);
-  --text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  --text-shadow: 1px 1px 5px rgb(0, 0, 0);
   --white-color: hsl(0, 0%, 95%);
   --body-color: hsl(0, 0%, 0%);
   --container-color: hsl(0, 0%, 10%);
@@ -86,11 +86,11 @@ body.light-theme {
   --title-color: #111;
   --text-color: hsl(24, 3%, 28%);
   --body-color: hsl(0, 0%, 95%);
-  --nav-color: hsl(0, 0%, 95%); /* color solido para el navmenu */
-  --nav-filter: unset;
+  --nav-color: hsla(0, 0%, 100%, .8); /* color solido para el navmenu */
+  --nav-filter: unset; /* sin filtros */
   --nav-transparent: unset; /* bg color por defecto del navmenu */
-  --shadow-bg: #00000000;
-  --box-shadow: #00000000;
+  --shadow-bg: #00000050; /* sombreado del 50% para la imagen del home */
+  --box-shadow: #00000000; /* sin sombras */
 }
 
 button,
@@ -121,6 +121,7 @@ img {
 
 i {
   font-weight: var(--font-regular);
+  font-size: 1.25rem;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -209,7 +210,7 @@ i {
 }
 /* Show Scroll Up */
 .scrollup.is-show {
-  bottom: 3rem;
+  bottom: 4rem;
 }
 
 .scrollup-btn {

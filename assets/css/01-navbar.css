@@ -14,16 +14,14 @@
   align-items: center;
 }
 
-.theme-button i {
-  color: var(--white-color);
-  font-size: 1.25rem;
-}
-
-.navmenu-button, .navmenu-close {
+.navmenu-button, .theme-button, .navmenu-close { /* color por defecto del "theme" y "menu" buttons */
   display: flex;
-  font-size: 1.25rem;
   color: var(--white-color);
   cursor: pointer;
+}
+
+.header.is-scroll .navmenu-button, .header.is-scroll .theme-button { /* cambia color del "theme" y "menu" buttons */
+  color: var(--title-color);
 }
 
 .navmenu-list {
@@ -33,12 +31,11 @@
   row-gap: 2.5rem;
 }
 
-.navmenu-link {
+.navmenu-link, .navmenu-close { /* color por defecto de los "link" y "close" buttons */
   position: relative;
-  color: var(--white-color);
+  color: var(--title-color);
   font-family: var(--second-font);
   font-weight: var(--font-medium);
-  text-shadow: var(--text-shadow);
 }
 
 /* crea lineas para el link activo ↓↓↓ */
@@ -46,7 +43,7 @@
   content: '';
   width: 0;
   height: 2px;
-  background-color: var(--white-color);
+  background-color: var(--title-color); /* color por defecto de las lineas */
   position: absolute;
   left: 0;
   bottom: -.5rem;
@@ -72,15 +69,34 @@
     position: fixed;
     top: -100%; /* oculto por defecto */
     left: 0;
-    background-color: hsla(0, 0%, 0%, .3);
+    background-color: var(--nav-color);
     width: 100%;
     padding-block: 4rem;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px); /* for safari */
     transition: top .4s;
   }
-  .navmenu-link {
+  .navmenu-link, .navmenu-close, .navmenu-button {
+    font-weight: 700;
+  }
+}
+
+/* menu para escritorio */
+@media screen and (min-width: 1023px) {
+  .navmenu-link, .theme-button i {
+    color: var(--white-color);
+    text-shadow: var(--text-shadow);
+  }
+  .navmenu-link::after {
+    background-color: var(--white-color);
+  }
+  .header.is-scroll .navmenu-link, .header.is-scroll .theme-button i {
+    color: var(--title-color);
+    font-weight: 700;
     text-shadow: unset;
+  }
+  .header.is-scroll .navmenu-link::after {
+    background-color: var(--title-color);
   }
 }
 
@@ -102,24 +118,4 @@
   top: 0;
   left: 0;
   z-index: -1;
-}
-
-/* cambia el color de los botones de "menu" y "theme" cuando se scrollea */
-.header.is-scroll .navmenu-button i, .header.is-scroll .theme-button i {
-  color: var(--title-color);
-}
-
-
-/* cambia el color y se quita las sombras de los links cuando se scrollea en desktop */
-@media screen and (min-width: 1023px) {
-  .header.is-scroll .navmenu-link {
-    color: var(--title-color);
-    text-shadow: unset;
-  }
-  .header.is-scroll .navmenu-link::after { /* el color de las lineas para los links activos */
-    background-color: var(--title-color);
-  }
-  .header.is-scroll .navmenu-button i, .header.is-scroll .navmenu-link { /* el grosor del texto  y el boton del "menu" */
-    font-weight: 700;
-  }
 }
