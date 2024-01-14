@@ -1,6 +1,20 @@
+=== VERSION 0.0.1 ===
 - colocar button de whatsapp OK
 - programar thema claro. OK
 - colocar button de thema. OK
 - programar theme button. OK
 - programer el footer. OK
-- programar el area de checklist.
+- programar el area de checklist. OK
+- agregar metadatos. OK
+
+clases re-utilizables
+.is-clickable
+.is-descktop
+.is-scroll
+.is-open
+.is-show
+.is-active
+
+=== VERSION 0.0.2 ===
+- pasar a un framework → parcel.js
+- organizar carpeta src.

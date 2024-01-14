@@ -5,6 +5,14 @@
   row-gap: 2.5rem;
 }
 
+.popular .section-title {
+  font-size: var(--h3-font-size);
+}
+.popular .section-title i {
+  font-weight: 500;
+  font-size: var(--h2-font-size);
+}
+
 .popular-card {
   display: inline-block;
 }

@@ -27,7 +27,8 @@
 
 .services-content .services-box .services-group .services-data i {
   font-size: 1rem;
-  color: var(--first-color);
+  font-weight: var(--font-bold);
+  color: var(--title-color);
 }
 
 /* not checked skill */
@@ -41,24 +42,10 @@
 
 .services-content .services-box .services-group .services-data .services-name {
   font-size: var(--normal-font-size);
-  font-weight: 500;
+  font-weight: var(--font-medium);
   line-height: 18px;
 }
 
 .services-content .services-box .services-group .services-data .services-level {
   font-size: var(--smaller-font-size);
-}
-
-/* Hide and show projects & skills */
-.filters [data-content] {
-  display: none;
-}
-
-.filters_active[data-content] {
-  display: grid;
-}
-
-/* Activate button filter */
-.filters_content .filters_button.filter-tab-active {
-  background-color: var(--body-color);
 }

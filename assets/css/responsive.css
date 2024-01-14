@@ -29,9 +29,12 @@
   :root {
     --shadow-deg-end: 90%;
   }
-  .home-container, .about-container, .explore-content, .join-container {
+  .home-container, .location-container, .explore-content, .join-container {
     grid-template-columns: 380px;
     justify-content: center;
+  }
+  .services-content .services-box {
+    justify-content: space-around;
   }
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
@@ -54,14 +57,14 @@
   .home-data .home-description {
     font-size: var(--normal-font-size);
   }
-  .about-container, .join-container {
+  .location-container, .join-container {
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
-  .about-data .section-title, .popular .section-title {
+  .location-data .section-title, .popular .section-title {
     font-size: var(--h2-font-size);
   }
-  .about-data, .about-data .section-title, .join-data, .join-data .section-title {
+  .location-data, .location-data .section-title, .join-data, .join-data .section-title {
     text-align: initial; /* original is "center" */
   }
   .popular-container {
@@ -90,6 +93,9 @@
   :root {
     --shadow-deg-end: 95%;
   }
+  .is-desktop {
+    display: block;
+  }
   .navmenu-button, .navmenu-close {
     display: none;
   }
@@ -103,8 +109,22 @@
   .popular-container {
     grid-template-columns: repeat(4, 1fr);
   }
+  .services-area {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-around;
+  }
+  .services-title {
+    align-self: center;
+    font-size: var(--h2-font-size);
+  }
   .footer-content {
     grid-template-columns: repeat(3, max-content);
+  }
+  .scrollup-btn .whatsapp, .scrollup-btn i {
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -143,15 +163,15 @@
   .button {
     column-gap: 1.5rem;
   }
-  .about-container {
+  .location-container {
     grid-template-columns: 400px 460px;
     column-gap: 8.5rem;
     padding-block: 1rem;
   }
-  .about-description {
+  .location-description {
     margin-bottom: 3rem;
   }
-  .about-img {
+  .location-img {
     width: 460px;
   }
   .popular-container {

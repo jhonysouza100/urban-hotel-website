@@ -1,30 +1,30 @@
-.about-container {
+.location-container {
   row-gap: 3rem;
 }
 
-.about-data {
+.location-data {
   text-align: center;
 }
 
-.about-description {
+.location-description {
   margin-bottom: 2rem;
 }
 
-.about-data a:hover i {
+.location-data a:hover i {
   transform: scale(1.2) translateX(.25rem);
 }
 
-.about-image {
+.location-image {
   position: relative;
   justify-self: center;
   overflow: hidden;
 }
 
-.about-img {
+.location-img {
   width: 300px;
   transition: transform .4s;
 }
 
-.about-image:hover .about-img {
+.location-image:hover .location-img {
   transform: scale(1.1);
 }

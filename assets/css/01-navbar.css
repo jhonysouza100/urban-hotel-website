@@ -38,6 +38,10 @@
   font-weight: var(--font-medium);
 }
 
+.navmenu-button {
+  font-weight: var(--font-medium);
+}
+
 /* crea lineas para el link activo ↓↓↓ */
 .navmenu-link::after {
   content: '';
@@ -49,7 +53,7 @@
   bottom: -.5rem;
   transition: width .3s;
 }
-.active-link::after {
+.is-active::after {
   width: 70%; /* muestra la linea cuando el link esta activo*/
 }
 .navmenu-link:hover::after {
@@ -76,13 +80,13 @@
     -webkit-backdrop-filter: blur(24px); /* for safari */
     transition: top .4s;
   }
-  .navmenu-link, .navmenu-close, .navmenu-button {
-    font-weight: 700;
-  }
 }
 
 /* menu para escritorio */
 @media screen and (min-width: 1023px) {
+  :root {
+    --font-medium:
+  }
   .navmenu-link, .theme-button i {
     color: var(--white-color);
     text-shadow: var(--text-shadow);
@@ -92,9 +96,8 @@
   }
   .header.is-scroll .navmenu-link, .header.is-scroll .theme-button i {
     color: var(--title-color);
-    font-weight: 700;
     text-shadow: unset;
-  }
+  } 
   .header.is-scroll .navmenu-link::after {
     background-color: var(--title-color);
   }

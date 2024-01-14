@@ -27,9 +27,9 @@ const activeSections = () => {
     sectionId = el.getAttribute('id'),
     sectionClass = document.querySelector('.navmenu a[href*=' + sectionId + ']')
     if(scrollY > sectionTop && scrollY < sectionTop + sectionHght) {
-      sectionClass.classList.add('active-link')
+      sectionClass.classList.add('is-active')
     } else {
-      sectionClass.classList.remove('active-link')
+      sectionClass.classList.remove('is-active')
     }
   })
 }
@@ -68,10 +68,10 @@ const sr = ScrollReveal({
   // reset: true // repetir animacion
 })
 
-sr.reveal(`.home-social, .explore-data, .explore-user, .footer-container`)
+sr.reveal(`.home-social, .services-title, .explore-data, .explore-user, .footer-container`)
 sr.reveal(`.home-card`, {delay: 350, distance: '100px', interval: 100})
-sr.reveal(`.about-data, .join-image`, {origin: 'right'})
-sr.reveal(`.about-image, .join-data`, {origin: 'left'})
+sr.reveal(`.location-data, .join-image, .right`, {origin: 'right'})
+sr.reveal(`.location-image, .join-data, .left`, {origin: 'left'})
 sr.reveal(`.popular-card`, {interval: 200})
 
 /*=============== SWIPER OPTIONS ===============*/
