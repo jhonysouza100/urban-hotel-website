@@ -29,6 +29,9 @@
   --nav-color: hsla(0, 0%, 0%, .3);
   --nav-filter: blur(24px);
   --nav-transparent: #00000030;
+
+  /* colores para :hover */
+  --instagram-color: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
   
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -172,6 +175,7 @@ i {
   transform: translateX(.25rem);
 }
 
+/*=============== SHADOW ===============*/
 .shadow {
   position: absolute;
   top: 0;
@@ -179,6 +183,11 @@ i {
   width: 100%;
   height: 100%;
   background: var(--box-shadow);
+}
+
+/*=============== IS CLICKABLE ===============*/
+.is-clickable {
+  cursor: pointer;
 }
 
 /*=============== SCROLL BAR ===============*/

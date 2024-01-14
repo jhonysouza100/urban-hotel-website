@@ -1,0 +1,64 @@
+.services-content {
+  row-gap: 3.5rem;
+}
+
+.services-title {
+  font-size: var(--h3-font-size);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.services-content .services-box {
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+.services-content .services-box .services-group {
+  display: grid;
+  align-content: flex-start;
+  row-gap: 1rem;
+}
+
+.services-content .services-box .services-group .services-data {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.services-content .services-box .services-group .services-data i {
+  font-size: 1rem;
+  color: var(--first-color);
+}
+
+/* not checked skill */
+.services-content .services-box .services-group .services-data i.no-checked{
+  color: red;
+}
+/* learning */
+.services-content .services-box .services-group .services-data i.learning{
+  color: #adff2f;
+}
+
+.services-content .services-box .services-group .services-data .services-name {
+  font-size: var(--normal-font-size);
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.services-content .services-box .services-group .services-data .services-level {
+  font-size: var(--smaller-font-size);
+}
+
+/* Hide and show projects & skills */
+.filters [data-content] {
+  display: none;
+}
+
+.filters_active[data-content] {
+  display: grid;
+}
+
+/* Activate button filter */
+.filters_content .filters_button.filter-tab-active {
+  background-color: var(--body-color);
+}

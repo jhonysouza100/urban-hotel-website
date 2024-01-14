@@ -2,5 +2,5 @@
 - programar thema claro. OK
 - colocar button de thema. OK
 - programar theme button. OK
-- programer el footer.
+- programer el footer. OK
 - programar el area de checklist.
