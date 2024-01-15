@@ -26,12 +26,12 @@
   --white-color: hsl(0, 0%, 95%);
   --body-color: hsl(0, 0%, 0%);
   --container-color: hsl(0, 0%, 10%);
-  --nav-color: hsla(0, 0%, 0%, .3);
+  --nav-color: hsla(0, 0%, 0%, 0.3);
   --nav-filter: blur(24px);
   --nav-transparent: #00000030;
 
   /* colores para :hover */
-  --instagram-color: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+  --instagram-color: linear-gradient(145deg, #f9ce34 10%, #ee2a7b 40%, #6228d7 90%);
   
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -84,9 +84,9 @@ body {
 body.light-theme {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --scrollup-color: #ac6433;
+  --scrollup-color: hsl(24, 3%, 28%);
   --main-color: #fff;
-  --button-color: #ac6433;
+  --button-color: #1d9bf0;
   --title-color: #111;
   --font-medium: 700;
   --text-color: hsl(24, 3%, 28%);
@@ -241,6 +241,6 @@ i {
 }
 
 .scrollup-btn .whatsapp {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }

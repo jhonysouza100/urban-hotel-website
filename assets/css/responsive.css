@@ -226,4 +226,9 @@
   .scrollup {
     right: 3rem;
   }
+  .scrollup-btn .whatsapp, .scrollup-btn i {
+    height: 1.6rem;
+    width: 1.6rem;
+    font-size: 1.6rem;
+  }
 }
