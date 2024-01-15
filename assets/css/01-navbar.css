@@ -14,14 +14,14 @@
   align-items: center;
 }
 
-.navmenu-button, .theme-button, .navmenu-close { /* color por defecto del "theme" y "menu" buttons */
+.navmenu-button, .theme-button { /* color por defecto del "theme" y "menu" buttons */
   display: flex;
   color: var(--white-color);
   cursor: pointer;
 }
 
 .header.is-scroll .navmenu-button, .header.is-scroll .theme-button { /* cambia color del "theme" y "menu" buttons */
-  color: var(--title-color);
+  color: var(--black-color);
 }
 
 .navmenu-list {
@@ -33,13 +33,13 @@
 
 .navmenu-link, .navmenu-close { /* color por defecto de los "link" y "close" buttons */
   position: relative;
-  color: var(--title-color);
+  color: var(--black-color);
   font-family: var(--second-font);
-  font-weight: var(--font-medium);
+  font-weight: var(--font-bold);
 }
 
 .navmenu-button {
-  font-weight: var(--font-medium);
+  font-weight: var(--font-bold);
 }
 
 /* crea lineas para el link activo ↓↓↓ */
@@ -47,7 +47,7 @@
   content: '';
   width: 0;
   height: 2px;
-  background-color: var(--title-color); /* color por defecto de las lineas */
+  background-color: var(--black-color); /* color por defecto de las lineas */
   position: absolute;
   left: 0;
   bottom: -.5rem;
@@ -84,9 +84,6 @@
 
 /* menu para escritorio */
 @media screen and (min-width: 1023px) {
-  :root {
-    --font-medium:
-  }
   .navmenu-link, .theme-button i {
     color: var(--white-color);
     text-shadow: var(--text-shadow);
@@ -95,11 +92,11 @@
     background-color: var(--white-color);
   }
   .header.is-scroll .navmenu-link, .header.is-scroll .theme-button i {
-    color: var(--title-color);
+    color: var(--black-color);
     text-shadow: unset;
   } 
   .header.is-scroll .navmenu-link::after {
-    background-color: var(--title-color);
+    background-color: var(--black-color);
   }
 }
 

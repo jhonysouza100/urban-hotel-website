@@ -9,29 +9,41 @@
   --shadow-deg-start: 180deg;
   --shadow-deg-scale: 35%;
   --shadow-deg-end: 75%;
-  --shadow-bg: linear-gradient(var(--shadow-deg-start), #000 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg-scale), #000 var(--shadow-deg-end));
-  --box-shadow: linear-gradient(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%);
+  /* --shadow-bg: linear-gradient(var(--shadow-deg-start), #000 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg-scale), #000 var(--shadow-deg-end)); */
+  --shadow-bg: #00000050;
+  /* --box-shadow: linear-gradient(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%); */
   
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --scrollup-color: linear-gradient(90deg,
-                  hsl(23, 4%, 28%) 0%,
-                  hsl(23, 4%, 8%) 100%);
+  /* --scrollup-color: hsla(0, 0%, 100%, .2); */
+  --scrollup-color: hsla(0, 0%, 100%, .75);
   --main-color: rgb(23, 204, 87);
-  --button-color: hsla(0, 0%, 100%, .2);
+  --button-color: hsla(30, 62%, 76%, 0.75);
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 70%);
   --text-color-light: hsl(0, 0%, 50%);
   --text-shadow: 1px 1px 5px rgb(0, 0, 0);
   --white-color: hsl(0, 0%, 95%);
-  --body-color: hsl(0, 0%, 0%);
+  --black-color: hsl(0, 0%, 0%);
+  --dual-color: hsl(0, 0%, 0%);
+  /* --body-color: hsl(0, 0%, 0%); */
+  --body-color: #2c3e20cc;
   --container-color: hsl(0, 0%, 10%);
-  --nav-color: hsla(0, 0%, 0%, .3);
+  /* --nav-color: hsla(0, 0%, 0%, .3); */
+  --nav-color: hsla(0, 0%, 100%, .75); /* color solido para el navmenu */
   --nav-filter: blur(24px);
   --nav-transparent: #00000030;
 
-  /* colores para :hover */
-  --instagram-color: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+  /* colores verde */
+  --color-verde: #2c3e20;
+  --color-verde-oscuro: #343c24;
+  --color-verde: #435134;
+  --color-beige: #E8C39E;
+  --color-celeste: #9ec3e8;
+  --color-verde-light: #a9d6c7;
+
+  /*  */
+
   
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -84,13 +96,17 @@ body {
 body.light-theme {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --scrollup-color: #ac6433;
+  --scrollup-color: linear-gradient(90deg,
+                  hsl(23, 4%, 28%) 0%,
+                  hsl(23, 4%, 8%) 100%);
   --main-color: #fff;
-  --button-color: #ac6433;
+  --button-color: #9ec3e8;
   --title-color: #111;
-  --font-medium: 700;
   --text-color: hsl(24, 3%, 28%);
   --body-color: hsl(0, 0%, 95%);
+  --body-color: hsla(30, 62%, 76%, 0.75);
+  --dual-color: hsl(0, 0%, 95%);
+  /* --nav-color: hsla(0, 0%, 0%, .3); */
   --nav-color: hsla(0, 0%, 100%, .75); /* color solido para el navmenu */
   --nav-filter: unset; /* sin filtros */
   --nav-transparent: unset; /* bg color por defecto del navmenu */
@@ -229,7 +245,9 @@ i {
 
 .scrollup-btn {
   background: var(--scrollup-color);
-  color: var(--white-color);
+  color: var(--dual-color);
+  backdrop-filter: var(--nav-filter);
+  -webkit-backdrop-filter: var(--nav-filter);
   font-size: 1.25rem;
   padding: 6px;
   border-radius: .25rem;
