@@ -60,6 +60,7 @@
   .home-data .home-description {
     font-size: var(--normal-font-size);
     text-align: start;
+    margin-right: 1rem;
   }
   .home-data .home-button {
     justify-content: flex-start;
