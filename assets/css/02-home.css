@@ -6,8 +6,7 @@
 .box {
   position: relative;
   min-height: 100vh;
-} 
-
+}
 .home-video {
   position: absolute;
   top: 0;
@@ -17,6 +16,7 @@
   object-fit: cover;
   z-index: 000;
 }
+
 .swiper-slide {
   clip-path: circle(0% at 0 50%);
   transition: all 2s;
@@ -26,7 +26,19 @@
   transition: 2s ease;
   transition-property: clip-path;
 }
-
+.swiper-pagination {
+  margin-bottom: 12px;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(255, 255, 255, .5);
+  background-color: var(--body-color);
+}
+.swiper-pagination-bullet:hover {
+  transform: scale(1.2);
+}
 
 .home-shadow {
   position: absolute;
@@ -77,14 +89,14 @@
 .home-description {
   margin-bottom: 4rem;
   color: var(--white-color);
-  text-shadow: 1px 1px 2px rgb(0, 0, 0);
+  text-shadow: var(--text-shadow);
   text-align: end;
   font-size: var(--small-font-size);
 }
 .home-data .home-button {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 .home-data .home-button a:hover i {
   transform: scale(1.2);
