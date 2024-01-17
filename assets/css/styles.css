@@ -11,6 +11,7 @@
   --shadow-deg-end: 75%;
   /* --shadow-bg: linear-gradient(var(--shadow-deg-start), #000 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg-scale), #000 var(--shadow-deg-end)); */
   --shadow-bg: #00000050;
+  /* --home-filter-color: rgba(25, 114, 92, .7); */
   /* --box-shadow: linear-gradient(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%); */
   
   /*========== Colors ==========*/
@@ -18,7 +19,8 @@
   /* --scrollup-color: hsla(0, 0%, 100%, .2); */
   --scrollup-color: hsl(24, 3%, 28%);
   --main-color: rgb(23, 204, 87);
-  --button-color: hsl(31, 34%, 36%);
+  /* --button-color: hsl(31, 34%, 36%); */
+  --button-color: rgb(25, 114, 92);
   /* --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 70%); */
   --title-color: #111;

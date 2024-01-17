@@ -1,6 +1,6 @@
 .home {
   position: relative;
-  background: rgb(25, 114, 92);
+  background: var(--button-color);
 }
 
 .box {
@@ -40,7 +40,7 @@
   transform: scale(1.2);
 }
 
-.home-shadow {
+.home-shadow { /* filtro oscuro */
   position: absolute;
   top: 0;
   left: 0;
@@ -49,14 +49,14 @@
   background: var(--shadow-bg);
   z-index: 1;
 }
-.home-shadow:before {
+.home-shadow:before { /* filtro de color */
   position: absolute;
   content: '';
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(25, 114, 92, .7);
+  background: var(--home-filter-color);
   z-index: 1;
 }
 
