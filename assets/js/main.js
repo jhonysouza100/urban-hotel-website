@@ -85,6 +85,6 @@ let swiperFavorite = new Swiper('.home-slider', {
     delay: 8000,
     disableOnInteraction: false,
   },
-  speed: 500,
+  speed: 1500,
   ease: 'ease-in-out'
 })

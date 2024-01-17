@@ -18,17 +18,20 @@
   /* --scrollup-color: hsla(0, 0%, 100%, .2); */
   --scrollup-color: hsl(24, 3%, 28%);
   --main-color: rgb(23, 204, 87);
-  --button-color: hsla(30, 62%, 76%, 0.75);
-  --title-color: hsl(0, 0%, 95%);
-  --text-color: hsl(0, 0%, 70%);
+  --button-color: hsl(31, 34%, 36%);
+  /* --title-color: hsl(0, 0%, 95%);
+  --text-color: hsl(0, 0%, 70%); */
+  --title-color: #111;
+  --text-color: hsl(24, 3%, 28%);
   --text-color-light: hsl(0, 0%, 50%);
   --text-shadow: 1px 1px 5px rgb(0, 0, 0);
   --white-color: hsl(0, 0%, 95%);
   --black-color: hsl(0, 0%, 0%);
   --dual-color: hsl(0, 0%, 0%);
   /* --body-color: hsl(0, 0%, 0%); */
-  --body-color: #2c3e20cc;
+  /* --body-color: #2c3e20cc; */
   --container-color: hsl(0, 0%, 10%);
+  --body-color: hsl(0, 0%, 95%);
   /* --nav-color: hsla(0, 0%, 0%, .3); */
   --nav-color: hsla(0, 0%, 100%, .75); /* color solido para el navmenu */
   --nav-filter: blur(24px);
