@@ -1,0 +1,35 @@
+{
+  "name": "urban-hotel-website",
+  "version": "1.0.0",
+  "source": "src/index.js",
+  "main": "dist/main.js",
+  "description": "",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "start": "parcel",
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonysouza100/urban-hotel-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhonysouza100/urban-hotel-website/issues"
+  },
+  "homepage": "https://github.com/jhonysouza100/urban-hotel-website#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@auth0/auth0-react": "^2.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "scrollreveal": "^4.0.9"
+  }
+}

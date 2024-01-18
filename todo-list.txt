@@ -1,5 +1,5 @@
 === VERSION 0.0.1 ===
-- colocar button de whatsapp OK
+- colocar button de OK
 - programar thema claro. OK
 - colocar button de thema. OK
 - programar theme button. OK
@@ -16,5 +16,5 @@ clases re-utilizables
 .is-active
 
 === VERSION 0.1.0 ===
-- pasar a un framework → parcel.js
-- organizar carpeta src.
+- instalar un framework → parcel.js
+- configurar el proyecto → carpeta src.
