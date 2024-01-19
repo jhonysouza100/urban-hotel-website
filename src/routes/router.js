@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
-import Home from '../pages/Home.jsx';
+import Main from '../pages/Main.jsx';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={ <Home /> } />
+        <Route path='/' element={ <Main /> } />
         {/* <Route path='/signup' element={ <Signup /> } /> */}
         {/* <Route path='/login' element={ <Login /> } /> */}
         {/* si la ruta no es ninguna de las anteriores, entra a 404 por defecto */}
