@@ -10,7 +10,8 @@
   --shadow-deg-scale: 35%;
   --shadow-deg-end: 75%;
   /* --shadow-bg: linear-gradient(var(--shadow-deg-start), #000 0%, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,0) var(--shadow-deg-scale), #000 var(--shadow-deg-end)); */
-  --shadow-bg: #00000050;
+  --shadow-bg: #00000050; /* sombreado del 50% para la imagen del home */
+  --box-shadow: #00000000; /* sin sombras */
   /* --home-filter-color: rgba(25, 114, 92, .7); */
   /* --box-shadow: linear-gradient(180deg, hsla(0,0%,0%,0) 50%, hsl(0,0%,0%) 125%); */
   
@@ -95,7 +96,7 @@ body {
   background-color: var(--body-color);
 }
 
-body.light-theme {
+.layout.dark-theme {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --scrollup-color: hsl(24, 3%, 28%);
@@ -106,11 +107,7 @@ body.light-theme {
   --body-color: hsl(0, 0%, 95%);
   --dual-color: hsl(0, 0%, 95%);
   /* --nav-color: hsla(0, 0%, 0%, .3); */
-  --nav-color: hsla(0, 0%, 100%, .75); /* color solido para el navmenu */
-  --nav-filter: unset; /* sin filtros */
-  --nav-transparent: unset; /* bg color por defecto del navmenu */
-  --shadow-bg: #00000050; /* sombreado del 50% para la imagen del home */
-  --box-shadow: #00000000; /* sin sombras */
+  
 }
 
 button,
@@ -180,8 +177,8 @@ i {
   column-gap: .5rem;
   font-family: var(--second-font);
   font-weight: var(--font-semi-bold);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px); /* for safari */
+  -webkit-backdrop-filter: var(--nav-filter); /* for safari */
+  backdrop-filter: var(--nav-filter);
 }
 .button i {
   font-size: 1.25rem;
@@ -227,15 +224,14 @@ i {
 
 /*=============== SCROLL UP ===============*/
 .scrollup {
-  position: fixed;
-  right: 1rem;
-  bottom: -50%;
-  display: inline-flex;
   z-index: var(--z-tooltip);
   display: grid;
-  grid-template-columns: 1 1fr;
+  grid-template-columns: repeat(1 1fr);
   gap: 1rem;
   transition: bottom .4s, transform .4s;
+  right: 1rem;
+  position: fixed;
+  bottom: -50%;
 }
 /* Show Scroll Up */
 .scrollup.is-show {
@@ -245,8 +241,8 @@ i {
 .scrollup-btn {
   background: var(--scrollup-color);
   color: var(--white-color);
-  backdrop-filter: var(--nav-filter);
   -webkit-backdrop-filter: var(--nav-filter);
+  backdrop-filter: var(--nav-filter);
   font-size: 1.25rem;
   padding: 6px;
   border-radius: .25rem;
@@ -258,6 +254,6 @@ i {
 }
 
 .scrollup-btn .whatsapp {
-  width: 1.25rem;
   height: 1.25rem;
+  width: 1.25rem;
 }

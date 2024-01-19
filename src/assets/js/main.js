@@ -36,18 +36,18 @@
 
 
 /*=============== LIGHT THEME ===============*/
-const THEMEBTN = document.querySelector('.theme-button i')
-const lightTheme = 'light-theme',
-      iconFillTheme = 'ri-lightbulb-fill',
-      iconLineTheme = 'ri-lightbulb-line';
+// const THEMEBTN = document.querySelector('.theme-button i')
+// const lightTheme = 'light-theme',
+//       iconFillTheme = 'ri-lightbulb-fill',
+//       iconLineTheme = 'ri-lightbulb-line';
 
-// Activar/Desactivar el tema manualmente con el botón
-THEMEBTN.onclick = () => {
-  // Agregar o eliminar el tema oscuro/icono
-  document.body.classList.toggle(lightTheme);
-  THEMEBTN.classList.toggle(iconFillTheme);
-  THEMEBTN.classList.toggle(iconLineTheme);
-};
+// // Activar/Desactivar el tema manualmente con el botón
+// THEMEBTN.onclick = () => {
+//   // Agregar o eliminar el tema oscuro/icono
+//   document.body.classList.toggle(lightTheme);
+//   THEMEBTN.classList.toggle(iconFillTheme);
+//   THEMEBTN.classList.toggle(iconLineTheme);
+// };
 
 /*=============== COMBINE ALL SCROLL FUNCTIONS ===============*/
 // const handleScroll = () => {
@@ -63,20 +63,20 @@ THEMEBTN.onclick = () => {
 
 
 /*=============== SWIPER OPTIONS ===============*/
-let swiperFavorite = new Swiper('.home-slider', {
-  loop: true,
-  effect: "fade",
-  slidesPerView: 'auto',
-  centeredSlides: 'auto',
-  grabCursor: true,
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  speed: 1500,
-  ease: 'ease-in-out'
-})
+// let swiperFavorite = new Swiper('.home-slider', {
+//   loop: true,
+//   effect: "fade",
+//   slidesPerView: 'auto',
+//   centeredSlides: 'auto',
+//   grabCursor: true,
+//   autoplay: {
+//     delay: 8000,
+//     disableOnInteraction: false,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   speed: 1500,
+//   ease: 'ease-in-out'
+// })

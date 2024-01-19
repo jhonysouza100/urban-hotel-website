@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
-import AppContext from "../context/context.jsx";
 import Layout from "../layouts/layout.jsx";
 import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
+import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
 
 function Main() {
@@ -12,14 +12,15 @@ function Main() {
   exploreImg1, exploreImg2, joinImg1
  } = images; // importa las imagenes
 
-  const { hello } = useContext(AppContext); // importa el contexto
-
   // carga las animaciones
   useEffect(() => {
 
     // se ejecuta al primer montado del DOM
     // SCROLL animation
     scrollAnimation();
+
+    // SWIPER animation
+    swiperAnimation();
 
   }, []);
 

@@ -1,47 +1,61 @@
+import { useContext, useEffect, useState } from "react";
+import AppContext from "../context/context";
+
 function header() {
+  const {handleTheme, toggleTheme, icon } = useContext(AppContext);
+  useEffect(() => {
+    handleTheme();
+  }, []);
 
-// =============== OPEN MENU ===============
-const NAVMENU = document.querySelector('.navmenu'),
-NAVTOGGLE = document.querySelector('.navmenu-button'),
-NAVCLOSE = document.querySelector('.navmenu-close'),
-toggleMenu = () => { NAVMENU.classList.toggle('is-open') }
+  const [bgHead, setBgHead] = useState("");
+  useEffect(() => {
+    // =============== CHANGE HEADER BACKGROUND ===============
+    const scrollHeader = () => { window.scrollY >= 50 ? setBgHead(" is-scroll") : setBgHead("") };
 
-NAVTOGGLE.onclick = toggleMenu
-NAVCLOSE.onclick = toggleMenu
-// =============== REMOVE MENU ON LINK CLICK ===============
-const NAVLINK = document.querySelectorAll('.navmenu-link').forEach(el => el.onclick = toggleMenu)
-// =============== ADD BLUR TO HEADER ===============
-const HEADER = document.querySelector('.header')
-const blurHeader = () => this.scrollY >= 50 ? HEADER.classList.add('is-scroll') : HEADER.classList.remove('is-scroll')
-// =============== SCROLL SECTIONS ACTIVE LINK ===============
-const SECTIONS = document.querySelectorAll('section[id]')
-const activeSections = () => {
-  SECTIONS.forEach(el => {
-    const sectionHght = el.offsetHeight,
-    sectionTop = el.offsetTop -58,
-    sectionId = el.getAttribute('id'),
-    sectionClass = document.querySelector('.navmenu a[href*=' + sectionId + ']')
-    if(scrollY > sectionTop && scrollY < sectionTop + sectionHght) {
-      sectionClass.classList.add('is-active')
-    } else {
-      sectionClass.classList.remove('is-active')
+    // =============== SCROLL SECTIONS ACTIVE LINK ===============
+    const SECTIONS = document.querySelectorAll("section[id]");
+    const activeSections = () => {
+      const scrollY = window.pageYOffset;
+      if(SECTIONS) {
+        SECTIONS.forEach(el => {
+          const sectionHght = el.offsetHeight,
+          sectionTop = el.offsetTop -58,
+          sectionId = el.getAttribute('id'),
+          sectionClass = document.querySelector('.navmenu a[href*=' + sectionId + ']')
+          if(sectionClass) {
+            if(scrollY > sectionTop && scrollY < sectionTop + sectionHght) {
+              sectionClass.classList.add('is-active')
+            } else {
+              sectionClass.classList.remove('is-active')
+            }
+          }
+        })
+      }
     }
-  })
-}
-// =============== COMBINE ALL SCROLL FUNCTIONS ===============
-const handleScroll = () => {
-  blurHeader()
-  activeSections()
-}
-window.onscroll = handleScroll
+    
+    window.addEventListener("scroll", scrollHeader);
+    window.addEventListener("scroll", activeSections);
+    return () => { // limpia el evento de desplazamiento cuando el componente se desmonta para evitar posibles problemas de memoria.
+      window.removeEventListener("scroll", activeSections);
+      window.removeEventListener("scroll", scrollHeader);
+    };
+  }, []);
+
+  // =============== OPEN MENU ===============
+  const [isShow, setIsShow] = useState(false);
+  const handleShow = () => { setIsShow(!isShow); };
+  // =============== REMOVE MENU ON LINK CLICK ===============
+  const handleClick = (e) => { if (e.target.classList.contains("navmenu-link")) handleShow(); };
+
 
   return (
-    <header className="header" id="header">
+    <header className={`header${bgHead}`} id="header">
       <nav className="nav container">
-        <div className="theme-button">
-          <i className="ri-lightbulb-fill" />
+        {/* theme button */}
+        <div className="theme-button" onClick={toggleTheme}>
+          <i className={`${icon}`} />
         </div>
-        <div className="navmenu" id="navmenu">
+        <div className={`navmenu ${isShow ? "is-open" : "" }`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
             <li className="navmenu-item">
               <a href="#home" className="navmenu-link is-active">
@@ -75,12 +89,12 @@ window.onscroll = handleScroll
             </li>
           </ul>
           {/* close button */}
-          <div className="navmenu-close" id="navmenu-close">
+          <div className="navmenu-close" id="navmenu-close" onClick={handleShow}>
             <i className="ri-close-line" />
           </div>
         </div>
         {/* toggle button */}
-        <div className="navmenu-button" id="navmenu-button">
+        <div className="navmenu-button" id="navmenu-button" onClick={handleShow}>
           <i className="ri-menu-fill" />
         </div>
       </nav>
