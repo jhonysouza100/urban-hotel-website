@@ -142,10 +142,10 @@ function Main() {
           <div className="home-social">
             <span className="home-social-text">Siguenos</span>
             <div className="home-social-links">
-              <a href="#" target="_blank" className="home-social-link">
+              <a href="https://intagram.com" target="_blank" className="home-social-link">
                 <i className="ri-instagram-fill" />
               </a>
-              <a href="#" target="_blank" className="home-social-link">
+              <a href="www.facebook.com" target="_blank" className="home-social-link">
                 <i className="ri-facebook-circle-fill" />
               </a>
               <a
