@@ -17,7 +17,7 @@ const swiperAnimation = () => {
     ease: 'ease-in-out'
   })
 
-  return swiperAnimation;
+  return swiperFavorite;
 }
 
 export default swiperAnimation;

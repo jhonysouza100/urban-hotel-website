@@ -38,7 +38,7 @@ function Main() {
                 >
                   <div className="home-shadow" />
                   <video
-                    src="https://urban-hotel-videos.nyc3.cdn.digitaloceanspaces.com/videos/recorrido-2.mov"
+                    src=""
                     className="home-video"
                     autoPlay=""
                     muted=""
@@ -74,7 +74,7 @@ function Main() {
                 >
                   <div className="home-shadow" />
                   <video
-                    src="https://urban-hotel-videos.nyc3.cdn.digitaloceanspaces.com/videos/recorrido-3.mp4"
+                    src=""
                     className="home-video"
                     autoPlay=""
                     muted=""
@@ -108,7 +108,7 @@ function Main() {
                 >
                   <div className="home-shadow" />
                   <video
-                    src="https://urban-hotel-videos.nyc3.cdn.digitaloceanspaces.com/videos/recorrido-4.mp4"
+                    src=""
                     className="home-video"
                     autoPlay=""
                     muted=""
