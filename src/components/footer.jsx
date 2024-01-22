@@ -44,10 +44,10 @@ function footer() {
           <div className="footer-data">
             <h3 className="footer-title">Siguenos</h3>
             <div className="footer-social">
-              <a href="#" target="_blank" className="footer-social-link">
+              <a href="#" target="_blank" className="footer-social-link" aria-label="Read more about Seminole tax hike">
                 <i className="ri-facebook-line" />
               </a>
-              <a href="#" target="_blank" className="footer-social-link">
+              <a href="#" target="_blank" className="footer-social-link" aria-label="Read more about Seminole tax hike">
                 <i className="ri-instagram-line" />
               </a>
             </div>

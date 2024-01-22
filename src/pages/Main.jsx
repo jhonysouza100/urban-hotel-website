@@ -142,15 +142,16 @@ function Main() {
           <div className="home-social">
             <span className="home-social-text">Siguenos</span>
             <div className="home-social-links">
-              <a href="https://intagram.com" target="_blank" className="home-social-link">
+              <a href="https://intagram.com" target="_blank" className="home-social-link" aria-label="Read more about Seminole tax hike">
                 <i className="ri-instagram-fill" />
               </a>
-              <a href="www.facebook.com" target="_blank" className="home-social-link">
+              <a href="www.facebook.com" target="_blank" className="home-social-link" aria-label="Read more about Seminole tax hike">
                 <i className="ri-facebook-circle-fill" />
               </a>
               <a
                 href="https://api.whatsapp.com/send?phone=543757458904&text=Hola, me gustaría hacer una consulta"
                 target="_blank"
+                aria-label="Read more about Seminole tax hike"
                 className="home-social-link"
               >
                 <i className="ri-whatsapp-fill" />

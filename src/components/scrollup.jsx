@@ -24,7 +24,7 @@ function scrollup() {
           alt="whatsapp-img"
         />
       </a>
-      <a href="#" className="scrollup-btn">
+      <a href="#" className="scrollup-btn" aria-label="Read more about Seminole tax hike">
         <i className="ri-arrow-up-s-line" />
       </a>
     </div>
