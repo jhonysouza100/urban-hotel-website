@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-
 export const getAuthProfileData = () => {
   const { user, isAuthenticated } = useAuth0();
   const [userProfile, setUserProfile] = useState(null);
@@ -22,6 +21,6 @@ export const getAuthProfileData = () => {
 export const AuthButton = () => {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<a className="button" onClick={() => logout()}>Log Out</a>) 
-  : (<a className="button" onClick={() => loginWithRedirect()}>Login</a>);
+  ? (<a className="navmenu-link" onClick={() => logout()}>Log Out</a>) 
+  : (<a className="navmenu-link" onClick={() => loginWithRedirect()}>Login</a>);
 };

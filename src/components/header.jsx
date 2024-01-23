@@ -1,7 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import AppContext from "../context/context";
+import AppContext from "../context/context.jsx";
+import {AuthButton} from "../hooks/useAuth.js";
+
 
 function header() {
+  const {userData} = useContext(AppContext);
+  console.log(userData);
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
   useEffect(() => {
     handleTheme();
@@ -83,9 +87,10 @@ function header() {
               </a>
             </li>
             <li className="navmenu-item">
-              <a href="#join" className="navmenu-link">
+              {/* <a href="#join" className="navmenu-link">
                 Login
-              </a>
+              </a> */}
+              <AuthButton />
             </li>
           </ul>
           {/* close button */}

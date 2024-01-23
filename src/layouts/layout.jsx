@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import AppContext from "../context/context";
-import Footer from "../components/footer";
-import Header from "../components/header";
+import AppContext from "../context/context.jsx";
+import Footer from "../components/footer.jsx";
+import Header from "../components/header.jsx";
 
 function Layout({children}) {
   const {theme} = useContext(AppContext); // hook para destructurar del contexto

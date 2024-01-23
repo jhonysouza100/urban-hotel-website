@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import Layout from "../layouts/layout.jsx";
 import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";

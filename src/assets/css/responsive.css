@@ -193,9 +193,6 @@
     column-gap: 3rem;
     padding-top: 4rem;
   }
-  .popular-title {
-    font-size: var(--h2-font-size);
-  }
   .popular-location {
     font-size: var(--normal-font-size);
   }

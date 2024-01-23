@@ -4,14 +4,14 @@ import Router from './routes/router.js';
 
 function App() {
   return (
-    <AppProvider>
-      <Auth0Provider
-      domain={process.env.AUTH0_DOMAIN}
-      clientId={process.env.AUTH0_CLIENT_ID}
-      redirectUri={window.location.origin}>
+    <Auth0Provider
+    domain={process.env.AUTH0_DOMAIN}
+    clientId={process.env.AUTH0_CLIENT_ID}
+    redirectUri={window.location.origin}>
+      <AppProvider>
         <Router />
-      </Auth0Provider>
-    </AppProvider>
+      </AppProvider>
+    </Auth0Provider>
   );
 }
 
