@@ -21,6 +21,6 @@ export const getAuthProfileData = () => {
 export const AuthButton = () => {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<a className="navmenu-link" onClick={() => logout()}>Log Out</a>) 
+  ? (<a className="navmenu-link" onClick={() => logout()}>Logout</a>) 
   : (<a className="navmenu-link" onClick={() => loginWithRedirect()}>Login</a>);
 };

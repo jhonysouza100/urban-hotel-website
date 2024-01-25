@@ -179,8 +179,8 @@ h3.section-title {
 h3.section-title::after {
   content: '';
   width: 250px;
-  height: .1px;
-  background-color: #cccccc75;
+  height: 1.25px;
+  background-color: #cccccc85;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
