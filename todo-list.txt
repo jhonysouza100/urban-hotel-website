@@ -7,7 +7,7 @@
 - programar el area de checklist. OK
 - agregar metadatos. OK
 
-clases re-utilizables
+clases via script
 .is-clickable
 .is-descktop
 .is-scroll
@@ -16,5 +16,27 @@ clases re-utilizables
 .is-active
 
 === VERSION 0.1.0 ===
-- instalar un framework → parcel.js
-- configurar el proyecto → carpeta src.
+- instalar un framework → parcel.js OK
+- configurar el proyecto → carpeta src. OK
+- implementar Auth0 → login button. OK
+- conceder permisos en Auth0. OK
+- conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".
+- agregar enviroment de conexiones en el hosting para la API y Auth0.
+- renombrar la base de datos "christmas-giveaway-db" como "users-db".
+- agregar a la base de datos una tabla (comments) para comentarios y valoraciones → id, content, rate, userId = key, createAt, updatedAt.
+
+- mostart datos del usuario logueado.
+
+- conceder permisos en la API (views-api).
+- renombrar la base de datos "views" como "views-db"?.
+- agregar a la base de datos una tabla (urban-views) para manejar las vistas del hotel → renombrar tabla "views" como "main-views"?.
+
+- agregar API del clima.
+- mostrar el clima de iguazú.
+- agregar api de "google maps".
+
+- crear un metodos para renderizar cada polaroid desde un object de "images" → layout/pholaroidImages.jsx.
+- agregar un "button" a cada polaroid para ver mas fotos.
+- agregar una "page" para galeria de fotos grid → diseño instagram.
+- renderiza una componente galeria de imagenes → layout/imageGallery.jsx.
+- al hacer "click" en una polaroid "ver más" este debera abrir una "page/gallery.jsx" con layout>imageGallery renderizada segun el arobject de "images" relacionado con el polaroid → ejem: piscina-polaroid.onclick => photosPiscina = {}.forEach(el => (<>el</>))

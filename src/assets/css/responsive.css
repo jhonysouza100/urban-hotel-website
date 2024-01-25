@@ -29,12 +29,23 @@
   :root {
     --shadow-deg-end: 90%;
   }
+  h3.section-title {
+    font-size: 1.45rem;
+  }
+  h3.section-title::after {
+    width: 350px;
+  }
   .home-container, .location-container, .explore-content, .join-container {
     grid-template-columns: 380px;
     justify-content: center;
   }
-  .services-content .services-box {
+  .services-container {
     justify-content: space-around;
+    align-items: normal;
+    flex-direction: column;
+  }
+  .services-group {
+    grid-template-columns: repeat(4, 1fr);
   }
   .footer-content {
     grid-template-columns: repeat(2, 1fr);
@@ -43,6 +54,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  h3.section-title {
+    font-size: 1.65rem;
+  }
+  h3.section-title::after {
+    width: 400px;
+  }
   .home-social {
     top: 0;
     bottom: 0;
@@ -64,12 +81,13 @@
   }
   .home-data .home-button {
     justify-content: flex-start;
+    margin-bottom: 1rem;
   }
   .location-container, .join-container {
     grid-template-columns: repeat(2, 350px);
     align-items: center;
   }
-  .location-data .section-title, .popular .section-title {
+  .location-data .section-title {
     font-size: var(--h2-font-size);
   }
   .location-data, .location-data .section-title, .join-data, .join-data .section-title {
@@ -78,6 +96,10 @@
   .popular-container {
     grid-template-columns: repeat(2, 240px);
   }
+  .services-data .services-name {
+    font-size: 19px;
+    line-height: 24px;
+}
   .explore-img {
     width: 100vw;
   }
@@ -101,6 +123,13 @@
   :root {
     --shadow-deg-end: 95%;
   }
+  h3.section-title {
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+  h3.section-title::after {
+    width: 650px;
+  }
   .is-desktop {
     display: block;
   }
@@ -117,23 +146,11 @@
   .home-data {
     margin-inline: unset;
   }
-  .home-data .home-button {
-    margin-bottom: 8rem;
-  }
   .home-social {
     right: 1.5rem;
   }
   .popular-container {
     grid-template-columns: repeat(4, 1fr);
-  }
-  .services-area {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-around;
-  }
-  .services-title {
-    align-self: center;
-    font-size: var(--h2-font-size);
   }
   .footer-content {
     grid-template-columns: repeat(3, max-content);

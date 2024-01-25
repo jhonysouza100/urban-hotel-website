@@ -22,7 +22,7 @@ function footer() {
                 </address>
               </li>
               <li>
-                <address className="footer-info">Abierto las 24hs</address>
+                <address className="footer-info">Abierto las 24hs <br /> 365 días del año</address>
               </li>
             </ul>
           </div>

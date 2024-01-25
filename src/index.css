@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@400;500&Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=EB+Garamond:wght@400;500;600;700&family=Poppins:wght@400;500&Dancing+Script:wght@700&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -52,6 +52,7 @@
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: "Poppins", sans-serif;
   --second-font: "Montserrat", sans-serif;
+  --section-font: "EB Garamond", sans-serif;
   --cursive-font: "Dancing Script", cursive;
   --biggest-font-size: 2.75rem;
   --h1-font-size: 1.5rem;
@@ -147,6 +148,11 @@ i {
   margin-inline: 1.5rem;
 }
 
+.flex-box {
+  display: flex;
+  justify-content: center;
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -154,12 +160,31 @@ i {
 
 .section {
   padding-block: 4rem 1rem;
-}
+} 
 
 .section-title {
   text-align: center;
   font-size: var(--h1-font-size);
   margin-bottom: 1.5rem;
+}
+
+h3.section-title {
+  font-family: var(--section-font);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+h3.section-title::after {
+  content: '';
+  width: 250px;
+  height: .1px;
+  background-color: #cccccc75;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -.5rem;
 }
 
 .main {

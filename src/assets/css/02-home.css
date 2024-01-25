@@ -1,6 +1,6 @@
 .home {
   position: relative;
-  background: var(--button-color);
+  /* background: var(--button-color); */
 }
 
 .box {
@@ -18,7 +18,7 @@
   z-index: 000;
 }
 
-.swiper-slide {
+/* .swiper-slide {
   clip-path: circle(0% at 0 50%);
   transition: all 2s;
 }
@@ -26,7 +26,7 @@
   clip-path: circle(150% at 0 50%);
   transition: 2s ease;
   transition-property: clip-path;
-}
+} */
 .swiper-pagination {
   margin-bottom: 12px;
 }

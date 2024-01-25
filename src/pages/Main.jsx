@@ -6,22 +6,28 @@ import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
 
 function Main() {
-  
-  const { homeBgImg1, homeBgImg2, homeBgImg3, locationImg1,
-  popularImg1, popularImg2, popularImg3, popularImg4,
-  exploreImg1, exploreImg2, joinImg1
- } = images; // importa las imagenes
+  const {
+    homeBgImg1,
+    homeBgImg2,
+    homeBgImg3,
+    locationImg1,
+    popularImg1,
+    popularImg2,
+    popularImg3,
+    popularImg4,
+    exploreImg1,
+    exploreImg2,
+    joinImg1,
+  } = images; // importa las imagenes
 
   // carga las animaciones
   useEffect(() => {
-
     // se ejecuta al primer montado del DOM
     // SCROLL animation
     scrollAnimation();
 
     // SWIPER animation
     swiperAnimation();
-
   }, []);
 
   return (
@@ -142,10 +148,20 @@ function Main() {
           <div className="home-social">
             <span className="home-social-text">Siguenos</span>
             <div className="home-social-links">
-              <a href="https://intagram.com" target="_blank" className="home-social-link" aria-label="Read more about Seminole tax hike">
+              <a
+                href="https://intagram.com"
+                target="_blank"
+                className="home-social-link"
+                aria-label="Read more about Seminole tax hike"
+              >
                 <i className="ri-instagram-fill" />
               </a>
-              <a href="www.facebook.com" target="_blank" className="home-social-link" aria-label="Read more about Seminole tax hike">
+              <a
+                href="www.facebook.com"
+                target="_blank"
+                className="home-social-link"
+                aria-label="Read more about Seminole tax hike"
+              >
                 <i className="ri-facebook-circle-fill" />
               </a>
               <a
@@ -191,9 +207,7 @@ function Main() {
         </section>
         {/*==================== POPULAR ====================*/}
         <section className="popular section" id="popular">
-          <h3 className="section-title">
-            <i className="ri-time-line" /> 365 días del año <br /> 24 hs al día
-          </h3>
+          <h3 className="photos-title section-title">GALERIA DE FOTOS</h3>
           <div className="popular-container container grid">
             <article className="popular-card">
               <div className="popular-image">
@@ -208,11 +222,7 @@ function Main() {
             </article>
             <article className="popular-card">
               <div className="popular-image">
-                <img
-                  src={popularImg2}
-                  className="popular-img"
-                  alt="piscina"
-                />
+                <img src={popularImg2} className="popular-img" alt="piscina" />
                 <div className="shadow" />
                 <h2 className="popular-title">Piscina</h2>
               </div>
@@ -243,71 +253,65 @@ function Main() {
         </section>
         {/*==================== SERVICES ====================*/}
         <section className="services section" id="services">
-          <div className="services-container container">
-            <div className="services-content grid" data-content="" id="skills">
-              <div className="services-area">
-                <h3 className="services-title">Servicios y Comodidades</h3>
-                <div className="services-box">
-                  <div className="services-group left">
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Habitaciones</h3>
-                        <span className="skils_level">Dobles y Triples</span>
-                      </div>
-                    </div>
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Desayuno</h3>
-                        <span className="skils_level">Incluído</span>
-                      </div>
-                    </div>
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Piscina</h3>
-                        <span className="skils_level">y Solarium</span>
-                      </div>
-                    </div>
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Avenida principal</h3>
-                        <span className="skils_level">a 200 mt</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="services-group right">
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">WIFI</h3>
-                        <span className="skils_level">Gratuito</span>
-                      </div>
-                    </div>
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Recepción</h3>
-                        <span className="skils_level">24 hs</span>
-                      </div>
-                    </div>
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Terminal de Obnibus</h3>
-                        <span className="skils_level">a 300 mt</span>
-                      </div>
-                    </div>
-                    <div className="services-data">
-                      <i className="ri-checkbox-circle-line" />
-                      <div>
-                        <h3 className="services-name">Hito 3 Fronteras</h3>
-                        <span className="skils_level">a 1200 mt</span>
-                      </div>
-                    </div>
-                  </div>
+          <h3 className="services-title section-title">SERVICIOS DEL HOTEL</h3>
+          <div className="services-container container grid">
+            <div className="services-group left">
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Habitaciones</h3>
+                  <span className="skils_level">Dobles y Triples</span>
+                </div>
+              </div>
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Desayuno</h3>
+                  <span className="skils_level">Incluído</span>
+                </div>
+              </div>
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Piscina</h3>
+                  <span className="skils_level">y Solarium</span>
+                </div>
+              </div>
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Avenida principal</h3>
+                  <span className="skils_level">a 200 mt</span>
+                </div>
+              </div>
+            </div>
+            <div className="services-group right">
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">WIFI</h3>
+                  <span className="skils_level">Gratuito</span>
+                </div>
+              </div>
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Recepción</h3>
+                  <span className="skils_level">24 hs</span>
+                </div>
+              </div>
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Terminal de Obnibus</h3>
+                  <span className="skils_level">a 300 mt</span>
+                </div>
+              </div>
+              <div className="services-data">
+                <i className="ri-checkbox-circle-line" />
+                <div>
+                  <h3 className="services-name">Hito 3 Fronteras</h3>
+                  <span className="skils_level">a 1200 mt</span>
                 </div>
               </div>
             </div>
@@ -371,11 +375,7 @@ function Main() {
               </form>
             </div>
             <div className="join-image">
-              <img
-                src={joinImg1}
-                className="join-img"
-                alt="join-img"
-              />
+              <img src={joinImg1} className="join-img" alt="join-img" />
               <div className="shadow" />
             </div>
           </div>

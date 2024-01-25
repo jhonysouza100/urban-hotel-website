@@ -9,7 +9,7 @@ const scrollAnimation = () => {
     // reset: true // repetir animacion
   })
 
-  sr.reveal(`.home-social, .services-title, .explore-data, .explore-user, .footer-container`)
+  sr.reveal(`.home-social, .photos-title, .services-title, .explore-data, .explore-user, .footer-container`)
   sr.reveal(`.home-card`, {delay: 350, distance: '100px', interval: 100})
   sr.reveal(`.location-data, .join-image, .right`, {origin: 'right'})
   sr.reveal(`.location-image, .join-data, .left`, {origin: 'left'})
