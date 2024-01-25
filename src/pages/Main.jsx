@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Layout from "../layouts/layout.jsx";
+import FacebookComments from "../plugins/fb-comments.jsx";
 import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
@@ -380,6 +381,13 @@ function Main() {
             </div>
           </div>
         </section>
+        {/*==================== FACEBOOK COMMENTS PLUGIN ====================*/}
+        <section className="fb-comments section">
+          <div className="fb-comments-container container">
+            <FacebookComments />
+          </div>
+        </section>
+
       </main>
       <Scrollup />
     </Layout>
