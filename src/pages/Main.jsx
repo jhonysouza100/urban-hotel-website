@@ -5,6 +5,7 @@ import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
+import links from "../data/links.js";
 
 function Main() {
   const {
@@ -20,6 +21,10 @@ function Main() {
     exploreImg2,
     joinImg1,
   } = images; // importa las imagenes
+
+  const pholaroidImgs = [{src: popularImg1, title: "Desayuno"}, {src: popularImg2, title: "Pileta"}, {src: popularImg3, alt: "popular-img", title: "Luna de Miel"}, {src: popularImg4, title: "Matrimonial"}];
+
+  const {bookingLink, facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links; // importo los links
 
   // carga las animaciones
   useEffect(() => {
@@ -64,7 +69,7 @@ function Main() {
                         Misiones.
                       </p>
                       <div className="home-button">
-                        <a href="#" className="button">
+                        <a href={bookingLink} className="button" target="_blank">
                           Saber mas <i className="ri-information-line" />
                         </a>
                       </div>
@@ -100,7 +105,7 @@ function Main() {
                         Misiones.
                       </p>
                       <div className="home-button">
-                        <a href="#" className="button">
+                        <a href={bookingLink} className="button" target="_blank">
                           Saber mas <i className="ri-information-line" />
                         </a>
                       </div>
@@ -134,7 +139,7 @@ function Main() {
                         Misiones.
                       </p>
                       <div className="home-button">
-                        <a href="#" className="button">
+                        <a href={bookingLink} className="button" target="_blank">
                           Saber mas <i className="ri-information-line" />
                         </a>
                       </div>
@@ -150,7 +155,7 @@ function Main() {
             <span className="home-social-text">Siguenos</span>
             <div className="home-social-links">
               <a
-                href="https://intagram.com"
+                href={instagramLink}
                 target="_blank"
                 className="home-social-link"
                 aria-label="Read more about Seminole tax hike"
@@ -158,7 +163,7 @@ function Main() {
                 <i className="ri-instagram-fill" />
               </a>
               <a
-                href="www.facebook.com"
+                href={facebookLink}
                 target="_blank"
                 className="home-social-link"
                 aria-label="Read more about Seminole tax hike"
@@ -166,7 +171,7 @@ function Main() {
                 <i className="ri-facebook-circle-fill" />
               </a>
               <a
-                href="https://api.whatsapp.com/send?phone=543757458904&text=Hola, me gustaría hacer una consulta"
+                href={hotelWhatsapp}
                 target="_blank"
                 aria-label="Read more about Seminole tax hike"
                 className="home-social-link"
@@ -190,7 +195,7 @@ function Main() {
               </p>
               <a
                 target="_blank"
-                href="https://www.google.com/maps/place/Iguazu+Urban+Hotel/@-25.5976291,-54.5724695,16.25z/data=!4m9!3m8!1s0x94f6923382135a49:0x4c03b72e6c337200!5m2!4m1!1i2!8m2!3d-25.5969127!4d-54.5684158!16s%2Fg%2F11cjhrqpl8?entry=ttu"
+                href={googleMapsLink}
                 className="button"
               >
                 Como llegar <i className="ri-send-plane-line" />
@@ -210,46 +215,19 @@ function Main() {
         <section className="popular section" id="popular">
           <h3 className="photos-title section-title">GALERIA DE FOTOS</h3>
           <div className="popular-container container grid">
-            <article className="popular-card">
-              <div className="popular-image">
-                <img
-                  src={popularImg1}
-                  className="popular-img"
-                  alt="popular-img"
-                />
-                <div className="shadow" />
-                <h2 className="popular-title">Desayuno</h2>
-              </div>
-            </article>
-            <article className="popular-card">
-              <div className="popular-image">
-                <img src={popularImg2} className="popular-img" alt="piscina" />
-                <div className="shadow" />
-                <h2 className="popular-title">Piscina</h2>
-              </div>
-            </article>
-            <article className="popular-card">
-              <div className="popular-image">
-                <img
-                  src={popularImg3}
-                  className="popular-img"
-                  alt="luna-miel-img"
-                />
-                <div className="shadow" />
-                <h2 className="popular-title">Luna de Miel</h2>
-              </div>
-            </article>
-            <article className="popular-card">
-              <div className="popular-image">
-                <img
-                  src={popularImg4}
-                  className="popular-img"
-                  alt="matrimonial-img"
-                />
-                <div className="shadow" />
-                <h2 className="popular-title">Matrimonial</h2>
-              </div>
-            </article>
+            {pholaroidImgs.map(el => (
+              <article className="popular-card" key={crypto.randomUUID()}>
+                <div className="popular-image">
+                  <img
+                    src={el.src}
+                    className="popular-img"
+                    alt="popular-img"
+                  />
+                  <div className="shadow" />
+                  <h2 className="popular-title">{el.title}</h2>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
         {/*==================== SERVICES ====================*/}
@@ -282,7 +260,7 @@ function Main() {
                 <i className="ri-checkbox-circle-line" />
                 <div>
                   <h3 className="services-name">Avenida principal</h3>
-                  <span className="skils_level">a 200 mt</span>
+                  <span className="skils_level">a 200 mts</span>
                 </div>
               </div>
             </div>
@@ -305,14 +283,14 @@ function Main() {
                 <i className="ri-checkbox-circle-line" />
                 <div>
                   <h3 className="services-name">Terminal de Obnibus</h3>
-                  <span className="skils_level">a 300 mt</span>
+                  <span className="skils_level">a 300 mts</span>
                 </div>
               </div>
               <div className="services-data">
                 <i className="ri-checkbox-circle-line" />
                 <div>
                   <h3 className="services-name">Hito 3 Fronteras</h3>
-                  <span className="skils_level">a 1200 mt</span>
+                  <span className="skils_level">a 1200 mts</span>
                 </div>
               </div>
             </div>

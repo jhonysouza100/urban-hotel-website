@@ -34,8 +34,10 @@ clases via script
 - agregar API del clima.
 - mostrar el clima de iguazú.
 - agregar api de "google maps".
+- agregar componente de comentarios dfe facebook. OK
+- agregar api de moderacion a los comentarios de facebook.
 
-- crear un metodos para renderizar cada polaroid desde un object de "images" → layout/pholaroidImages.jsx.
+- crear un metodos para renderizar cada polaroid desde un object. OK
 - agregar un "button" a cada polaroid para ver mas fotos.
 - agregar una "page" para galeria de fotos grid → diseño instagram.
 - renderiza una componente galeria de imagenes → layout/imageGallery.jsx.

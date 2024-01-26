@@ -39,6 +39,9 @@
     grid-template-columns: 380px;
     justify-content: center;
   }
+  .services-container, .popular-container {
+    padding-top: 2rem;
+  }
   .services-container {
     justify-content: space-around;
     align-items: normal;
@@ -48,8 +51,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
   .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: .5fr .5fr;
+    gap: 2rem;
   }
 }
 
@@ -96,6 +98,9 @@
   .popular-container {
     grid-template-columns: repeat(2, 240px);
   }
+  .services-container, .popular-container {
+    padding-top: 2.5rem;
+  }
   .services-data .services-name {
     font-size: 19px;
     line-height: 24px;
@@ -110,7 +115,8 @@
     padding-block: 2.5rem 1rem;
   }
   .footer-content {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
     justify-content: space-between;
   }
   .footer-copyright {
@@ -152,9 +158,12 @@
   .popular-container {
     grid-template-columns: repeat(4, 1fr);
   }
-  .footer-content {
-    grid-template-columns: repeat(3, max-content);
+  .services-container, .popular-container {
+    padding-top: 3rem;
   }
+  .footer-content {
+    grid-template-columns: repeat(4, max-content);
+    }
   .scrollup-btn .whatsapp, .scrollup-btn i {
     height: 1.5rem;
     width: 1.5rem;
@@ -206,8 +215,9 @@
     width: 460px;
   }
   .popular-container {
-    /* grid-template-columns: repeat(4, 300px); */
     column-gap: 3rem;
+  }
+  .services-container, .popular-container {
     padding-top: 4rem;
   }
   .popular-location {

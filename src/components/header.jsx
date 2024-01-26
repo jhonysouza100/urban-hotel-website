@@ -51,7 +51,6 @@ function header() {
   // =============== REMOVE MENU ON LINK CLICK ===============
   const handleClick = (e) => { if (e.target.classList.contains("navmenu-link")) handleShow(); };
 
-
   return (
     <header className={`header${bgHead}`} id="header">
       <nav className="nav container">
@@ -61,37 +60,12 @@ function header() {
         </div>
         <div className={`navmenu ${isShow ? "is-open" : "" }`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
-            <li className="navmenu-item">
-              <a href="#home" className="navmenu-link is-active">
-                Inicio
-              </a>
-            </li>
-            <li className="navmenu-item">
-              <a href="#location" className="navmenu-link">
-                Ubicación
-              </a>
-            </li>
-            <li className="navmenu-item">
-              <a href="#popular" className="navmenu-link">
-                Fotos
-              </a>
-            </li>
-            <li className="navmenu-item">
-              <a href="#services" className="navmenu-link">
-                Servicios
-              </a>
-            </li>
-            <li className="navmenu-item">
-              <a href="#explore" className="navmenu-link">
-                Iguazú
-              </a>
-            </li>
-            <li className="navmenu-item">
-              {/* <a href="#join" className="navmenu-link">
-                Login
-              </a> */}
-              <AuthButton />
-            </li>
+            <li className="navmenu-item"><a href="#home" className="navmenu-link is-active">Inicio</a></li>
+            <li className="navmenu-item"><a href="#location" className="navmenu-link">Ubicación</a></li>
+            <li className="navmenu-item"><a href="#popular" className="navmenu-link">Fotos</a></li>
+            <li className="navmenu-item"><a href="#services" className="navmenu-link">Servicios</a>            </li>
+            <li className="navmenu-item"><a href="#explore" className="navmenu-link">Explora</a></li>
+            <li className="navmenu-item"><AuthButton /></li>
           </ul>
           {/* close button */}
           <div className="navmenu-close" id="navmenu-close" onClick={handleShow}>
