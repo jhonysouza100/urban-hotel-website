@@ -33,7 +33,7 @@
   margin-bottom: 1rem;
 }
 
-.footer-description, .footer-info, .footer-social-link {
+.footer-description, .footer-address, .footer-info, .footer-info a, .footer-social-link {
   color: var(--text-color-light);
 }
 
@@ -42,8 +42,21 @@
   row-gap: .75rem;
 }
 
-.footer-info {
+.footer-info, .footer-info a, .footer-address {
   font-style: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  transition: all 0.3s ease-out 0s;
+}
+
+.footer-info:hover {
+  color: var(--main-color);
+  transform: translateX(.25rem);
+}
+
+.footer-info:hover a {
+  color: var(--main-color);
 }
 
 .footer-social {
