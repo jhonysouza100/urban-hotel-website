@@ -20,6 +20,7 @@ clases via script
 - configurar el proyecto → carpeta src. OK
 - implementar Auth0 → login button. OK
 - conceder permisos en Auth0. OK
+
 - conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".
 - agregar enviroment de conexiones en el hosting para la API y Auth0.
 - renombrar la base de datos "christmas-giveaway-db" como "users-db".
@@ -34,11 +35,13 @@ clases via script
 - agregar API del clima.
 - mostrar el clima de iguazú.
 - agregar api de "google maps".
-- agregar componente de comentarios dfe facebook. OK
+- agregar componente de comentarios de facebook. OK
 - agregar api de moderacion a los comentarios de facebook.
 
 - crear un metodos para renderizar cada polaroid desde un object. OK
-- agregar un "button" a cada polaroid para ver mas fotos.
-- agregar una "page" para galeria de fotos grid → diseño instagram.
-- renderiza una componente galeria de imagenes → layout/imageGallery.jsx.
-- al hacer "click" en una polaroid "ver más" este debera abrir una "page/gallery.jsx" con layout>imageGallery renderizada segun el arobject de "images" relacionado con el polaroid → ejem: piscina-polaroid.onclick => photosPiscina = {}.forEach(el => (<>el</>))
+- agregar un "button" a cada polaroid para ver mas fotos. OK
+- agregar una "page" para galeria de fotos grid → diseño instagram. OK
+- renderiza un componente galeria de imagenes → layout/imageGallery.jsx. OK
+- al hacer "click" en una polaroid "ver más" este debera abrir una "page/gallery.jsx" con layout>imageGallery renderizada segun el object de "images" relacionado con el polaroid → ejem: piscina-polaroid.onclick => photosPiscina = {}.forEach(el => (<>el</>)).
+
+- optimizar codigo con use ref para evitar renderizado innesesario de componentes.

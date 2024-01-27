@@ -6,6 +6,7 @@ import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
 import links from "../data/links.js";
+import { Link } from "react-router-dom";
 
 function Main() {
   const {
@@ -218,13 +219,9 @@ function Main() {
             {pholaroidImgs.map(el => (
               <article className="popular-card" key={crypto.randomUUID()}>
                 <div className="popular-image">
-                  <img
-                    src={el.src}
-                    className="popular-img"
-                    alt="popular-img"
-                  />
-                  <div className="shadow" />
-                  <h2 className="popular-title">{el.title}</h2>
+                  <img src={el.src} className="popular-img" alt="popular-img"/>
+                  <Link to={"/galeria"} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
+                  {/* <div className="shadow" /> */}
                 </div>
               </article>
             ))}

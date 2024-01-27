@@ -5,9 +5,6 @@
   row-gap: 2.5rem;
 }
 
-.popular .section-title {
-  font-size: var(--h3-font-size);
-}
 .popular .section-title i {
   font-weight: 500;
   font-size: var(--h2-font-size);
@@ -36,6 +33,26 @@
   object-fit: cover;
 }
 
+.popular-button {
+  width: 10%;
+}
+
+.popular-title {
+  font-size: var(--h3-font-size);
+  color: #111;
+  text-align: center;
+  line-height: 2rem;
+  border-radius: 3rem;
+  margin-top: .45rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.popular-image:hover .popular-title {
+  color: var(--body-color);
+  background: #4a474595;
+  transform: translateY(-5.5rem);
+}
+
 .popular-image:hover {
   transform: scale(1.1) rotate(3deg);
 }
@@ -51,11 +68,4 @@
 }
 .popular-container .popular-card:nth-child(4) .popular-image:hover {
   transform: scale(1.1) rotate(0deg);
-}
-
-.popular-title {
-  font-size: var(--h3-font-size);
-  color: #111;
-  text-align: center;
-  line-height: 2rem;
 }
