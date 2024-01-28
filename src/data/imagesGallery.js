@@ -12,14 +12,14 @@ const imagesGallery = {
     {src: cama1, alt: "matrimonial-img"},
   ],
   PISCINA: [
-    {src: cama1, alt: "matrimonial-img"},
-    {src: cama1, alt: "matrimonial-img"},
-    {src: cama1, alt: "matrimonial-img"},
+    {src: cama1, alt: "poll-img"},
+    {src: cama1, alt: "poll-img"},
+    {src: cama1, alt: "poll-img"},
   ],
   LUNAMIEL: [
-    {src: cama1, alt: "matrimonial-img"},
-    {src: cama1, alt: "matrimonial-img"},
-    {src: cama1, alt: "matrimonial-img"},
+    {src: cama1, alt: "lunamiel-img"},
+    {src: cama1, alt: "lunamiel-img"},
+    {src: cama1, alt: "lunamiel-img"},
   ]
 }
 

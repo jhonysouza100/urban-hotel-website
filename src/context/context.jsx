@@ -42,7 +42,7 @@ const AppProvider = ({ children }) => {
   const [gallerySelected, setGallery] = useState("");
   const handleGallery = (arg) => {
     setGallery(arg); // ej: gallerySelected = "DESAYUNO"
-    console.log(arg)
+    // console.log(arg)
   }
 
   const data = { theme, icon, handleTheme, toggleTheme, userData, gallerySelected, handleGallery };

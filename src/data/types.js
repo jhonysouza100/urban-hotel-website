@@ -4,3 +4,5 @@ const types = {
   PISCINA: "PISCINA",
   LUNAMIEL: "LUNAMIEL"
 }
+
+export default types;

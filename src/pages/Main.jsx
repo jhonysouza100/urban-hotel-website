@@ -26,9 +26,9 @@ function Main() {
   } = images; // importa las imagenes
 
   // importa los tipos de galeria
-  const {DESAYUNO, MATRIMONIAL, PISCINA, LUNAMIEL} = types
+  const {DESAYUNO, MATRIMONIAL, PISCINA, LUNAMIEL} = types;
 
-  // crea un arreglo de imagenes para renderizar un componente
+  // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
   const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: DESAYUNO}, {src: popularImg2, title: "Pileta", type: PISCINA}, {src: popularImg3, title: "Luna de Miel", type: LUNAMIEL}, {src: popularImg4, title: "Matrimonial", type: MATRIMONIAL}];
 
   // importo las direcciones para los enlaces

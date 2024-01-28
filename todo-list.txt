@@ -21,27 +21,34 @@ clases via script
 - implementar Auth0 → login button. OK
 - conceder permisos en Auth0. OK
 
+== PERMISASOS A LA API DE USUARIOS ===
 - conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".
 - agregar enviroment de conexiones en el hosting para la API y Auth0.
 - renombrar la base de datos "christmas-giveaway-db" como "users-db".
 - agregar a la base de datos una tabla (comments) para comentarios y valoraciones → id, content, rate, userId = key, createAt, updatedAt.
 
-- mostart datos del usuario logueado.
-
+== PERMISASOS A LA API DE VISTAS ===
 - conceder permisos en la API (views-api).
 - renombrar la base de datos "views" como "views-db"?.
 - agregar a la base de datos una tabla (urban-views) para manejar las vistas del hotel → renombrar tabla "views" como "main-views"?.
 
+=== ELEMENTO RECICLABLE ===
+- crear un metodos para renderizar cada polaroid desde un object. OK
+- agregar un "button" a cada polaroid para ver mas fotos. OK
+- agregar una "page" para galeria de fotos grid → diseño instagram. OK
+- renderiza un componente galeria de imagenes → layout/imageGallery.jsx. OK
+- al hacer "click" en una polaroid "ver más" este debera abrir una "page/gallery.jsx" renderizada un array de "images" segun el typo del polaroid. OK
+- maketar la galeria de fotos.
+
+=== OPTIMIZACION DE CODIGO ===
+- optimizar codigo con use ref para evitar renderizado innesesario de componentes.
+
+=== API DE TERCEROS ===
 - agregar API del clima.
 - mostrar el clima de iguazú.
 - agregar api de "google maps".
 - agregar componente de comentarios de facebook. OK
 - agregar api de moderacion a los comentarios de facebook.
 
-- crear un metodos para renderizar cada polaroid desde un object. OK
-- agregar un "button" a cada polaroid para ver mas fotos. OK
-- agregar una "page" para galeria de fotos grid → diseño instagram. OK
-- renderiza un componente galeria de imagenes → layout/imageGallery.jsx. OK
-- al hacer "click" en una polaroid "ver más" este debera abrir una "page/gallery.jsx" con layout>imageGallery renderizada segun el object de "images" relacionado con el polaroid → ejem: piscina-polaroid.onclick => photosPiscina = {}.forEach(el => (<>el</>)).
-
-- optimizar codigo con use ref para evitar renderizado innesesario de componentes.
+=== INTERFAZ DE USUARIO ===
+- mostart datos del usuario logueado.
