@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
 import FacebookComments from "../plugins/fb-comments.jsx";
 import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
+import types from "../data/types.js";
 import links from "../data/links.js";
 import { Link } from "react-router-dom";
 
@@ -23,9 +25,17 @@ function Main() {
     joinImg1,
   } = images; // importa las imagenes
 
-  const pholaroidImgs = [{src: popularImg1, title: "Desayuno"}, {src: popularImg2, title: "Pileta"}, {src: popularImg3, alt: "popular-img", title: "Luna de Miel"}, {src: popularImg4, title: "Matrimonial"}];
+  // importa los tipos de galeria
+  const {DESAYUNO, MATRIMONIAL, PISCINA, LUNAMIEL} = types
 
-  const {bookingLink, facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links; // importo los links
+  // crea un arreglo de imagenes para renderizar un componente
+  const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: DESAYUNO}, {src: popularImg2, title: "Pileta", type: PISCINA}, {src: popularImg3, title: "Luna de Miel", type: LUNAMIEL}, {src: popularImg4, title: "Matrimonial", type: MATRIMONIAL}];
+
+  // importo las direcciones para los enlaces
+  const {bookingLink, facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links;
+
+  // trae del contexto: la funcion para manejar la galeria
+  const {handleGallery} = useContext(AppContext);
 
   // carga las animaciones
   useEffect(() => {
@@ -220,7 +230,7 @@ function Main() {
               <article className="popular-card" key={crypto.randomUUID()}>
                 <div className="popular-image">
                   <img src={el.src} className="popular-img" alt="popular-img"/>
-                  <Link to={"/galeria"} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
+                  <Link to={"/galeria"} onClick={() => handleGallery(el.type)} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
                   {/* <div className="shadow" /> */}
                 </div>
               </article>

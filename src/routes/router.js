@@ -8,8 +8,6 @@ function Router() {
       <Routes>
         <Route path='/' element={ <Main /> } />
         <Route path='/galeria' element={ <Gallery /> } />
-        {/* <Route path='/signup' element={ <Signup /> } /> */}
-        {/* <Route path='/login' element={ <Login /> } /> */}
         {/* si la ruta no es ninguna de las anteriores, entra a 404 por defecto */}
         {/* <Route path='*' element={ <Error404 /> } /> */}
       </Routes>

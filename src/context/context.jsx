@@ -39,7 +39,13 @@ const AppProvider = ({ children }) => {
     }
   }, [userData]);
 
-  const data = { theme, icon, handleTheme, toggleTheme, userData };
+  const [gallerySelected, setGallery] = useState("");
+  const handleGallery = (arg) => {
+    setGallery(arg); // ej: gallerySelected = "DESAYUNO"
+    console.log(arg)
+  }
+
+  const data = { theme, icon, handleTheme, toggleTheme, userData, gallerySelected, handleGallery };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };
