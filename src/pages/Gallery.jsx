@@ -2,6 +2,8 @@ import { useContext, useEffect } from 'react';
 import AppContext from '../context/context.jsx';
 import types from '../data/types.js';
 import imagesGallery from "../data/imagesGallery.js";
+import Footer from "../components/footer.jsx";
+import { Link } from 'react-router-dom';
 
 function Gallery() {
   const {gallerySelected, handleGallery} = useContext(AppContext);
@@ -46,13 +48,33 @@ function Gallery() {
       // Manejar el caso en que gallerySelected no coincida con ningún tipo conocido
       break;
   }
-  
+	
   // Verificar si selectedImages es null antes de intentar realizar el mapeo
   return (
-    <div className='images-gallery container grid'>
-      {selectedImages && selectedImages.map(el => (
-        <img src={el.src} alt={el.alt} key={crypto.randomUUID()} />
-      ))}
+    <div>
+
+    	<section className='images-gallery container grid'>
+        {selectedImages && selectedImages.map((el, i) => (
+          <a href={`#img${i}`} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>
+        ))}
+      </section>
+			
+			{selectedImages && selectedImages.map((el, i) => (
+				<article className='light-box' id={`img${i}`} key={crypto.randomUUID()}>
+  				<a href={`#img${i === 0 ? selectedImages.length-1 : i - 1}`} className="prev"><i className="ri-arrow-left-wide-line" /></a>
+  				<img src={el.src} alt={el.alt} />
+  				<a href={`#img${i >= selectedImages.length-1 ? 0 : i + 1 }`} className="next"><i className="ri-arrow-right-wide-line" /></a>
+  				<a href="#" className="close">
+  				  <i className="ri-close-line" />
+  				</a>
+				</article>
+			))}
+
+      <div className="gallery-button container">
+        <Link to={'/'} className='button'><i class="ri-arrow-left-line"></i>Volver</Link>
+      </div>
+
+			<Footer />
     </div>
   );
 }
