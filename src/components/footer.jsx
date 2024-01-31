@@ -37,8 +37,8 @@ function footer() {
           <div className="footer-data">
             <h3 className="footer-title">Siguenos</h3>
             <div className="footer-social">
-              <a href={facebookLink} target="_blank" className="footer-social-link"><i className="ri-facebook-line" /></a>
-              <a href={instagramLink} target="_blank" className="footer-social-link"><i className="ri-instagram-line" /></a>
+              <a href={facebookLink} target="_blank" className="footer-social-link" aria-label="Contact"><i className="ri-facebook-line" /></a>
+              <a href={instagramLink} target="_blank" className="footer-social-link" aria-label="Contact"><i className="ri-instagram-line" /></a>
             </div>
           </div>
         </div>

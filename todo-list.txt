@@ -38,7 +38,12 @@ clases via script
 - agregar una "page" para galeria de fotos grid → diseño instagram. OK
 - renderiza un componente galeria de imagenes → layout/imageGallery.jsx. OK
 - al hacer "click" en una polaroid "ver más" este debera abrir una "page/gallery.jsx" renderizada un array de "images" segun el typo del polaroid. OK
-- maketar la galeria de fotos.
+- maketar la galeria de fotos. OK
+- agregar funcion para mostrar imagenes de stock. OK
+
+
+=== REACT-IMAGE-GALLERY ===
+- maketar un componente de react-image-gallery.
 
 === OPTIMIZACION DE CODIGO ===
 - optimizar codigo con use ref para evitar renderizado innesesario de componentes.

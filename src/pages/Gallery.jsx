@@ -1,14 +1,38 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/context.jsx';
-import types from '../data/types.js';
 import imagesGallery from "../data/imagesGallery.js";
 import Footer from "../components/footer.jsx";
 import { Link } from 'react-router-dom';
+import {useUnsplash} from '../hooks/useUnsplash.js';
 
 function Gallery() {
   const {gallerySelected, handleGallery} = useContext(AppContext);
   // importa un objeto de imagenes por cada tipo de galeria
-  const {DESAYUNO, MATRIMONIAL, PISCINA, LUNAMIEL} = imagesGallery; // [] array de imagenes
+  const {BREAKFAST, ROOM, POOL, IGUAZU} = imagesGallery; // [] array de imagenes
+
+  // UNSPLASH IMAGES
+  const [images, setImages] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedImages = await useUnsplash(gallerySelected || "HOTEL");
+
+        // Hacer una copia del array antes de ordenar
+        const imagesCopy = [...fetchedImages.results];
+
+        // Ordenar de forma aleatoria
+        const imagesSorted = imagesCopy.sort(() => Math.random() - 0.5);
+
+        console.log(imagesSorted);
+        setImages(imagesSorted);
+
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // obtiene el valor de gallerySelected almacenado en localStorage
   useEffect(() => {
@@ -20,7 +44,7 @@ function Gallery() {
     }
   }, []);
 
-  // Almacenar el valor de gallerySelected en localStorage
+  // Almacenar en local el valor de gallerySelected en el stado desde el contexto
   useEffect(() => {
     if (gallerySelected) {
       localStorage.setItem('gallerySelected', gallerySelected);
@@ -31,20 +55,20 @@ function Gallery() {
   let selectedImages = null;
 
   switch (gallerySelected) {
-    case types.DESAYUNO:
-      selectedImages = DESAYUNO;
+    case BREAKFAST.type:
+      selectedImages = BREAKFAST.img;
       break;
-    case types.MATRIMONIAL:
-      selectedImages = MATRIMONIAL;
+    case ROOM.type:
+      selectedImages = ROOM.img;
       break;
-    case types.PISCINA:
-      selectedImages = PISCINA;
+    case POOL.type:
+      selectedImages = POOL.img;
       break;
-    case types.LUNAMIEL:
-      selectedImages = LUNAMIEL;
+    case IGUAZU.type:
+      selectedImages = IGUAZU.img;
       break;
     default:
-      selectedImages = MATRIMONIAL;
+      selectedImages = IGUAZU.img;
       // Manejar el caso en que gallerySelected no coincida con ningún tipo conocido
       break;
   }
@@ -57,6 +81,8 @@ function Gallery() {
         {selectedImages && selectedImages.map((el, i) => (
           <a href={`#img${i}`} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>
         ))}
+        {/* // UNSPLASH IMAGES */}
+        {images && images.map(el => (<a key={crypto.randomUUID()}><img src={el.urls.small} alt={el.alt_description} /></a>))}
       </section>
 			
 			{selectedImages && selectedImages.map((el, i) => (
@@ -71,7 +97,7 @@ function Gallery() {
 			))}
 
       <div className="gallery-button container">
-        <Link to={'/'} className='button'><i class="ri-arrow-left-line"></i>Volver</Link>
+        <Link to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link>
       </div>
 
 			<Footer />

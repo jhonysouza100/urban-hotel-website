@@ -6,7 +6,6 @@ import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
-import types from "../data/types.js";
 import links from "../data/links.js";
 import { Link } from "react-router-dom";
 
@@ -25,11 +24,8 @@ function Main() {
     joinImg1,
   } = images; // importa las imagenes
 
-  // importa los tipos de galeria
-  const {DESAYUNO, MATRIMONIAL, PISCINA, LUNAMIEL} = types;
-
   // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
-  const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: DESAYUNO}, {src: popularImg2, title: "Pileta", type: PISCINA}, {src: popularImg3, title: "Luna de Miel", type: LUNAMIEL}, {src: popularImg4, title: "Matrimonial", type: MATRIMONIAL}];
+  const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: "BREAKFAST"}, {src: popularImg2, title: "Pileta", type: "POOL"}, {src: popularImg3, title: "Habitaciones", type: "ROOM"}, {src: popularImg4, title: "Iguazú", type: "IGUAZU"}];
 
   // importo las direcciones para los enlaces
   const {bookingLink, facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links;
@@ -169,7 +165,7 @@ function Main() {
                 href={instagramLink}
                 target="_blank"
                 className="home-social-link"
-                aria-label="Read more about Seminole tax hike"
+                aria-label="Contact"
               >
                 <i className="ri-instagram-fill" />
               </a>
@@ -177,14 +173,14 @@ function Main() {
                 href={facebookLink}
                 target="_blank"
                 className="home-social-link"
-                aria-label="Read more about Seminole tax hike"
+                aria-label="Contact"
               >
                 <i className="ri-facebook-circle-fill" />
               </a>
               <a
                 href={hotelWhatsapp}
                 target="_blank"
-                aria-label="Read more about Seminole tax hike"
+                aria-label="Contact"
                 className="home-social-link"
               >
                 <i className="ri-whatsapp-fill" />
