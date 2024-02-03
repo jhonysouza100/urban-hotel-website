@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/context.jsx';
+import Lightbox from "yet-another-react-lightbox";
+import "../../node_modules/yet-another-react-lightbox/dist/styles.css";
 import imagesGallery from "../data/imagesGallery.js";
 import Footer from "../components/footer.jsx";
 import { Link } from 'react-router-dom';
@@ -23,8 +25,13 @@ function Gallery() {
         // Ordenar de forma aleatoria
         const imagesSorted = imagesCopy.sort(() => Math.random() - 0.5);
 
-        console.log(imagesSorted);
-        setImages(imagesSorted);
+        console.log(fetchedImages.results);
+        setImages(fetchedImages.results);
+        
+        const imagesSrc = [];
+        imagesSorted.map(el => imagesSrc.push({src: el.urls.small, alt: el.alt_description}))
+        console.log(imagesSrc);
+        setImages(imagesSrc);
 
       } catch (error) {
         console.log(error);
@@ -72,17 +79,31 @@ function Gallery() {
       // Manejar el caso en que gallerySelected no coincida con ningún tipo conocido
       break;
   }
+
+  // REACT LIGHTBOX GALLERY
+  const [open, setOpen] = useState(false)
 	
   // Verificar si selectedImages es null antes de intentar realizar el mapeo
   return (
     <div>
 
+      <button className='button' onClick={() => setOpen(true)}>{`${open? "Close" : "Open"}`}</button>
+      {/* // REACt LIGHTBOX GALLERY */}
+      <Lightbox
+       open={open}
+       close={() => setOpen(false)}
+       slides={images}
+
+       />
+
     	<section className='images-gallery container grid'>
         {selectedImages && selectedImages.map((el, i) => (
           <a href={`#img${i}`} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>
         ))}
+
         {/* // UNSPLASH IMAGES */}
-        {images && images.map(el => (<a key={crypto.randomUUID()}><img src={el.urls.small} alt={el.alt_description} /></a>))}
+        {/* {images && images.map(el => (<a key={crypto.randomUUID()}><img src={el.urls.small} alt={el.alt_description} /></a>))} */}
+        {images && images.map(el => (<a key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>))}
       </section>
 			
 			{selectedImages && selectedImages.map((el, i) => (

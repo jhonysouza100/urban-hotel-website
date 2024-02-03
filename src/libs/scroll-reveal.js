@@ -3,7 +3,7 @@ import ScrollReveal from 'scrollreveal';
 // Función para las animaciones de ScrollReveal
 const scrollAnimation = () => {
   const sr = ScrollReveal({
-    origin: 'top', // Cambiado a 'bottom' para que las animaciones se activen cuando se desplaza hacia abajo
+    origin: 'bottom', // Cambiado a 'bottom' para que las animaciones se activen cuando se desplaza hacia abajo
     distance: '60px', // Reducido para que la animación comience antes de que el elemento esté completamente visible
     duration: 1000, // Reducido el tiempo de animación para hacerlo más rápido
     delay: 200, // Añadido un pequeño retraso para un mejor efecto
