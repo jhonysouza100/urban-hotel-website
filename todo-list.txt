@@ -43,18 +43,18 @@ clases via script
 
 
 === REACT-IMAGE-GALLERY ===
-- maketar un componente de react-image-gallery.
+- maketar un componente de react-image-gallery. OK
 
 === OPTIMIZACION DE CODIGO ===
 - investigar importacion global en parcel js.
 - optimizar codigo con use ref para evitar renderizado innesesario de componentes.
 
 === API DE TERCEROS ===
-- agregar API del clima.
-- mostrar el clima de iguazú.
-- agregar api de "google maps".
 - agregar componente de comentarios de facebook. OK
 - agregar api de moderacion a los comentarios de facebook.
+- agregar api de "google maps".
+- agregar API del clima.
+- mostrar el clima de iguazú.
 
 === INTERFAZ DE USUARIO ===
 - mostart datos del usuario logueado.

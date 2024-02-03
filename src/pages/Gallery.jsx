@@ -8,41 +8,15 @@ import { Link } from 'react-router-dom';
 import {useUnsplash} from '../hooks/useUnsplash.js';
 
 function Gallery() {
+  // contexto para el tipo de galeria seleccionado
   const {gallerySelected, handleGallery} = useContext(AppContext);
   // importa un objeto de imagenes por cada tipo de galeria
   const {BREAKFAST, ROOM, POOL, IGUAZU} = imagesGallery; // [] array de imagenes
-
-  // UNSPLASH IMAGES
+  // establece las variables para las imagenes de la galeria
   const [images, setImages] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedImages = await useUnsplash(gallerySelected || "HOTEL");
 
-        // Hacer una copia del array antes de ordenar
-        const imagesCopy = [...fetchedImages.results];
-
-        // Ordenar de forma aleatoria
-        const imagesSorted = imagesCopy.sort(() => Math.random() - 0.5);
-
-        console.log(fetchedImages.results);
-        setImages(fetchedImages.results);
-        
-        const imagesSrc = [];
-        imagesSorted.map(el => imagesSrc.push({src: el.urls.small, alt: el.alt_description}))
-        console.log(imagesSrc);
-        setImages(imagesSrc);
-
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  // obtiene el valor de gallerySelected almacenado en localStorage
-  useEffect(() => {
+  // obtiene el valor de la galeria seleccionada almacenado en localStorage cuando el usuario recarga la gallery
+   useEffect(() => {
     const storedGallerySelected = localStorage.getItem('gallerySelected');
     // solo se ejecuta una vez si gallerySlected esta vacio y hay algo en el localStorage cuando se recarga la galeria
     if (!gallerySelected && storedGallerySelected) {
@@ -51,75 +25,78 @@ function Gallery() {
     }
   }, []);
 
-  // Almacenar en local el valor de gallerySelected en el stado desde el contexto
   useEffect(() => {
+    const fetchData = async () => { // fetch hacia la api de "Unsplash"
+      try {
+        const res = await useUnsplash(gallerySelected || "HOTEL");
+        const imagesResult = [...res.results]; // de la respuesta, almacena su "results";
+        const imagesFiltered = imagesResult.map(el => ({ src: el.urls.small, alt: el.alt_description }));
+        return imagesFiltered;  // Devuelve un array de objetos apto para ser unsado en "react-lightbox"
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    const fetchImagesAndSetState = async () => {
+      try {
+        const fetchedImages = await fetchData(); // obtiene imagenes de stock atraves de terceros
+        let selectedImages = null; // para guardar una galería de imágenes según el tipo de galería seleccionado
+  
+        switch (gallerySelected) { // define las imagenes de la galeria segun el tipo de galeria seleccionado
+          case BREAKFAST.type:
+            selectedImages = BREAKFAST.img;
+            break;
+          case ROOM.type:
+            selectedImages = ROOM.img;
+            break;
+          case POOL.type:
+            selectedImages = POOL.img;
+            break;
+          case IGUAZU.type:
+            selectedImages = IGUAZU.img;
+            break;
+          default:
+            selectedImages = IGUAZU.img;
+            // Manejar el caso en que gallerySelected no coincida con ningún tipo conocido
+            break;
+        }
+  
+        setImages([...selectedImages, ...fetchedImages]); // se fusionan y se guardan las imagenes de la galeria('assets') junto a las imagenes de stock('terceros')
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    fetchImagesAndSetState();
+  
+    // Almacena inmediatamente en local el valor de la galeria en el stado desde el contexto, por ej. "BREAKFAST"
     if (gallerySelected) {
       localStorage.setItem('gallerySelected', gallerySelected);
     }
+
   }, [gallerySelected]);
 
-  // Guarda una galería de imágenes según el tipo de galería seleccionado
-  let selectedImages = null;
-
-  switch (gallerySelected) {
-    case BREAKFAST.type:
-      selectedImages = BREAKFAST.img;
-      break;
-    case ROOM.type:
-      selectedImages = ROOM.img;
-      break;
-    case POOL.type:
-      selectedImages = POOL.img;
-      break;
-    case IGUAZU.type:
-      selectedImages = IGUAZU.img;
-      break;
-    default:
-      selectedImages = IGUAZU.img;
-      // Manejar el caso en que gallerySelected no coincida con ningún tipo conocido
-      break;
-  }
-
   // REACT LIGHTBOX GALLERY
-  const [open, setOpen] = useState(false)
+  const [index, setIndex] = useState(-1);
 	
-  // Verificar si selectedImages es null antes de intentar realizar el mapeo
   return (
     <div>
+      {/* VOlVER */}
+      <div className="gallery-button section"><Link to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
 
-      <button className='button' onClick={() => setOpen(true)}>{`${open? "Close" : "Open"}`}</button>
-      {/* // REACt LIGHTBOX GALLERY */}
+      {/* // COMPONENT REACt LIGHTBOX GALLERY */}
       <Lightbox
-       open={open}
-       close={() => setOpen(false)}
+      index={index} // index 0, 1, 2...
+       open={index >= 0} // true/fasle
+       close={() => setIndex(-1)}
        slides={images}
-
        />
 
+      {/* GALLERY */}
     	<section className='images-gallery container grid'>
-        {selectedImages && selectedImages.map((el, i) => (
-          <a href={`#img${i}`} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>
-        ))}
-
-        {/* // UNSPLASH IMAGES */}
-        {/* {images && images.map(el => (<a key={crypto.randomUUID()}><img src={el.urls.small} alt={el.alt_description} /></a>))} */}
-        {images && images.map(el => (<a key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>))}
+        {/* // IMAGES */}
+        {images && images.map((el, index) => (<a onClick={() => setIndex(index)} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>))}
       </section>
-			
-			{selectedImages && selectedImages.map((el, i) => (
-				<article className='light-box' id={`img${i}`} key={crypto.randomUUID()}>
-  				<a href={`#img${i === 0 ? selectedImages.length-1 : i - 1}`} className="prev"><i className="ri-arrow-left-wide-line" /></a>
-  				<img src={el.src} alt={el.alt} />
-  				<a href={`#img${i >= selectedImages.length-1 ? 0 : i + 1 }`} className="next"><i className="ri-arrow-right-wide-line" /></a>
-  				<a href="#" className="close">
-  				  <i className="ri-close-line" />
-  				</a>
-				</article>
-			))}
-
-      <div className="gallery-button container">
-        <Link to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link>
-      </div>
 
 			<Footer />
     </div>
