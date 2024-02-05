@@ -22,6 +22,12 @@
   }
 }
 
+@media screen and (max-width: 380px) {
+  .footer-info a {
+    font-size: small;
+  }
+}
+
 /* de 341px hasta 575px --normal-styles css */
 
 /* For medium devices */
