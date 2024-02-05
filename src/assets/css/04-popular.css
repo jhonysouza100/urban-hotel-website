@@ -49,7 +49,7 @@
 
 .popular-image:hover .popular-title {
   color: var(--body-color);
-  background: var(--main-color);
+  background: var(--button-color);
   transform: translateY(-5.5rem);
 }
 
