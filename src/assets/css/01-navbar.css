@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.nav-logo {
+  width: 40px;
+}
+
 .navmenu-button, .theme-button { /* color por defecto del "theme" y "menu" buttons */
   display: flex;
   color: var(--white-color);
@@ -109,16 +113,19 @@
 }
 
 /* cambia el color del header cuando se scrollea */
-.header.is-scroll::after {
-  transition: color .4s;
+.header::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--nav-color);
-  -webkit-backdrop-filter: var(--nav-filter); /* for safari */
-  backdrop-filter: var(--nav-filter);
   top: 0;
   left: 0;
   z-index: -1;
+  transition: background-color 0.4s ease; /* Agrega la transición aquí */
+}
+
+.header.is-scroll::after {
+  background-color: var(--nav-color);
+  -webkit-backdrop-filter: var(--nav-filter); /* for safari */
+  backdrop-filter: var(--nav-filter);
 }

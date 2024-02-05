@@ -10,6 +10,7 @@ import popularImg4 from "../assets/img/background-2.jpg";
 import exploreImg1 from "../assets/img/background-4.jpg";
 import exploreImg2 from "../assets/img/recep2.jpg";
 import joinImg1 from "../assets/img/service2.jpg";
+import logoImg from "../assets/img/logo.png";
 
 const images = {
   whatsappIcon,
@@ -23,7 +24,8 @@ const images = {
   popularImg4,
   exploreImg1,
   exploreImg2,
-  joinImg1
+  joinImg1,
+  logoImg
 };
 
 export default images;

@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import AppContext from "../context/context.jsx";
 import {AuthButton} from "../hooks/useAuth.js";
+import images from "../data/images.js";
 
 
 function header() {
+  const {logoImg} = images;
   const {userData} = useContext(AppContext);
   console.log(userData);
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
@@ -56,7 +58,8 @@ function header() {
       <nav className="nav container">
         {/* theme button */}
         <div className="theme-button" onClick={toggleTheme}>
-          <i className={`${icon}`} />
+          {/* <i className={`${icon}`} /> */}
+          <img className="nav-logo" src={logoImg} alt="logo img" />
         </div>
         <div className={`navmenu ${isShow ? "is-open" : "" }`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">

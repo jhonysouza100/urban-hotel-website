@@ -1,4 +1,5 @@
 import links from "../data/links";
+import Scrollup from "./scrollup.jsx";
 
 function footer() {
   const {instagramLink, facebookLink, googleMapsLink, hotelEmail, hotelWhatsapp, cataratasArg, cataratasBr, cataratasLuna, aeropuertoIg, documentacionBr, copyrightLink} = links;
@@ -46,6 +47,8 @@ function footer() {
       <a href={copyrightLink} target="_blank" className="footer-copyright">
         © Copyright Jhony Souza 2024. All rights reserved.
       </a>
+
+      <Scrollup />
     </footer>
   );
 }

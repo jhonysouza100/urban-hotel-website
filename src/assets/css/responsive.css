@@ -89,7 +89,6 @@
   }
   .home-data .home-button {
     justify-content: flex-start;
-    margin-bottom: 1rem;
   }
   .location-container, .join-container {
     grid-template-columns: repeat(2, 350px);

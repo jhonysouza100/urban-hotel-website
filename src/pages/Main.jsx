@@ -2,7 +2,6 @@ import { useEffect, useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
 import FacebookComments from "../plugins/fb-comments.jsx";
-import Scrollup from "../components/scrollup.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
@@ -370,7 +369,6 @@ function Main() {
         </section>
 
       </main>
-      <Scrollup />
     </Layout>
   );
 }
