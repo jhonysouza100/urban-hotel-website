@@ -12,8 +12,8 @@ function header() {
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
   
   // =============== CHANGE HEADER BACKGROUND ===============
-  const isScroll = useRef("");
-  const scrollHeader = () => { window.scrollY >= 50 ? isScroll.current = "is-scroll" : isScroll.current = ""; updateHeaderClass(); activeSections(); };
+  const isScroll = useRef(false);
+  const scrollHeader = () => { window.scrollY >= 50 ? isScroll.current = true : isScroll.current = false; updateHeaderClass(); activeSections(); };
  // =============== Update Header Class ===============
   const updateHeaderClass = () => {
     const HEADER = document.getElementById("header");
@@ -55,20 +55,28 @@ function header() {
   }, []);
 
   // =============== OPEN MENU ===============
-  const [isShow, setIsShow] = useState(false);
-  const handleShow = () => { setIsShow(!isShow); };
+  const isShow = useRef(false);
+  const handleShow = () => { 
+    isShow.current = !isShow.current;
+    const NAVMENU = document.querySelector("#navmenu");
+    if (NAVMENU) {
+      // Si isShow.current no está vacío
+      NAVMENU.classList.toggle("is-open", Boolean(isShow.current));
+    }
+    
+   };
   // =============== REMOVE MENU ON LINK CLICK ===============
   const handleClick = (e) => { if (e.target.classList.contains("navmenu-link")) handleShow(); };
 
   return (
-    <header className="header" id="header">
+    <header className={`header`} id="header">
       <nav className="nav container">
         {/* theme button */}
         <div className="theme-button" onClick={toggleTheme}>
           {/* <i className={`${icon}`} /> */}
           <img className="nav-logo" src={logoImg} alt="logo img" />
         </div>
-        <div className={`navmenu ${isShow ? "is-open" : "" }`} id="navmenu" onClick={handleClick}>
+        <div className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
             <li className="navmenu-item"><a href="#home" className="navmenu-link is-active">Inicio</a></li>
             <li className="navmenu-item"><a href="#location" className="navmenu-link">Ubicación</a></li>

@@ -46,8 +46,8 @@ clases via script
 - maketar un componente de react-image-gallery. OK
 
 === OPTIMIZACION DE CODIGO ===
+- optimizar codigo con use ref para evitar renderizado innesesario de componentes. OK
 - investigar importacion global en parcel js.
-- optimizar codigo con use ref para evitar renderizado innesesario de componentes.
 
 === API DE TERCEROS ===
 - agregar componente de comentarios de facebook. OK
