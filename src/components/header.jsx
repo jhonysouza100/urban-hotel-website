@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import AppContext from "../context/context.jsx";
 import {AuthButton} from "../hooks/useAuth.js";
 import images from "../data/images.js";
@@ -7,44 +7,51 @@ import images from "../data/images.js";
 function header() {
   const {logoImg} = images;
   const {userData} = useContext(AppContext);
-  console.log(userData);
+  console.log(userData)
+
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
+  
+  // =============== CHANGE HEADER BACKGROUND ===============
+  const isScroll = useRef("");
+  const scrollHeader = () => { window.scrollY >= 50 ? isScroll.current = "is-scroll" : isScroll.current = ""; updateHeaderClass(); activeSections(); };
+ // =============== Update Header Class ===============
+  const updateHeaderClass = () => {
+    const HEADER = document.getElementById("header");
+    if (HEADER) {
+      // Si isScroll.current no está vacío
+      HEADER.classList.toggle("is-scroll", Boolean(isScroll.current));
+    }
+  };
+  // =============== SCROLL SECTIONS ACTIVE LINK ===============
+  const activeSections = () => {
+    const SECTIONS = document.querySelectorAll("section[id]");
+    const scrollY = window.pageYOffset;
+    if(SECTIONS) {
+      SECTIONS.forEach(el => {
+        const sectionHght = el.offsetHeight,
+        sectionTop = el.offsetTop -58,
+        sectionId = el.getAttribute('id'),
+        sectionClass = document.querySelector('.navmenu a[href*=' + sectionId + ']')
+        if(sectionClass) {
+          if(scrollY > sectionTop && scrollY < sectionTop + sectionHght) {
+            sectionClass.classList.add('is-active')
+          } else {
+            sectionClass.classList.remove('is-active')
+          }
+        }
+      })
+    }
+  };
+
   useEffect(() => {
     handleTheme();
-  }, []);
-
-  const [bgHead, setBgHead] = useState("");
-  useEffect(() => {
-    // =============== CHANGE HEADER BACKGROUND ===============
-    const scrollHeader = () => { window.scrollY >= 50 ? setBgHead(" is-scroll") : setBgHead("") };
-
-    // =============== SCROLL SECTIONS ACTIVE LINK ===============
-    const SECTIONS = document.querySelectorAll("section[id]");
-    const activeSections = () => {
-      const scrollY = window.pageYOffset;
-      if(SECTIONS) {
-        SECTIONS.forEach(el => {
-          const sectionHght = el.offsetHeight,
-          sectionTop = el.offsetTop -58,
-          sectionId = el.getAttribute('id'),
-          sectionClass = document.querySelector('.navmenu a[href*=' + sectionId + ']')
-          if(sectionClass) {
-            if(scrollY > sectionTop && scrollY < sectionTop + sectionHght) {
-              sectionClass.classList.add('is-active')
-            } else {
-              sectionClass.classList.remove('is-active')
-            }
-          }
-        })
-      }
-    }
     
     window.addEventListener("scroll", scrollHeader);
-    window.addEventListener("scroll", activeSections);
+
     return () => { // limpia el evento de desplazamiento cuando el componente se desmonta para evitar posibles problemas de memoria.
-      window.removeEventListener("scroll", activeSections);
       window.removeEventListener("scroll", scrollHeader);
     };
+
   }, []);
 
   // =============== OPEN MENU ===============
@@ -54,7 +61,7 @@ function header() {
   const handleClick = (e) => { if (e.target.classList.contains("navmenu-link")) handleShow(); };
 
   return (
-    <header className={`header${bgHead}`} id="header">
+    <header className="header" id="header">
       <nav className="nav container">
         {/* theme button */}
         <div className="theme-button" onClick={toggleTheme}>
