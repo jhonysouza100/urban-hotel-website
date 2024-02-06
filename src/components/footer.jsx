@@ -28,7 +28,7 @@ function footer() {
         <div className="footer-data">
           <h3 className="footer-title">Contacto</h3>
           <ul className="footer-list">
-            <li className="footer-info"><a target="_blank" href={hotelWhatsapp}><i className="ri-phone-line"></i> Tel: +54 3757 - 458904</a></li>
+            <li className="footer-info"><a target="_blank" href={hotelWhatsapp}><i className="ri-phone-line"></i> +54 3757 - 458904</a></li>
             <li className="footer-info"><a target="_blank" href={hotelEmail}><i className="ri-mail-line"></i> Iguazuurbanhotel@gmail.com</a></li>
           </ul>
         </div>
