@@ -8,7 +8,7 @@ const scrollAnimation = () => {
     duration: 1000, // Reducido el tiempo de animación para hacerlo más rápido
     delay: 200, // Añadido un pequeño retraso para un mejor efecto
     easing: 'cubic-bezier(0.5, 0, 0, 1)', // Cambiado a una curva de aceleración para hacer la animación más natural
-    reset: true // Reiniciar la animación en cada desplazamiento
+    reset: false // Reiniciar la animación en cada desplazamiento
   });
 
   // Aplicar animaciones a los elementos específicos

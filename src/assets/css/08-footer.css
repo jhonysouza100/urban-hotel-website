@@ -1,5 +1,5 @@
 .footer {
-  padding-block: 3rem 2rem;
+  padding-block: 1.5rem 2rem;
   background-color: var(--container-color);
   /* color: var(--text-color-light); */
 }
@@ -51,6 +51,7 @@
 }
 
 .footer-info a {
+  font-size: small;
   transition: color 0.3s ease-out 0s;
 }
 

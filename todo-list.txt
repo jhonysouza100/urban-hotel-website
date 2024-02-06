@@ -21,17 +21,6 @@ clases via script
 - implementar Auth0 → login button. OK
 - conceder permisos en Auth0. OK
 
-== PERMISASOS A LA API DE USUARIOS ===
-- conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".
-- agregar enviroment de conexiones en el hosting para la API y Auth0.
-- renombrar la base de datos "christmas-giveaway-db" como "users-db".
-- agregar a la base de datos una tabla (comments) para comentarios y valoraciones → id, content, rate, userId = key, createAt, updatedAt.
-
-== PERMISASOS A LA API DE VISTAS ===
-- conceder permisos en la API (views-api).
-- renombrar la base de datos "views" como "views-db"?.
-- agregar a la base de datos una tabla (urban-views) para manejar las vistas del hotel → renombrar tabla "views" como "main-views"?.
-
 === ELEMENTO RECICLABLE ===
 - crear un metodos para renderizar cada polaroid desde un object. OK
 - agregar un "button" a cada polaroid para ver mas fotos. OK
@@ -41,12 +30,12 @@ clases via script
 - maketar la galeria de fotos. OK
 - agregar funcion para mostrar imagenes de stock. OK
 
-
 === REACT-IMAGE-GALLERY ===
 - maketar un componente de react-image-gallery. OK
 
 === OPTIMIZACION DE CODIGO ===
 - optimizar codigo con use ref para evitar renderizado innesesario de componentes. OK
+- investigar porque no carga el root cunado recarga la web.
 - investigar importacion global en parcel js.
 
 === API DE TERCEROS ===
@@ -58,3 +47,14 @@ clases via script
 
 === INTERFAZ DE USUARIO ===
 - mostart datos del usuario logueado.
+
+== PERMISASOS A LA API DE USUARIOS ===
+- conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".
+- agregar enviroment de conexiones en el hosting para la API y Auth0.
+- renombrar la base de datos "christmas-giveaway-db" como "users-db".
+- agregar a la base de datos una tabla (comments) para comentarios y valoraciones → id, content, rate, userId = key, createAt, updatedAt.
+
+== PERMISASOS A LA API DE VISTAS ===
+- conceder permisos en la API (views-api).
+- renombrar la base de datos "views" como "views-db"?.
+- agregar a la base de datos una tabla (urban-views) para manejar las vistas del hotel → renombrar tabla "views" como "main-views"?.
