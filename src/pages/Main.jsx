@@ -1,12 +1,18 @@
 import { useEffect, useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
-import FacebookComments from "../plugins/fb-comments.jsx";
+// import FacebookComments from "../plugins/fb-comments.jsx";
 import scrollAnimation from "../libs/scroll-reveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
 import links from "../data/links.js";
 import { Link } from "react-router-dom";
+import '../assets/css/02-home.css';
+import '../assets/css/03-location.css';
+import '../assets/css/04-popular.css';
+import '../assets/css/05-services.css';
+import '../assets/css/06-explore.css';
+import '../assets/css/07-join.css';
 
 function Main() {
   const {
@@ -362,11 +368,11 @@ function Main() {
           </div>
         </section>
         {/*==================== FACEBOOK COMMENTS PLUGIN ====================*/}
-        <section className="fb-comments section">
+        {/* <section className="fb-comments section">
           <div className="fb-comments-container container">
             <FacebookComments />
           </div>
-        </section>
+        </section> */}
 
       </main>
     </Layout>

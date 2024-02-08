@@ -1,4 +1,8 @@
+// import swiperBundle from "./bundle/swiper-bundle.min.js";
+import './bundle/swiper-bundle.min.css'
+
 const swiperAnimation = () => {
+  // swiperBundle();
   let swiperFavorite = new Swiper('.home-slider', {
     loop: true,
     effect: "fade",

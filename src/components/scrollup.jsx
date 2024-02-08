@@ -1,7 +1,10 @@
 import { useState } from "react";
+import links from "../data/links";
 import images from "../data/images.js";
+import '../assets/css/scrollup.css';
 
 function scrollup() {
+  const {hotelWhatsapp} = links;
   const { whatsappIcon } = images;
   const [up, setUp] = useState("");
   const scrollUp = () => {
@@ -15,7 +18,7 @@ function scrollup() {
     <div className={`scrollup${up}`}>
       <a
         target="_blank"
-        href="https://api.whatsapp.com/send?phone=543757458904&text=Hola, me gustaría hacer una consulta"
+        href={hotelWhatsapp}
         className="scrollup-btn"
       >
         <img

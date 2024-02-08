@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/context.jsx';
+import { Link } from 'react-router-dom';
 import Lightbox from "yet-another-react-lightbox";
 import "../../node_modules/yet-another-react-lightbox/dist/styles.css";
+import {useUnsplash} from '../hooks/useUnsplash.js';
 import imagesGallery from "../data/imagesGallery.js";
 import Footer from "../components/footer.jsx";
-import { Link } from 'react-router-dom';
-import {useUnsplash} from '../hooks/useUnsplash.js';
+import '../assets/css/gallery.css';
 
 function Gallery() {
   // contexto para el tipo de galeria seleccionado
