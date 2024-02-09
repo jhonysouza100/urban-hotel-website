@@ -36,11 +36,11 @@ function footer() {
         <div className="footer-data">
           <h3 className="footer-title">Más Informacíon</h3>
           <ul className="footer-list">
-            <li className="footer-info"><a target="_blank" href={cataratasArg}>Parque Nacional Iguazu</a></li>
+            <li className="footer-info"><a target="_blank" href={cataratasArg}>Parque Nacional Iguazú</a></li>
             <li className="footer-info"><a target="_blank" href={cataratasBr}>Parque Nacional do Iguazú (Brasil)</a></li>
-            <li className="footer-info"><a target="_blank" href={documentacionBr}>Documentacion para ingresar a Brasil (DNM)</a></li>
-          <li className="footer-info"><a target="_blank" href={aeropuertoIg}>Aeropuerto Iguazu</a></li>
-            <li className="footer-info"><a target="_blank" href={cataratasLuna}>Paseo de Luna llena en Cataratas del Iguazu</a></li>
+            <li className="footer-info"><a target="_blank" href={documentacionBr}>Documentación para ingresar a Brasil (DNM)</a></li>
+          <li className="footer-info"><a target="_blank" href={aeropuertoIg}>Aeropuerto Iguazú</a></li>
+            <li className="footer-info"><a target="_blank" href={cataratasLuna}>Paseo de Luna llena en Cataratas del Iguazú</a></li>
           </ul>
         </div>
         </div>
