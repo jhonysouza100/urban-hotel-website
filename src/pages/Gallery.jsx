@@ -94,7 +94,7 @@ function Gallery() {
        />
 
       {/* GALLERY */}
-    	<section className='images-gallery container grid'>
+    	<section className='images-gallery'>
         {/* // IMAGES */}
         {images && images.map((el, index) => (<a onClick={() => setIndex(index)} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>))}
       </section>

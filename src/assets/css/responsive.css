@@ -15,6 +15,9 @@
   .swiper-pagination-bullet {
     display: none;
   }
+  .services {
+    height: 85vh;
+  }
 }
 
 /*=============== BREAKPOINTS ===============*/
@@ -25,6 +28,9 @@
   }
   .scrollup.is-show {
     bottom: 5rem;
+  }
+  .images-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
@@ -205,9 +211,6 @@
   }
   .home-social-link {
     font-size: 1.5rem;
-  }
-  .button {
-    column-gap: 1.5rem;
   }
   .location-container {
     grid-template-columns: 400px 460px;

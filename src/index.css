@@ -211,7 +211,8 @@ h3.section-title::after {
   font-weight: initial;
 }
 .button:hover i {
-  transform: translateX(.25rem);
+  /* transform: translateX(.25rem); */
+  transform: scale(1.2);
 }
 
 /*=============== SHADOW ===============*/

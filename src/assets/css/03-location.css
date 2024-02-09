@@ -10,10 +10,6 @@
   margin-bottom: 2rem;
 }
 
-.location-data a:hover i {
-  transform: scale(1.2) translateX(.25rem);
-}
-
 .location-image {
   position: relative;
   justify-self: center;

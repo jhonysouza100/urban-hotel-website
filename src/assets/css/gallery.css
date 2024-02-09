@@ -1,9 +1,9 @@
 .images-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 4px;
   width: 95%;
   margin: auto;
-  grid-gap: 4px;
   padding: 40px 0;
   overflow: hidden;
 }
@@ -46,10 +46,4 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 40px;
-}
-
-@media screen and (max-with: 400px) {
-  .images-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
 }
