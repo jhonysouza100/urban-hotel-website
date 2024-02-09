@@ -1,5 +1,5 @@
 // import swiperBundle from "./bundle/swiper-bundle.min.js";
-import './bundle/swiper-bundle.min.css'
+import './bundle/swiper-bundle.min.css';
 
 const swiperAnimation = () => {
   // swiperBundle();

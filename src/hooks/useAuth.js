@@ -21,6 +21,6 @@ export const getAuthProfileData = () => {
 export const AuthButton = () => {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<h4 className="navmenu-link" onClick={() => logout()}>Logout</h4>) 
-  : (<h4 className="navmenu-link" onClick={() => loginWithRedirect()}>Login</h4>);
+  ? (<h4 className="navmenu-link" onClick={() => logout()}>Cerrar sesión</h4>) 
+  : (<h4 className="navmenu-link" onClick={() => loginWithRedirect()}>Iniciar sesión</h4>);
 };

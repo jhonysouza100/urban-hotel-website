@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
 // import FacebookComments from "../plugins/fb-comments.jsx";
-import scrollAnimation from "../libs/scroll-reveal.js";
+import scrollAnimation from "../libs/scrollreveal.js";
 import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
 import links from "../data/links.js";
@@ -305,7 +305,7 @@ function Main() {
           </div>
         </section>
         {/*==================== EXPLORE ====================*/}
-        <section className="explore section" id="explore">
+        {/* <section className="explore section" id="explore">
           <div className="explore-container">
             <div className="explore-image">
               <img
@@ -336,9 +336,9 @@ function Main() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/*==================== JOIN ====================*/}
-        <section className="join section" id="join">
+        {/* <section className="join section" id="join">
           <div className="join-container container grid">
             <div className="join-data">
               <h2 className="section-title">
@@ -366,7 +366,7 @@ function Main() {
               <div className="shadow" />
             </div>
           </div>
-        </section>
+        </section> */}
         {/*==================== FACEBOOK COMMENTS PLUGIN ====================*/}
         {/* <section className="fb-comments section">
           <div className="fb-comments-container container">

@@ -5,7 +5,7 @@ import caf4 from "../assets/img/bg5.jpeg";
 import caf5 from "../assets/img/bg6.jpeg";
 import caf6 from "../assets/img/bg7.jpeg";
 
-const imagesGallery = {
+const gallery = {
   BREAKFAST: {
     type: "BREAKFAST",
     img: [
@@ -43,4 +43,4 @@ const imagesGallery = {
   }
 }
 
-export default imagesGallery;
+export default gallery;
