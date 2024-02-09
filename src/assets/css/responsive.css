@@ -11,6 +11,12 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .swiper-pagination-bullet {
+    display: none;
+  }
+}
+
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 340px) { /* de 0px hasta 340px */

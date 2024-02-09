@@ -84,9 +84,6 @@
     backdrop-filter: var(--nav-filter);
     transition: top .4s;
   }
-  .swiper-pagination-bullet {
-    display: none;
-  }
 }
 
 /* menu para escritorio */
