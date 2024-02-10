@@ -231,7 +231,7 @@ function Main() {
               <article className="popular-card" key={crypto.randomUUID()}>
                 <div className="popular-image">
                   <img src={el.src} className="popular-img" alt="popular-img"/>
-                  <Link to={"/galeria"} onClick={() => handleGallery(el.type)} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
+                  <Link to={"/galeria"} rel='prefetch' onClick={() => handleGallery(el.type)} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
                   {/* <div className="shadow" /> */}
                 </div>
               </article>
