@@ -83,7 +83,7 @@ function Gallery() {
   return (
     <div>
       {/* VOlVER */}
-      <div className="gallery-button section"><Link to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
+      <div className="gallery-button section"><Link to={'/'} rel='prefetch' className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
 
       {/* // COMPONENT REACt LIGHTBOX GALLERY */}
       <Lightbox
