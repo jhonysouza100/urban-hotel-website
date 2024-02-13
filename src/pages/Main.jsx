@@ -1,18 +1,27 @@
 import { useEffect, useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
-// import FacebookComments from "../plugins/fb-comments.jsx";
 import scrollAnimation from "../libs/scrollreveal.js";
-import swiperAnimation from "../libs/swiper.js";
 import images from "../data/images.js";
 import links from "../data/links.js";
 import { Link } from "react-router-dom";
+
+// import Siper module
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+// import required modules
+import { Pagination, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
+
 import '../assets/css/02-home.css';
 import '../assets/css/03-location.css';
 import '../assets/css/04-popular.css';
 import '../assets/css/05-services.css';
 import '../assets/css/06-explore.css';
 import '../assets/css/07-join.css';
+
 
 function Main() {
   const {
@@ -45,7 +54,7 @@ function Main() {
     scrollAnimation();
 
     // SWIPER animation
-    swiperAnimation();
+    // swiperAnimation();
   }, []);
 
   return (
@@ -53,9 +62,20 @@ function Main() {
       <main className="main">
         {/*==================== HOME ====================*/}
         <section className="home" id="home">
-          <div className="swiper home-slider">
-            <div className="swiper-wrapper">
-              <div className="swiper-slide">
+          
+          <Swiper pagination={{ clickable: true }}
+                  spaceBetween={30}
+                  effect={'fade'}
+                  loop={true}
+                  keyboard={{enabled: true,}}
+                  autoplay={{delay: 8000, disableOnInteraction: false,}}
+                  slidesPerView='1'
+                  centeredSlides='auto'
+                  grabCursor={true}
+                  speed={1500}
+                  ease='ease-in-out'
+           modules={[EffectFade, Pagination, Autoplay, Keyboard]} className="home-slider">
+              <SwiperSlide className="swiper-slide">
                 <div
                   className="box"
                   style={{ background: `url(${homeBgImg1}) no-repeat` }}
@@ -88,8 +108,8 @@ function Main() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="swiper-slide">
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide">
                 <div
                   className="box"
                   style={{
@@ -124,8 +144,8 @@ function Main() {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="swiper-slide">
+              </SwiperSlide>
+              <SwiperSlide className="swiper-slide">
                 <div
                   className="box"
                   style={{ background: `url(${homeBgImg3}) no-repeat` }}
@@ -158,10 +178,8 @@ function Main() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="swiper-pagination" />
-          </div>
+              </SwiperSlide>
+          </Swiper>
           {/* social component */}
           <div className="home-social">
             <span className="home-social-text">Siguenos</span>
@@ -231,7 +249,7 @@ function Main() {
               <article className="popular-card" key={crypto.randomUUID()}>
                 <div className="popular-image">
                   <img src={el.src} className="popular-img" alt="popular-img"/>
-                  <Link to={"/galeria"} onClick={() => handleGallery(el.type)} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
+                  <Link to={"/galeria"} rel='prefetch' onClick={() => handleGallery(el.type)} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
                   {/* <div className="shadow" /> */}
                 </div>
               </article>

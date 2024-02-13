@@ -1,6 +1,6 @@
 export const usePost = async (data) => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}`, {
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}`, {
       method: 'POST',
       body: JSON.stringify(data),
       headers: {'Content-Type': 'application/json'}
@@ -14,7 +14,7 @@ export const usePost = async (data) => {
 
 export const useGet = async () => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}`);
+    const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}`);
     return res;
   } catch (error) {
     console.log(error);

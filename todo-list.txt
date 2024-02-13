@@ -35,18 +35,21 @@ clases via script
 
 === OPTIMIZACION DE CODIGO ===
 - optimizar codigo con use ref para evitar renderizado innesesario de componentes. OK
-- investigar porque no carga el root cunado recarga la web.
-- investigar importacion global en parcel js.
+- investigar porque no carga el root cuando recarga la web. => limitaciones del host. OK
+- investigar importacion global en parcel js. => no renderiza en producion se ven los archivos fuente, mala optimizacion. OK
+- migrar a vitejs. posee mas soporte. OK
 
 === API DE TERCEROS ===
 - agregar componente de comentarios de facebook. OK
-- agregar api de moderacion a los comentarios de facebook.
+- quitar facebook commnets. => causa bugs de carga a la pagina, tiene documentacion muy antigua y no se puede establecer un moderador para los comments. OK
+- agregar origenes permitidos en auth0 para la nueva url. OK
 - agregar api de "google maps".
 - agregar API del clima.
 - mostrar el clima de iguazú.
 
 === INTERFAZ DE USUARIO ===
 - mostart datos del usuario logueado.
+- mostrar un toaster cuando inicia seccion.
 
 == PERMISASOS A LA API DE USUARIOS ===
 - conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".

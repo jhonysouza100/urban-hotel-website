@@ -1,27 +1,13 @@
 {
   "name": "urban-hotel-website",
+  "private": true,
   "version": "1.0.0",
-  "source": "src/index.html",
-  "description": "",
+  "type": "module",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jhonysouza100/urban-hotel-website.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jhonysouza100/urban-hotel-website/issues"
-  },
-  "homepage": "https://github.com/jhonysouza100/urban-hotel-website#readme",
-  "devDependencies": {
-    "parcel": "^2.11.0",
-    "process": "^0.11.10"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
@@ -30,6 +16,17 @@
     "react-router-dom": "^6.20.1",
     "remixicon": "^4.1.0",
     "scrollreveal": "^4.0.9",
+    "swiper": "^11.0.6",
     "yet-another-react-lightbox": "^3.16.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.1.0"
   }
 }

@@ -83,7 +83,7 @@ function Gallery() {
   return (
     <div>
       {/* VOlVER */}
-      <div className="gallery-button section"><Link to={'/'} rel='prefetch' className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
+      <div className="gallery-button section"><Link rel='prefetch' to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
 
       {/* // COMPONENT REACt LIGHTBOX GALLERY */}
       <Lightbox
@@ -94,7 +94,7 @@ function Gallery() {
        />
 
       {/* GALLERY */}
-    	<section className='images-gallery'>
+      <section className='images-gallery'>
         {/* // IMAGES */}
         {images && images.map((el, index) => (<a onClick={() => setIndex(index)} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>))}
       </section>

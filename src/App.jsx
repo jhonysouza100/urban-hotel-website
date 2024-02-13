@@ -1,12 +1,12 @@
 import { AppProvider } from './context/context.jsx';
 import { Auth0Provider } from '@auth0/auth0-react';
-import Router from './routes/router.js';
+import Router from './routes/router.jsx';
 
 function App() {
   return (
     <Auth0Provider
-    domain={process.env.AUTH0_DOMAIN}
-    clientId={process.env.AUTH0_CLIENT_ID}
+    domain={import.meta.env.VITE_AUTH0_DOMAIN}
+    clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
     redirectUri={window.location.origin}>
       <AppProvider>
         <Router />

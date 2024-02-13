@@ -40,6 +40,10 @@
   transform: scale(1.2);
 }
 
+.swiper-pagination-bullet-active {
+  
+}
+
 .home-shadow { /* filtro oscuro */
   position: absolute;
   top: 0;
