@@ -1,13 +1,16 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import AppContext from "../context/context.jsx";
 import {AuthButton} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
 import '../assets/css/01-navbar.css';
+import { Toaster, toast } from "sonner";
 
 
 function header() {
   const {logoImg} = images;
-  const {userData} = useContext(AppContext);
+
+  const {userData, loged} = useContext(AppContext);
+  loged ? toast(`¡Bienvenido/a ${userData.username}!`) : null;
   console.log(userData)
 
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
@@ -96,6 +99,7 @@ function header() {
           <i className="ri-menu-fill" />
         </div>
       </nav>
+      <Toaster />
     </header>
   );
 }

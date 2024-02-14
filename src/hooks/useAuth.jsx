@@ -3,19 +3,21 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 export const getAuthProfileData = () => {
   const { user, isAuthenticated } = useAuth0();
-  const [userProfile, setUserProfile] = useState(null);
+  const [userData, setUserData] = useState(null);
+  const [loged, setLoged] = useState(false);
   useEffect(() => {
     // Cuando el usuario esté autenticado, actualiza el estado del perfil del usuario
     if (isAuthenticated) {
-      setUserProfile({
+      setUserData({
         username: user.name,
         email: user.email,
         picture: user.picture,
       });
+      setLoged(isAuthenticated);
     }
   }, [isAuthenticated, user]);
   
-  return userProfile;
+  return {userData, loged};
 };
 
 export const AuthButton = () => {

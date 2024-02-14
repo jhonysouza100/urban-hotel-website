@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
     localStorage.setItem("selected-icon", newIcon);
   };
 
-  const userData = getAuthProfileData();
+  const {userData, loged} = getAuthProfileData();
   useEffect(() => {
     // Este efecto se ejecutará después de que getAuthProfileData haya actualizado el estado
     // console.log(userData);
@@ -45,7 +45,7 @@ const AppProvider = ({ children }) => {
     // console.log(arg)
   }
 
-  const data = { theme, icon, handleTheme, toggleTheme, userData, gallerySelected, handleGallery };
+  const data = { theme, icon, handleTheme, toggleTheme, gallerySelected, handleGallery,userData, loged };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };
