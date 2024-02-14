@@ -50,7 +50,7 @@ function header() {
 
   useEffect(() => {
     handleTheme();
-    isAuthenticated ? toast(`¡Bienvenido/a ${userData.username}!`) : console.log(isAuthenticated);
+    isAuthenticated ? () => toast(`¡Bienvenido/a ${userData.username}!`) : console.log(isAuthenticated);
     
     window.addEventListener("scroll", scrollHeader);
 
