@@ -9,8 +9,9 @@ import { Toaster, toast } from "sonner";
 function header() {
   const {logoImg} = images;
 
-  const {userData, loged} = useContext(AppContext);
-  loged ? toast(`¡Bienvenido/a ${userData.username}!`) : null;
+  // data proveniente de la autenticacion de usuario
+  const {userData, isAuthenticated} = useContext(AppContext);
+  console.log(isAuthenticated);
   console.log(userData)
 
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
@@ -49,6 +50,7 @@ function header() {
 
   useEffect(() => {
     handleTheme();
+    // isAuthenticated ? toast(`¡Bienvenido/a ${userData.username}!`) : null;
     
     window.addEventListener("scroll", scrollHeader);
 
