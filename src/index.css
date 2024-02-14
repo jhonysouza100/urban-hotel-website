@@ -101,7 +101,7 @@ body {
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
   --scrollup-color: hsl(24, 3%, 28%);
-  --main-color: #fff;
+  /* --main-color: #fff; */
   --button-color: #1d9bf0;
   --title-color: #111;
   --text-color: hsl(24, 3%, 28%);

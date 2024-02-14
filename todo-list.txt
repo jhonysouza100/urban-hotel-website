@@ -42,7 +42,7 @@ clases via script
 === OPTIMIZACION DE RECURSOS ===
 - eliminar imagenes que no se usen. OK
 - rehubicar imagenes a la carpeta public. OK
-- convertir imagenes a formatos mas lijeros.
+- convertir imagenes a formatos mas lijeros. 
 - convertir los vides a gif.
 - agregar Robots.txt
 
