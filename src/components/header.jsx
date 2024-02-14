@@ -11,8 +11,8 @@ function header() {
 
   // data proveniente de la autenticacion de usuario
   const {userData, isAuthenticated} = useContext(AppContext);
-  console.log(isAuthenticated);
-  console.log(userData)
+  console.log("isAuthenticated:", isAuthenticated);
+  console.log("userData:", userData)
 
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
   
@@ -50,7 +50,7 @@ function header() {
 
   useEffect(() => {
     handleTheme();
-    // isAuthenticated ? toast(`¡Bienvenido/a ${userData.username}!`) : null;
+    isAuthenticated ? toast(`¡Bienvenido/a ${userData.username}!`) : console.log(isAuthenticated);
     
     window.addEventListener("scroll", scrollHeader);
 
@@ -89,7 +89,7 @@ function header() {
             <li className="navmenu-item"><a href="#popular" className="navmenu-link">Fotos</a></li>
             <li className="navmenu-item"><a href="#services" className="navmenu-link">Servicios</a></li>
             {/* <li className="navmenu-item"><a href="#explore" className="navmenu-link">Explora</a></li> */}
-            <li className="navmenu-item"><AuthButton /></li>
+            <li className="navmenu-item"><AuthButton className="navmenu-link" /></li>
           </ul>
           {/* close button */}
           <div className="navmenu-close" id="navmenu-close" onClick={handleShow}>

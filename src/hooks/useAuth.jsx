@@ -19,9 +19,9 @@ export const getAuthProfileData = () => {
   return {userData, isAuthenticated};
 };
 
-export const AuthButton = () => {
+export const AuthButton = (props) => {
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<h4 className="navmenu-link" onClick={() => logout()}>Cerrar sesión</h4>) 
-  : (<h4 className="navmenu-link" onClick={() => loginWithRedirect()}>Iniciar sesión</h4>);
+  ? (<h4 className={props.className} onClick={() => logout()}>Cerrar sesión</h4>) 
+  : (<h4 className={props.className} onClick={() => loginWithRedirect()}>Iniciar sesión</h4>);
 };

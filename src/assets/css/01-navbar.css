@@ -40,6 +40,7 @@
   color: var(--black-color);
   font-family: var(--second-font);
   font-weight: var(--font-bold);
+  display: inline;
 }
 
 .navmenu-button {
