@@ -1,7 +1,7 @@
 import { useState } from "react";
 import links from "../data/links";
 import images from "../data/images.js";
-import '../assets/css/scrollup.css';
+import '../css/scrollup.css';
 
 function scrollup() {
   const {hotelWhatsapp} = links;

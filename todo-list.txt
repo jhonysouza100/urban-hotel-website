@@ -39,6 +39,14 @@ clases via script
 - investigar importacion global en parcel js. => no renderiza en producion se ven los archivos fuente, mala optimizacion. OK
 - migrar a vitejs. posee mas soporte. OK
 
+=== OPTIMIZACION DE RECURSOS ===
+- eliminar imagenes que no se usen. OK
+- rehubicar imagenes a la carpeta public. OK
+- convertir imagenes a formatos mas lijeros.
+- convertir los vides a gif.
+- agregar Robots.txt
+
+
 === API DE TERCEROS ===
 - agregar componente de comentarios de facebook. OK
 - quitar facebook commnets. => causa bugs de carga a la pagina, tiene documentacion muy antigua y no se puede establecer un moderador para los comments. OK
@@ -49,7 +57,7 @@ clases via script
 
 === INTERFAZ DE USUARIO ===
 - mostart datos del usuario logueado.
-- mostrar un toaster cuando inicia seccion.
+- mostrar un toaster cuando inicia seccion. OK
 
 == PERMISASOS A LA API DE USUARIOS ===
 - conceder permisos en la API (christmas-giveaway-api) → renombrar como "users-api".

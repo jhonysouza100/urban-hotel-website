@@ -1,6 +1,6 @@
 import links from "../data/links";
 import Scrollup from "./scrollup.jsx";
-import '../assets/css/08-footer.css';
+import '../css/08-footer.css';
 
 function footer() {
   const {instagramLink, facebookLink, googleMapsLink, hotelEmail, hotelWhatsapp, cataratasArg, cataratasBr, cataratasLuna, aeropuertoIg, documentacionBr, copyrightLink} = links;

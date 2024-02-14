@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AppContext from "../context/context.jsx";
 import {AuthButton, AuthToaster} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
-import '../assets/css/01-navbar.css';
+import '../css/01-navbar.css';
 
 
 function header() {

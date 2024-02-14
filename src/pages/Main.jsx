@@ -15,12 +15,12 @@ import 'swiper/css/effect-fade';
 // import required modules
 import { Pagination, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
 
-import '../assets/css/02-home.css';
-import '../assets/css/03-location.css';
-import '../assets/css/04-popular.css';
-import '../assets/css/05-services.css';
-import '../assets/css/06-explore.css';
-import '../assets/css/07-join.css';
+import '../css/02-home.css';
+import '../css/03-location.css';
+import '../css/04-popular.css';
+import '../css/05-services.css';
+import '../css/06-explore.css';
+import '../css/07-join.css';
 
 
 function Main() {
@@ -28,7 +28,6 @@ function Main() {
     homeBgImg1,
     homeBgImg2,
     homeBgImg3,
-    locationImg1,
     popularImg1,
     popularImg2,
     popularImg3,
@@ -36,7 +35,7 @@ function Main() {
   } = images; // importa las imagenes
 
   // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
-  const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: "BREAKFAST"}, {src: popularImg2, title: "Pileta", type: "POOL"}, {src: popularImg3, title: "Habitaciones", type: "ROOM"}, {src: popularImg4, title: "Iguazú", type: "IGUAZU"}];
+  const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: "BREAKFAST"}, {src: popularImg2, title: "Habitaciones", type: "ROOM"}, {src: popularImg3, title: "Pileta", type: "POOL"}, {src: popularImg4, title: "Iguazú", type: "IGUAZU"}];
 
   // importo las direcciones para los enlaces
   const {bookingLink, facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links;
@@ -230,7 +229,7 @@ function Main() {
             </div>
             <div className="location-image">
               <img
-                src={locationImg1}
+                src={homeBgImg1}
                 className="location-img"
                 alt="location-img"
               />

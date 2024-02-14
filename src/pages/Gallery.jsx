@@ -6,7 +6,7 @@ import "../../node_modules/yet-another-react-lightbox/dist/styles.css";
 import {useUnsplash} from '../hooks/useUnsplash.js';
 import gallery from "../data/gallery.js";
 import Footer from "../components/footer.jsx";
-import '../assets/css/gallery.css';
+import '../css/gallery.css';
 
 function Gallery() {
   // contexto para el tipo de galeria seleccionado

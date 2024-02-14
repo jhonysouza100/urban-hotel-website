@@ -1,30 +1,24 @@
-import whatsappIcon from "../assets/img/whatsapp.svg";
-import homeBgImg1 from "../assets/img/b4.jpeg";
-import homeBgImg2 from "../assets/img/background.webp";
-import homeBgImg3 from "../assets/img/b3.jpeg";
-import locationImg1  from "../assets/img/b4.jpeg";
-import popularImg1 from "../assets/img/bg6.jpeg";
-import popularImg2 from "../assets/img/bg1.jpeg";
-import popularImg3 from "../assets/img/matrimonial.jpg";
-import popularImg4 from "../assets/img/background-2.jpg";
-import exploreImg1 from "../assets/img/background-4.jpg";
-import exploreImg2 from "../assets/img/recep2.jpg";
-import joinImg1 from "../assets/img/service2.jpg";
-import logoImg from "../assets/img/logo.png";
+import whatsappIcon from "/public/img/whatsapp.svg";
+import homeBgImg1 from "/public/img/home-bg-1.webp";
+import homeBgImg2 from "/public/img/home-bg-2.webp";
+import homeBgImg3 from "/public/img/home-bg-3.webp";
+import popularImg1 from "/public/img/gallery-img-1.webp";
+import popularImg2 from "/public/img/gallery-img-2.webp";
+import popularImg3 from "/public/img/gallery-img-3.webp";
+import popularImg4 from "/public/img/gallery-img-4.webp";
+import exploreImg1 from "/public/img/iguazu-img-1.webp";
+import logoImg from "/public/img/logo.webp";
 
 const images = {
   whatsappIcon,
   homeBgImg1,
   homeBgImg2,
   homeBgImg3,
-  locationImg1,
   popularImg1,
   popularImg2,
   popularImg3,
   popularImg4,
   exploreImg1,
-  exploreImg2,
-  joinImg1,
   logoImg
 };
 
