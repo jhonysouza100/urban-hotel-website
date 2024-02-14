@@ -33,9 +33,6 @@ function Main() {
     popularImg2,
     popularImg3,
     popularImg4,
-    exploreImg1,
-    exploreImg2,
-    joinImg1,
   } = images; // importa las imagenes
 
   // crea un arreglo de imagenes para renderizar es las fotos con sus tipos

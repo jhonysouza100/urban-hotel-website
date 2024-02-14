@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Toaster, toast } from "sonner";
 
 export const getAuthProfileData = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -24,3 +25,14 @@ export const AuthButton = (props) => {
   ? (<h4 className={props.className} onClick={() => logout()}>Cerrar sesión</h4>) 
   : (<h4 className={props.className} onClick={() => loginWithRedirect()}>Iniciar sesión</h4>);
 };
+
+export const AuthToaster = (props) => {
+  const {isAuthenticated} = useAuth0();
+  useEffect(() => {
+     // Muestra el mensaje de bienvenida solo si showWelcomeMessage es true
+     if (isAuthenticated) {
+      toast(`¡Bienvenido/a ${props.username}!`);
+    }
+  }, [isAuthenticated]);
+  return (<Toaster />);
+}

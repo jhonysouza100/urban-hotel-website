@@ -1,17 +1,15 @@
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import AppContext from "../context/context.jsx";
-import {AuthButton} from "../hooks/useAuth.jsx";
+import {AuthButton, AuthToaster} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
 import '../assets/css/01-navbar.css';
-import { Toaster, toast } from "sonner";
 
 
 function header() {
   const {logoImg} = images;
 
   // data proveniente de la autenticacion de usuario
-  const {userData, isAuthenticated} = useContext(AppContext);
-  console.log("isAuthenticated:", isAuthenticated);
+  const {userData} = useContext(AppContext);
   console.log("userData:", userData)
 
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
@@ -47,18 +45,19 @@ function header() {
       })
     }
   };
+  
 
   useEffect(() => {
     handleTheme();
-    isAuthenticated ? () => toast(`¡Bienvenido/a ${userData.username}!`) : console.log(isAuthenticated);
     
     window.addEventListener("scroll", scrollHeader);
-
-    return () => { // limpia el evento de desplazamiento cuando el componente se desmonta para evitar posibles problemas de memoria.
+  
+    return () => {
+      // limpia el evento de desplazamiento cuando el componente se desmonta para evitar posibles problemas de memoria.
       window.removeEventListener("scroll", scrollHeader);
     };
-
-  }, []);
+  });
+  
 
   // =============== OPEN MENU ===============
   const isShow = useRef(false);
@@ -101,7 +100,7 @@ function header() {
           <i className="ri-menu-fill" />
         </div>
       </nav>
-      <Toaster />
+      {userData && <AuthToaster username={userData.username} />}
     </header>
   );
 }
