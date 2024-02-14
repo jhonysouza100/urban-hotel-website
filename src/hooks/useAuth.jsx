@@ -12,7 +12,6 @@ export const getAuthProfileData = () => {
         email: user.email,
         picture: user.picture,
       });
-      setLoged(isAuthenticated);
     }
   }, [isAuthenticated, user]);
   
