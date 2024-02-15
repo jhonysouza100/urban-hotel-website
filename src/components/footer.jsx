@@ -9,7 +9,7 @@ function footer() {
       <div className="footer-container container grid">
         <div>
           <p href="#" className="footer-logo">Iguazú Urban Hotel{" "}<span>Express<span /></span></p>
-          <p className="footer-description">Hace tu reserva hoy!</p>
+          <p className="footer-description">¡Hace tu reserva hoy!</p>
         </div>
         <div className="footer-content grid">
         <div className="footer-data">

@@ -2,7 +2,7 @@
 @media screen and (min-width: 1152px) {
   :root {
     --biggest-font-size: 5.5rem;
-    --h1-font-size: 2.5rem;
+    --h1-font-size: 1.75rem;
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
@@ -29,6 +29,9 @@
   .scrollup.is-show {
     bottom: 5rem;
   }
+  .location-image {
+    width: 100%;
+  }
   .images-gallery {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
@@ -40,9 +43,6 @@
 @media screen and (min-width: 576px) { /* desde 576px hasta ↑ */
   :root {
     --shadow-deg-end: 90%;
-  }
-  h3.section-title {
-    font-size: 1.45rem;
   }
   h3.section-title::after {
     width: 350px;
@@ -69,11 +69,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  h3.section-title {
-    font-size: 1.65rem;
-  }
   h3.section-title::after {
-    width: 400px;
+    width: 600px;
   }
   .home-social {
     top: 0;
@@ -141,12 +138,8 @@
   :root {
     --shadow-deg-end: 95%;
   }
-  h3.section-title {
-    font-size: 2.25rem;
-    font-weight: 400;
-  }
   h3.section-title::after {
-    width: 650px;
+    width: 750px;
   }
   .is-desktop {
     display: block;
@@ -220,8 +213,9 @@
   .location-description {
     margin-bottom: 3rem;
   }
-  .location-img {
+  .location-image {
     width: 460px;
+    height: 340px;
   }
   .popular-container {
     column-gap: 3rem;

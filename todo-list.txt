@@ -32,6 +32,8 @@ clases via script
 
 === REACT-IMAGE-GALLERY ===
 - maketar un componente de react-image-gallery. OK
+- colocar el scroll al top de la pagina cunado se abra gallery. OK
+- agregar contenido de informacion para gallery.
 
 === OPTIMIZACION DE CODIGO ===
 - optimizar codigo con use ref para evitar renderizado innesesario de componentes. OK
@@ -42,10 +44,15 @@ clases via script
 === OPTIMIZACION DE RECURSOS ===
 - eliminar imagenes que no se usen. OK
 - rehubicar imagenes a la carpeta public. OK
-- convertir imagenes a formatos mas lijeros. 
-- convertir los vides a gif.
-- agregar Robots.txt
+- convertir imagenes a formatos mas lijeros. OK
+- pasar todos los textos a un objeto e importarlo a los componentes.
+- crear un archivo pata txt.js, el cual exporta objetos de textos para cada idioma.
+- convertir los videos a gif.
 
+=== SEO == 
+- agregar robots.txt. OK
+- agregar sitemap.xml. OK
+- cargar sitemap en google.
 
 === API DE TERCEROS ===
 - agregar componente de comentarios de facebook. OK

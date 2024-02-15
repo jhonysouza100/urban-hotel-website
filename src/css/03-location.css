@@ -11,13 +11,17 @@
 }
 
 .location-image {
+  width: 300px;
+  height: 220px; /* Ajusta la altura según tus necesidades o utiliza un valor fijo */
   position: relative;
   justify-self: center;
   overflow: hidden;
 }
 
 .location-img {
-  width: 300px;
+  width: 100%; /* Cambia el ancho al 100% para ocupar el ancho del contenedor */
+  height: 100%; /* Ajusta la altura según tus necesidades o utiliza un valor fijo */
+  object-fit: cover; /* Mantiene la relación de aspecto y recorta el contenido si es necesario */
   transition: transform .4s;
 }
 

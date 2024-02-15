@@ -239,7 +239,7 @@ function Main() {
         </section>
         {/*==================== POPULAR ====================*/}
         <section className="popular section" id="popular">
-          <h3 className="photos-title section-title">GALERIA DE FOTOS</h3>
+          <h3 className="photos-title section-title">Galeria de Fotos</h3>
           <div className="popular-container container grid">
             {pholaroidImgs.map(el => (
               <article className="popular-card" key={crypto.randomUUID()}>
@@ -254,7 +254,7 @@ function Main() {
         </section>
         {/*==================== SERVICES ====================*/}
         <section className="services section" id="services">
-          <h3 className="services-title section-title">SERVICIOS DEL HOTEL</h3>
+          <h3 className="services-title section-title">Servicios del Hotel</h3>
           <div className="services-container container grid">
             <div className="services-group left">
               <div className="services-data">

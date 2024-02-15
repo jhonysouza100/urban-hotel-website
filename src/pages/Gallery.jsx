@@ -16,8 +16,8 @@ function Gallery() {
   // establece las variables para las imagenes de la galeria
   const [images, setImages] = useState(null);
 
-  // obtiene el valor de la galeria seleccionada almacenado en localStorage cuando el usuario recarga la gallery
-   useEffect(() => {
+  useEffect(() => {
+     // obtiene el valor de la galeria seleccionada almacenado en localStorage cuando el usuario recarga la gallery
     const storedGallerySelected = localStorage.getItem('gallerySelected');
     // solo se ejecuta una vez si gallerySlected esta vacio y hay algo en el localStorage cuando se recarga la galeria
     if (!gallerySelected && storedGallerySelected) {
@@ -75,15 +75,29 @@ function Gallery() {
       localStorage.setItem('gallerySelected', gallerySelected);
     }
 
+    // Función para scroll al principio de la página
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto" // Puedes cambiar a "smooth" si prefieres un desplazamiento suave
+      });
+    };
+
+    // Llamada a la función para scroll al principio de la página al cargar el componente
+    scrollToTop();
+
+
   }, [gallerySelected]);
 
   // REACT LIGHTBOX GALLERY
   const [index, setIndex] = useState(-1);
 	
   return (
-    <div>
+    <div className='gallery-container'>
       {/* VOlVER */}
       <div className="gallery-button section"><Link rel='prefetch' to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
+
+
 
       {/* // COMPONENT REACt LIGHTBOX GALLERY */}
       <Lightbox

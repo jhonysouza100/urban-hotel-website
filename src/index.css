@@ -169,22 +169,18 @@ i {
 }
 
 h3.section-title {
-  font-family: var(--section-font);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 1px;
   position: relative;
 }
 
 h3.section-title::after {
-  content: '';
+  /* content: '';
   width: 250px;
   height: 1.25px;
   background-color: #cccccc85;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -.5rem;
+  bottom: -.5rem; */
 }
 
 .main {

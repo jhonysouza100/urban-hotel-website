@@ -2,11 +2,13 @@ import { useContext, useEffect, useRef, useState } from "react";
 import AppContext from "../context/context.jsx";
 import {AuthButton, AuthToaster} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
+import texts from "../data/texts.js";
 import '../css/01-navbar.css';
 
 
 function header() {
   const {logoImg} = images;
+  const {navtext1, navtext2, navtext3, navtext4} = texts.spanish;
 
   // data proveniente de la autenticacion de usuario
   const {userData} = useContext(AppContext);
@@ -83,10 +85,10 @@ function header() {
         </div>
         <div className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
-            <li className="navmenu-item"><a href="#home" className="navmenu-link is-active">Inicio</a></li>
-            <li className="navmenu-item"><a href="#location" className="navmenu-link">Ubicación</a></li>
-            <li className="navmenu-item"><a href="#popular" className="navmenu-link">Fotos</a></li>
-            <li className="navmenu-item"><a href="#services" className="navmenu-link">Servicios</a></li>
+            <li className="navmenu-item"><a href="#home" className="navmenu-link is-active">{navtext1}</a></li>
+            <li className="navmenu-item"><a href="#location" className="navmenu-link">{navtext2}</a></li>
+            <li className="navmenu-item"><a href="#popular" className="navmenu-link">{navtext3}</a></li>
+            <li className="navmenu-item"><a href="#services" className="navmenu-link">{navtext4}</a></li>
             {/* <li className="navmenu-item"><a href="#explore" className="navmenu-link">Explora</a></li> */}
             <li className="navmenu-item"><AuthButton className="navmenu-link" /></li>
           </ul>

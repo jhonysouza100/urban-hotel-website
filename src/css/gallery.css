@@ -1,10 +1,16 @@
+.gallery-container {
+  min-height: 100vh;
+  /* background: linear-gradient(45deg, #fbda61, #ff5acd); */
+  background: linear-gradient(90deg, #61fb9c, #5aa2ff);
+}
+
 .images-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 4px;
   width: 95%;
   margin: auto;
-  padding: 40px 0;
+  padding: 40px 0;  
   overflow: hidden;
 }
 
