@@ -1,0 +1,32 @@
+@media screen and (max-width: 576px) {
+  .swiper-pagination-bullet {
+    display: none;
+  }
+}
+
+/* .swiper-slide {
+  clip-path: circle(0% at 0 50%);
+  transition: all 2s;
+}
+.swiper-slide.swiper-slide-active {
+  clip-path: circle(150% at 0 50%);
+  transition: 2s ease;
+  transition-property: clip-path;
+} */
+.swiper-pagination {
+  margin-bottom: 12px;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, .5);
+  background-color: var(--body-color);
+}
+.swiper-pagination-bullet:hover {
+  transform: scale(1.2);
+}
+
+.swiper-pagination-bullet-active {
+  
+}
+

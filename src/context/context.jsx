@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { getAuthProfileData } from "../hooks/useAuth";
+import texts from "../data/texts";
 
 // se declara un contexto
 const AppContext = createContext();
@@ -46,7 +47,14 @@ const AppProvider = ({ children }) => {
     // console.log(arg)
   }
 
-  const data = { theme, icon, handleTheme, toggleTheme, gallerySelected, handleGallery,userData, isAuthenticated };
+  // LANG
+  const lang = useRef("spanish");
+  const languageTexts = lang === 'english' ? texts.english : lang === 'portuguese' ? texts.portuguese : texts.spanish;
+  const handleLang = (arg) => {
+    lang.current = arg;
+  }
+
+  const data = { theme, icon, handleTheme, toggleTheme, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, languageTexts };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };

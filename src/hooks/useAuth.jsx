@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import AppContext from "../context/context.jsx";
 import { Toaster, toast } from "sonner";
 
 export const getAuthProfileData = () => {
@@ -20,10 +21,12 @@ export const getAuthProfileData = () => {
 };
 
 export const AuthButton = (props) => {
+  const {languageTexts} = useContext(AppContext);
+  const {authtext1, authtext2} = languageTexts;
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<h4 className={props.className} onClick={() => logout()}>Cerrar sesión</h4>) 
-  : (<h4 className={props.className} onClick={() => loginWithRedirect()}>Iniciar sesión</h4>);
+  ? (<h4 className={props.className} onClick={() => logout()}>{authtext1}</h4>) 
+  : (<h4 className={props.className} onClick={() => loginWithRedirect()}>{authtext2}</h4>);
 };
 
 export const AuthToaster = (props) => {

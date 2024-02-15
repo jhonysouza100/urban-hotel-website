@@ -1,4 +1,4 @@
-import { useEffect, useContext } from "react";
+import { lazy, Suspense, useEffect, useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
 import scrollAnimation from "../libs/scrollreveal.js";
@@ -6,14 +6,7 @@ import images from "../data/images.js";
 import links from "../data/links.js";
 import { Link } from "react-router-dom";
 
-// import Siper module
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-// import required modules
-import { Pagination, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
+const LazySwiper = lazy(() => import('../layouts/swiper.jsx'));
 
 import '../css/02-home.css';
 import '../css/03-location.css';
@@ -23,25 +16,33 @@ import '../css/06-explore.css';
 import '../css/07-join.css';
 
 
+
 function Main() {
+  // trae del contexto: la funcion para manejar la galeria
+  const {handleGallery, languageTexts} = useContext(AppContext);
+
   const {
     homeBgImg1,
-    homeBgImg2,
-    homeBgImg3,
     popularImg1,
     popularImg2,
     popularImg3,
     popularImg4,
   } = images; // importa las imagenes
 
-  // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
-  const pholaroidImgs = [{src: popularImg1, title: "Desayuno", type: "BREAKFAST"}, {src: popularImg2, title: "Habitaciones", type: "ROOM"}, {src: popularImg3, title: "Pileta", type: "POOL"}, {src: popularImg4, title: "Iguazú", type: "IGUAZU"}];
-
   // importo las direcciones para los enlaces
-  const {bookingLink, facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links;
+  const {facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links;
+  // importo los textos
+  const {sociallinktitle1, locationtitle1, locationtitle2, locationbuttontitle1, locationdescription1, cardimgtext1, cardimgtext2, cardimgtext3, cardimgtext4, sectiontitle1, sectiontitle2,
+          servicetext1, servicetext2} = languageTexts;
 
-  // trae del contexto: la funcion para manejar la galeria
-  const {handleGallery} = useContext(AppContext);
+    // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
+  const pholaroidImgs = [
+    { src: popularImg1, title: cardimgtext1, type: "BREAKFAST" },
+    { src: popularImg2, title: cardimgtext2, type: "ROOM" },
+    { src: popularImg3, title: cardimgtext3, type: "POOL" },
+    { src: popularImg4, title: cardimgtext4, type: "IGUAZU" },
+  ];
+
 
   // carga las animaciones
   useEffect(() => {
@@ -58,127 +59,14 @@ function Main() {
       <main className="main">
         {/*==================== HOME ====================*/}
         <section className="home" id="home">
-          
-          <Swiper pagination={{ clickable: true }}
-                  spaceBetween={30}
-                  effect={'fade'}
-                  loop={true}
-                  keyboard={{enabled: true,}}
-                  autoplay={{delay: 8000, disableOnInteraction: false,}}
-                  slidesPerView='1'
-                  centeredSlides='auto'
-                  grabCursor={true}
-                  speed={1500}
-                  ease='ease-in-out'
-           modules={[EffectFade, Pagination, Autoplay, Keyboard]} className="home-slider">
-              <SwiperSlide className="swiper-slide">
-                <div
-                  className="box"
-                  style={{ background: `url(${homeBgImg1}) no-repeat` }}
-                >
-                  <div className="home-shadow" />
-                  <video
-                    src=""
-                    className="home-video"
-                    autoPlay=""
-                    muted=""
-                    loop=""
-                  />
-                  <div className="home-media"></div>
-                  <div className="home-content">
-                    <div className="home-data container grid">
-                      <h1 className="home-title">
-                        Iguazú Urban
-                        <br /> Hotel <span>Express</span>
-                      </h1>
-                      <p className="home-description">
-                        Somos un hotel moderno con todos los servicios para que
-                        puedas disfrutar unos días únicos en Puerto Iguazú,
-                        Misiones.
-                      </p>
-                      <div className="home-button">
-                        <a href={bookingLink} className="button" target="_blank">
-                          Saber mas <i className="ri-information-line" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div
-                  className="box"
-                  style={{
-                    background: `url(${homeBgImg2}) no-repeat`,
-                  }}
-                >
-                  <div className="home-shadow" />
-                  <video
-                    src=""
-                    className="home-video"
-                    autoPlay=""
-                    muted=""
-                    loop=""
-                  />
-                  <div className="home-media"></div>
-                  <div className="home-content">
-                    <div className="home-data container grid">
-                      <h1 className="home-title">
-                        Iguazú Urban
-                        <br /> Hotel <span>Express</span>
-                      </h1>
-                      <p className="home-description">
-                        Somos un hotel moderno con todos los servicios para que
-                        puedas disfrutar unos días únicos en Puerto Iguazú,
-                        Misiones.
-                      </p>
-                      <div className="home-button">
-                        <a href={bookingLink} className="button" target="_blank">
-                          Saber mas <i className="ri-information-line" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="swiper-slide">
-                <div
-                  className="box"
-                  style={{ background: `url(${homeBgImg3}) no-repeat` }}
-                >
-                  <div className="home-shadow" />
-                  <video
-                    src=""
-                    className="home-video"
-                    autoPlay=""
-                    muted=""
-                    loop=""
-                  />
-                  <div className="home-media"></div>
-                  <div className="home-content">
-                    <div className="home-data container grid">
-                      <h1 className="home-title">
-                        Iguazú Urban
-                        <br /> Hotel <span>Express</span>
-                      </h1>
-                      <p className="home-description">
-                        Somos un hotel moderno con todos los servicios para que
-                        puedas disfrutar unos días únicos en Puerto Iguazú,
-                        Misiones.
-                      </p>
-                      <div className="home-button">
-                        <a href={bookingLink} className="button" target="_blank">
-                          Saber mas <i className="ri-information-line" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-          </Swiper>
+
+          <Suspense>
+            <LazySwiper />
+          </Suspense>
+
           {/* social component */}
           <div className="home-social">
-            <span className="home-social-text">Siguenos</span>
+            <span className="home-social-text">{sociallinktitle1}</span>
             <div className="home-social-links">
               <a
                 href={instagramLink}
@@ -212,19 +100,18 @@ function Main() {
           <div className="location-container container grid">
             <div className="location-data">
               <h2 className="section-title">
-                <i className="ri-map-pin-line" /> Fray Luis Beltrán 290 <br />{" "}
-                Puerto Iguazú - Misiones
+                <i className="ri-map-pin-line" /> {locationtitle1} <br />{" "}
+                {locationtitle2}
               </h2>
               <p className="location-description">
-                Ubicado en una zona céntrica, cerca de restaurantes, comercios,
-                mercados y la terminal de autobuses.
+                {locationdescription1}
               </p>
               <a
                 target="_blank"
                 href={googleMapsLink}
                 className="button"
               >
-                Como llegar <i className="ri-send-plane-line" />
+                {locationbuttontitle1} <i className="ri-send-plane-line" />
               </a>
             </div>
             <div className="location-image">
@@ -239,7 +126,7 @@ function Main() {
         </section>
         {/*==================== POPULAR ====================*/}
         <section className="popular section" id="popular">
-          <h3 className="photos-title section-title">Galeria de Fotos</h3>
+          <h3 className="photos-title section-title">{sectiontitle1}</h3>
           <div className="popular-container container grid">
             {pholaroidImgs.map(el => (
               <article className="popular-card" key={crypto.randomUUID()}>
@@ -254,67 +141,28 @@ function Main() {
         </section>
         {/*==================== SERVICES ====================*/}
         <section className="services section" id="services">
-          <h3 className="services-title section-title">Servicios del Hotel</h3>
+          <h3 className="services-title section-title">{sectiontitle2}</h3>
           <div className="services-container container grid">
             <div className="services-group left">
-              <div className="services-data">
+              {servicetext1 && servicetext1.map( el => (
+              <div className="services-data" key={crypto.randomUUID()}>
                 <i className="ri-checkbox-circle-line" />
                 <div>
-                  <h3 className="services-name">Habitaciones</h3>
-                  <span className="skils_level">Dobles y Triples</span>
+                  <h3 className="services-name">{el.t}</h3>
+                  <span className="skils_level">{el.d}</span>
                 </div>
-              </div>
-              <div className="services-data">
-                <i className="ri-checkbox-circle-line" />
-                <div>
-                  <h3 className="services-name">Desayuno</h3>
-                  <span className="skils_level">Incluído</span>
-                </div>
-              </div>
-              <div className="services-data">
-                <i className="ri-checkbox-circle-line" />
-                <div>
-                  <h3 className="services-name">Piscina</h3>
-                  <span className="skils_level">y Solarium</span>
-                </div>
-              </div>
-              <div className="services-data">
-                <i className="ri-checkbox-circle-line" />
-                <div>
-                  <h3 className="services-name">Avenida principal</h3>
-                  <span className="skils_level">a 200 mts</span>
-                </div>
-              </div>
+              </div>))}
+              
             </div>
             <div className="services-group right">
-              <div className="services-data">
+            {servicetext2 && servicetext2.map( el => (
+              <div className="services-data" key={crypto.randomUUID()}>
                 <i className="ri-checkbox-circle-line" />
                 <div>
-                  <h3 className="services-name">WIFI</h3>
-                  <span className="skils_level">Gratuito</span>
+                  <h3 className="services-name">{el.t}</h3>
+                  <span className="skils_level">{el.d}</span>
                 </div>
-              </div>
-              <div className="services-data">
-                <i className="ri-checkbox-circle-line" />
-                <div>
-                  <h3 className="services-name">Recepción</h3>
-                  <span className="skils_level">24 hs</span>
-                </div>
-              </div>
-              <div className="services-data">
-                <i className="ri-checkbox-circle-line" />
-                <div>
-                  <h3 className="services-name">Terminal de Obnibus</h3>
-                  <span className="skils_level">a 300 mts</span>
-                </div>
-              </div>
-              <div className="services-data">
-                <i className="ri-checkbox-circle-line" />
-                <div>
-                  <h3 className="services-name">Hito 3 Fronteras</h3>
-                  <span className="skils_level">a 1200 mts</span>
-                </div>
-              </div>
+              </div>))}
             </div>
           </div>
         </section>

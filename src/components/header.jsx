@@ -1,20 +1,20 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 import AppContext from "../context/context.jsx";
 import {AuthButton, AuthToaster} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
-import texts from "../data/texts.js";
 import '../css/01-navbar.css';
 
 
 function header() {
-  const {logoImg} = images;
-  const {navtext1, navtext2, navtext3, navtext4} = texts.spanish;
-
+  const {userData, languageTexts} = useContext(AppContext);
   // data proveniente de la autenticacion de usuario
-  const {userData} = useContext(AppContext);
-  console.log("userData:", userData)
-
   const {handleTheme, toggleTheme, icon } = useContext(AppContext);
+  console.log("userData:", userData);
+
+  const {logoImg} = images;
+  const {navtext1, navtext2, navtext3, navtext4} = languageTexts;
+
+
   
   // =============== CHANGE HEADER BACKGROUND ===============
   const isScroll = useRef(false);

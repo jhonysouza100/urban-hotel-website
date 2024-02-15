@@ -45,8 +45,8 @@ clases via script
 - eliminar imagenes que no se usen. OK
 - rehubicar imagenes a la carpeta public. OK
 - convertir imagenes a formatos mas lijeros. OK
-- pasar todos los textos a un objeto e importarlo a los componentes.
-- crear un archivo pata txt.js, el cual exporta objetos de textos para cada idioma.
+- pasar todos los textos a un objeto e importarlo a los componentes. OK
+- crear un archivo para texts.js, el cual exporta objetos de textos para cada idioma. OK
 - convertir los videos a gif.
 
 === SEO == 
