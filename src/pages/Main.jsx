@@ -1,11 +1,12 @@
-import { useEffect, useContext } from "react";
+import { lazy, Suspense, useEffect, useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
 import scrollAnimation from "../libs/scrollreveal.js";
-import Swiper from '../layouts/swiper.jsx';
 import images from "../data/images.js";
 import links from "../data/links.js";
 import { Link } from "react-router-dom";
+
+const LazySwiper = lazy(() => import('../layouts/swiper.jsx'));
 
 import '../css/02-home.css';
 import '../css/03-location.css';
@@ -59,7 +60,9 @@ function Main() {
         {/*==================== HOME ====================*/}
         <section className="home" id="home">
 
-          <Swiper />
+          <Suspense>
+            <LazySwiper />
+          </Suspense>
 
           {/* social component */}
           <div className="home-social">
