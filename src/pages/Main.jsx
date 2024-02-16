@@ -1,7 +1,6 @@
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import AppContext from '../context/context';
 import Layout from "../layouts/layout.jsx";
-import scrollAnimation from "../libs/scrollreveal.js";
 import Swiper from '../layouts/swiper.jsx';
 import images from "../data/images.js";
 import links from "../data/links.js";
@@ -42,17 +41,6 @@ function Main() {
     { src: popularImg4, title: cardimgtext4, type: "IGUAZU" },
   ];
 
-
-  // carga las animaciones
-  useEffect(() => {
-    // se ejecuta al primer montado del DOM
-    // SCROLL animation
-    scrollAnimation();
-
-    // SWIPER animation
-    // swiperAnimation();
-  }, []);
-
   return (
     <Layout>
       <main className="main">
@@ -65,32 +53,12 @@ function Main() {
           <div className="home-social">
             <span className="home-social-text">{sociallinktitle1}</span>
             <div className="home-social-links">
-              <a
-                href={instagramLink}
-                target="_blank"
-                className="home-social-link"
-                aria-label="Contact"
-              >
-                <i className="ri-instagram-fill" />
-              </a>
-              <a
-                href={facebookLink}
-                target="_blank"
-                className="home-social-link"
-                aria-label="Contact"
-              >
-                <i className="ri-facebook-circle-fill" />
-              </a>
-              <a
-                href={hotelWhatsapp}
-                target="_blank"
-                aria-label="Contact"
-                className="home-social-link"
-              >
-                <i className="ri-whatsapp-fill" />
-              </a>
+              <a href={instagramLink} target="_blank" className="home-social-link" aria-label="Contact"><i className="ri-instagram-fill" /></a>
+              <a href={facebookLink} target="_blank" className="home-social-link" aria-label="Contact"><i className="ri-facebook-circle-fill" /></a>
+              <a href={hotelWhatsapp} target="_blank" aria-label="Contact" className="home-social-link"><i className="ri-whatsapp-fill" /></a>
             </div>
           </div>
+
         </section>
         {/*==================== LOCATION ====================*/}
         <section className="location section" id="location">

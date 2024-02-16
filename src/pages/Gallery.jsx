@@ -17,7 +17,7 @@ function Gallery() {
   const [images, setImages] = useState(null);
 
   useEffect(() => {
-     // obtiene el valor de la galeria seleccionada almacenado en localStorage cuando el usuario recarga la gallery
+    // obtiene el valor de la galeria seleccionada almacenado en localStorage cuando el usuario recarga la gallery
     const storedGallerySelected = localStorage.getItem('gallerySelected');
     // solo se ejecuta una vez si gallerySlected esta vacio y hay algo en el localStorage cuando se recarga la galeria
     if (!gallerySelected && storedGallerySelected) {
@@ -95,10 +95,9 @@ function Gallery() {
 	
   return (
     <div className='gallery-container'>
+
       {/* VOlVER */}
       <div className="gallery-button section"><Link rel='prefetch' to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
-
-
 
       {/* // COMPONENT REACt LIGHTBOX GALLERY */}
       <Lightbox
