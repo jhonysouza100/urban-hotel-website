@@ -94,7 +94,7 @@ function swiper() {
                       </p>
                       <div className="home-button">
                         <a href={bookingLink} className="button" target="_blank">
-                          Saber mas <i className="ri-information-line" />
+                          {homebuttontitle1} <i className="ri-information-line" />
                         </a>
                       </div>
                     </div>
@@ -126,7 +126,7 @@ function swiper() {
                       </p>
                       <div className="home-button">
                         <a href={bookingLink} className="button" target="_blank">
-                          Saber mas <i className="ri-information-line" />
+                          {homebuttontitle1} <i className="ri-information-line" />
                         </a>
                       </div>
                     </div>

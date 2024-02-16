@@ -30,8 +30,9 @@ function Gallery() {
     const fetchData = async () => { // fetch hacia la api de "Unsplash"
       try {
         const res = await useUnsplash(gallerySelected || "HOTEL");
+        console.log(res)
         const imagesResult = [...res.results]; // de la respuesta, almacena su "results";
-        const imagesFiltered = imagesResult.map(el => ({ src: el.urls.small, alt: el.alt_description }));
+        const imagesFiltered = imagesResult.map(el => ({ src: el.urls.regular, alt: el.alt_description })); // thumb, small_s3, small, regular, raw, full
         return imagesFiltered;  // Devuelve un array de objetos apto para ser unsado en "react-lightbox"
       } catch (error) {
         console.log(error);

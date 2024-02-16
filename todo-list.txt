@@ -35,11 +35,16 @@ clases via script
 - colocar el scroll al top de la pagina cunado se abra gallery. OK
 - agregar contenido de informacion para gallery.
 
+== UI ===
+- agregar menu para intercambiar de idioma.
+- agregar menu para ver el clima.
+
 === OPTIMIZACION DE CODIGO ===
 - optimizar codigo con use ref para evitar renderizado innesesario de componentes. OK
 - investigar porque no carga el root cuando recarga la web. => limitaciones del host. OK
 - investigar importacion global en parcel js. => no renderiza en producion se ven los archivos fuente, mala optimizacion. OK
 - migrar a vitejs. posee mas soporte. OK
+- agregar imagenes mas grandes al gallery. OK
 
 === OPTIMIZACION DE RECURSOS ===
 - eliminar imagenes que no se usen. OK
