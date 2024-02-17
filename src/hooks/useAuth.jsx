@@ -31,10 +31,12 @@ export const AuthButton = (props) => {
 
 export const AuthToaster = (props) => {
   const {isAuthenticated} = useAuth0();
+  const {languageTexts} = useContext(AppContext);
+  const {authtoasttext1} = languageTexts;
   useEffect(() => {
      // Muestra el mensaje de bienvenida solo si showWelcomeMessage es true
      if (isAuthenticated) {
-      toast(`¡Bienvenido/a ${props.username}!`);
+      toast(`${authtoasttext1} ${props.username}!`);
     }
   }, [isAuthenticated]);
   return (<Toaster />);

@@ -21,6 +21,7 @@ const AppProvider = ({ children }) => {
       setIcon(selectedIcon);
     }
   };
+
   const toggleTheme = () => {
     // maneja el cambio de tema on "click"
     const newTheme = theme === "light-theme" ? "dark-theme" : "light-theme";
@@ -46,13 +47,21 @@ const AppProvider = ({ children }) => {
     setGallery(arg); // ej: gallerySelected = "DESAYUNO"
     // console.log(arg)
   }
-
+  
   // LANG
   const lang = useRef("spanish");
-  const languageTexts = lang === 'english' ? texts.english : lang === 'portuguese' ? texts.portuguese : texts.spanish;
+  const [languageTexts, setLanguageTexts] = useState(texts[lang.current]);
+
   const handleLang = (arg) => {
-    lang.current = arg;
-  }
+    if (texts[arg]) {
+      lang.current = arg;
+      setLanguageTexts(texts[arg]);
+    } else {
+      console.error(`Language '${arg}' not supported. Switching to default language.`);
+      lang.current = "spanish";
+      setLanguageTexts(texts.spanish); // Cambia al idioma predeterminado si el idioma no es compatible.
+    }
+  };
 
   const data = { theme, icon, handleTheme, toggleTheme, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, languageTexts };
 

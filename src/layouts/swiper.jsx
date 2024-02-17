@@ -28,7 +28,7 @@ function swiper() {
                   effect={'fade'}
                   loop={true}
                   keyboard={{enabled: true,}}
-                  autoplay={{delay: 8000, disableOnInteraction: false,}}
+                  autoplay={{delay: 348000, disableOnInteraction: false,}}
                   slidesPerView='1'
                   centeredSlides='auto'
                   grabCursor={true}

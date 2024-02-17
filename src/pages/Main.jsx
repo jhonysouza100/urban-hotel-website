@@ -12,12 +12,13 @@ import '../css/04-popular.css';
 import '../css/05-services.css';
 import '../css/06-explore.css';
 import '../css/07-join.css';
+import Dropdown from "../components/dropdown";
 
 
 
 function Main() {
   // trae del contexto: la funcion para manejar la galeria
-  const {handleGallery, languageTexts} = useContext(AppContext);
+  const {handleGallery, handleLang, languageTexts} = useContext(AppContext);
 
   const {
     homeBgImg1,
@@ -48,6 +49,8 @@ function Main() {
         <section className="home" id="home">
 
           <Swiper />
+
+          <Dropdown />
 
           {/* social component */}
           <div className="home-social">

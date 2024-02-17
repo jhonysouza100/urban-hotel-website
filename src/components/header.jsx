@@ -3,6 +3,7 @@ import AppContext from "../context/context.jsx";
 import {AuthButton, AuthToaster} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
 import '../css/01-navbar.css';
+import { Avatar } from "@mui/material";
 
 
 function header() {
@@ -82,6 +83,7 @@ function header() {
         <div className="theme-button" onClick={toggleTheme}>
           {/* <i className={`${icon}`} /> */}
           <img className="nav-logo" src={logoImg} alt="logo img" />
+          {userData && <Avatar alt="User" src={userData.username} />}
         </div>
         <div className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">

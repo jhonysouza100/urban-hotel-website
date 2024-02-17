@@ -19,7 +19,7 @@ const images = {
   popularImg3,
   popularImg4,
   exploreImg1,
-  logoImg
+  logoImg,
 };
 
 export default images;
