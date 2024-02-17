@@ -23,6 +23,9 @@
   display: flex;
   color: var(--white-color);
   cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .header.is-scroll .navmenu-button, .header.is-scroll .theme-button { /* cambia color del "theme" y "menu" buttons */
