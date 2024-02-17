@@ -82,8 +82,7 @@ function header() {
         {/* theme button */}
         <div className="theme-button" onClick={toggleTheme}>
           {/* <i className={`${icon}`} /> */}
-          <img className="nav-logo" src={logoImg} alt="logo img" />
-          {userData && <Avatar alt="User" src={userData.username} />}
+          {userData ? <Avatar alt="User" src={userData.picture} /> : <img className="nav-logo" src={logoImg} alt="logo img" />}
         </div>
         <div className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
