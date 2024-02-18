@@ -22,6 +22,7 @@
 .navmenu-button, .theme-button { /* color por defecto del "theme" y "menu" buttons */
   display: flex;
   color: var(--white-color);
+  font-size: var(--smaller-font-size);
   cursor: pointer;
   align-items: center;
   justify-content: space-between;
