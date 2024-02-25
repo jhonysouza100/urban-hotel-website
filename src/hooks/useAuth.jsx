@@ -25,8 +25,8 @@ export const AuthButton = (props) => {
   const {authtext1, authtext2} = languageTexts;
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<h4 className={props.className} onClick={() => logout()}>{authtext1}</h4>) 
-  : (<h4 className={props.className} onClick={() => loginWithRedirect()}>{authtext2}</h4>);
+  ? (<div className={props.className} onClick={() => logout()}>{authtext1}</div>) 
+  : (<div className={props.className} onClick={() => loginWithRedirect()}>{authtext2}</div>);
 };
 
 export const AuthToaster = (props) => {

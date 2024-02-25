@@ -1,22 +1,18 @@
 import { useContext, useEffect, useRef } from "react";
 import AppContext from "../context/context.jsx";
-import {AuthButton, AuthToaster} from "../hooks/useAuth.jsx";
 import images from "../data/images.js";
 import '../css/01-navbar.css';
-import { Avatar } from "@mui/material";
+import AccountMenu from "./accountMenu.jsx";
 
 
 function header() {
-  const {userData, languageTexts} = useContext(AppContext);
+  const { languageTexts, handleTheme, toggleTheme, icon} = useContext(AppContext);
   // data proveniente de la autenticacion de usuario
-  const {handleTheme, toggleTheme, icon } = useContext(AppContext);
-  console.log("userData:", userData);
 
-  const {logoImg} = images;
   const {navtext1, navtext2, navtext3, navtext4} = languageTexts;
+  const {logoImg} = images;
 
 
-  
   // =============== CHANGE HEADER BACKGROUND ===============
   const isScroll = useRef(false);
   const scrollHeader = () => { window.scrollY >= 50 ? isScroll.current = true : isScroll.current = false; updateHeaderClass(); activeSections(); };
@@ -79,11 +75,9 @@ function header() {
   return (
     <header className={`header`} id="header">
       <nav className="nav container">
-        {/* theme button */}
+        {/* ============ theme ? logo button ============ */}
         <div className="theme-button" onClick={toggleTheme}>
-          {/* <i className={`${icon}`} /> */}
-          {userData ? <Avatar alt="User" src={userData.picture} sx={{ width: 35, height: 35 }} /> : <img className="nav-logo" src={logoImg} alt="logo img" />}
-          {userData && <p>{userData.username}</p>}
+        <img className="nav-logo" src={logoImg} alt="logo img" />
         </div>
         <div className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
@@ -91,20 +85,22 @@ function header() {
             <li className="navmenu-item"><a href="#location" className="navmenu-link">{navtext2}</a></li>
             <li className="navmenu-item"><a href="#popular" className="navmenu-link">{navtext3}</a></li>
             <li className="navmenu-item"><a href="#services" className="navmenu-link">{navtext4}</a></li>
-            {/* <li className="navmenu-item"><a href="#explore" className="navmenu-link">Explora</a></li> */}
-            <li className="navmenu-item"><AuthButton className="navmenu-link" /></li>
           </ul>
-          {/* close button */}
+          {/* ============ close menu button ============ */}
           <div className="navmenu-close" id="navmenu-close" onClick={handleShow}>
             <i className="ri-close-line" />
           </div>
         </div>
-        {/* toggle button */}
-        <div className="navmenu-button" id="navmenu-button" onClick={handleShow}>
-          <i className="ri-menu-fill" />
+        {/* ============= USER AVATAR ============ */}
+        {/* ============ toggle menu button ============ */}
+        <div className="navmenu-button" id="navmenu-button">
+
+          <AccountMenu />
+
+          <i className="ri-menu-fill" onClick={handleShow} />
         </div>
       </nav>
-      {userData && <AuthToaster username={userData.username} />}
+      
     </header>
   );
 }
