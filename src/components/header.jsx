@@ -1,14 +1,14 @@
 import { useContext, useEffect, useRef } from "react";
 import AppContext from "../context/context.jsx";
+import AccountMenu from "./accountMenu.jsx";
 import images from "../data/images.js";
 import '../css/01-navbar.css';
-import AccountMenu from "./accountMenu.jsx";
+import { Stack } from "@mui/material";
 
 
 function header() {
   const { languageTexts, handleTheme, toggleTheme, icon} = useContext(AppContext);
   // data proveniente de la autenticacion de usuario
-
   const {navtext1, navtext2, navtext3, navtext4} = languageTexts;
   const {logoImg} = images;
 
@@ -45,7 +45,6 @@ function header() {
     }
   };
   
-
   useEffect(() => {
     handleTheme();
     
@@ -79,7 +78,10 @@ function header() {
         <div className="theme-button" onClick={toggleTheme}>
         <img className="nav-logo" src={logoImg} alt="logo img" />
         </div>
-        <div className={`navmenu`} id="navmenu" onClick={handleClick}>
+
+        <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4, lg: "4rem" }}>
+          
+        <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
             <li className="navmenu-item"><a href="#home" className="navmenu-link is-active">{navtext1}</a></li>
             <li className="navmenu-item"><a href="#location" className="navmenu-link">{navtext2}</a></li>
@@ -90,15 +92,18 @@ function header() {
           <div className="navmenu-close" id="navmenu-close" onClick={handleShow}>
             <i className="ri-close-line" />
           </div>
-        </div>
-        {/* ============= USER AVATAR ============ */}
-        {/* ============ toggle menu button ============ */}
-        <div className="navmenu-button" id="navmenu-button">
+        </Stack>
 
+          {/* ============= USER AVATAR MENU ============ */}
           <AccountMenu />
 
-          <i className="ri-menu-fill" onClick={handleShow} />
-        </div>
+          {/* ============ toggle menu button ============ */}
+          <div className="navmenu-button" id="navmenu-button" onClick={handleShow}>
+            <i className="ri-menu-fill" />
+          </div>
+
+        </Stack>
+
       </nav>
       
     </header>

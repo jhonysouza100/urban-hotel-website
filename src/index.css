@@ -172,17 +172,6 @@ h3.section-title {
   position: relative;
 }
 
-h3.section-title::after {
-  /* content: '';
-  width: 250px;
-  height: 1.25px;
-  background-color: #cccccc85;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -.5rem; */
-}
-
 .main {
   overflow: hidden; /* For animation ScrollReveal */
 }
@@ -232,14 +221,14 @@ h3.section-title::after {
 /*=============== SCROLL BAR ===============*/
 /* persosonalize scroll bar */
 ::-webkit-scrollbar {
-  width: .6rem;
+  width: .5rem;
   border-radius: .5rem;
   background-color: hsl(0, 0%, 10%);
 }
 ::-webkit-scrollbar-thumb {
   border-radius: .5rem;
-  background-color: hsl(0, 0%, 20%);
+  background-color: hsl(0, 0%, 35%);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: hsl(0, 0%, 30%);
+  background-color: hsl(0, 0%, 45%);
 }

@@ -13,7 +13,8 @@ import { AuthButton, AuthToaster } from '../hooks/useAuth';
 import AppContext from '../context/context';
 
 export default function AccountMenu() {
-  const { userData} = useContext(AppContext);
+  const { userData, languageTexts} = useContext(AppContext);
+  const {accountmenutext1, accountmenutext2, accountmenutext3} = languageTexts;
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -22,10 +23,11 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
     <>
     
-      <Tooltip title="Configuración de la cuenta">
+      <Tooltip title={accountmenutext3}>
         <IconButton
           onClick={handleClick}
           size="small"
@@ -34,7 +36,7 @@ export default function AccountMenu() {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+          <Avatar src={userData ? userData.picture : null} sx={{ width: 32, height: 32 }} />
         </IconButton>
       </Tooltip>
     
@@ -73,11 +75,9 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        {/* <MenuItem onClick={handleClose}><Avatar /> Profile</MenuItem> */}
-        <MenuItem onClick={handleClose}><Avatar /> My account</MenuItem>
+        <MenuItem onClick={handleClose}><Avatar src={userData ? userData.picture : null} /> {accountmenutext1}</MenuItem>
         <Divider />
-        {/* <MenuItem onClick={handleClose}><ListItemIcon><PersonAdd fontSize="small" /></ListItemIcon>Add another account</MenuItem> */}
-        <MenuItem onClick={handleClose}><ListItemIcon><Settings fontSize="small" /></ListItemIcon>Settings</MenuItem>
+        <MenuItem onClick={handleClose}><ListItemIcon><Settings fontSize="small" /></ListItemIcon>{accountmenutext2}</MenuItem>
         <MenuItem onClick={handleClose}><ListItemIcon>{userData ? <Logout fontSize="small" /> : <Login fontSize="small" />}</ListItemIcon><AuthButton /></MenuItem>
       </Menu>
 

@@ -89,6 +89,7 @@
     -webkit-backdrop-filter: var(--nav-filter); /* for safari */
     backdrop-filter: var(--nav-filter);
     transition: top .4s;
+    z-index: var(--z-fixed);
   }
 }
 
