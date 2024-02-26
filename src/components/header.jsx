@@ -1,17 +1,18 @@
 import { useContext, useEffect, useRef } from "react";
 import AppContext from "../context/context.jsx";
 import AccountMenu from "./accountMenu.jsx";
+import AccountDrawer from "./accountDrawer.jsx";
 import images from "../data/images.js";
 import '../css/01-navbar.css';
 import { Stack } from "@mui/material";
-
+import { AuthToaster } from "../hooks/useAuth.jsx";
 
 function header() {
-  const { languageTexts, handleTheme, toggleTheme, icon} = useContext(AppContext);
+  const { userData, languageTexts, handleTheme, toggleTheme, icon} = useContext(AppContext);
+  
   // data proveniente de la autenticacion de usuario
   const {navtext1, navtext2, navtext3, navtext4} = languageTexts;
   const {logoImg} = images;
-
 
   // =============== CHANGE HEADER BACKGROUND ===============
   const isScroll = useRef(false);
@@ -79,7 +80,7 @@ function header() {
         <img className="nav-logo" src={logoImg} alt="logo img" />
         </div>
 
-        <Stack direction="row" spacing={{ xs: 1, sm: 2, md: 4, lg: "4rem" }}>
+        <Stack direction="row" spacing={{ xs: 2, sm: 3, md: 4, lg: "4rem" }}>
           
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}className={`navmenu`} id="navmenu" onClick={handleClick}>
           <ul className="navmenu-list">
@@ -96,6 +97,7 @@ function header() {
 
           {/* ============= USER AVATAR MENU ============ */}
           <AccountMenu />
+          <AccountDrawer />
 
           {/* ============ toggle menu button ============ */}
           <div className="navmenu-button" id="navmenu-button" onClick={handleShow}>
@@ -105,6 +107,9 @@ function header() {
         </Stack>
 
       </nav>
+
+      {/* ============ TOASTER ============ */}
+      {userData && <AuthToaster username={userData.username} />}
       
     </header>
   );

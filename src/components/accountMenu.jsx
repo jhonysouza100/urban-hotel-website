@@ -9,11 +9,11 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import { useContext, useState } from 'react';
 import { Login } from '@mui/icons-material';
-import { AuthButton, AuthToaster } from '../hooks/useAuth';
+import { AuthButton } from '../hooks/useAuth';
 import AppContext from '../context/context';
 
 export default function AccountMenu() {
-  const { userData, languageTexts} = useContext(AppContext);
+  const { toggleDrawer, userData, languageTexts} = useContext(AppContext);
   const {accountmenutext1, accountmenutext2, accountmenutext3} = languageTexts;
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -76,14 +76,12 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={handleClose}><Avatar src={userData ? userData.picture : null} /> {accountmenutext1}</MenuItem>
+        <MenuItem onClick={() =>{ handleClose; toggleDrawer(true)(); }} disabled={userData ? false : true}><Avatar src={userData ? userData.picture : null} /> {accountmenutext1}</MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}><ListItemIcon><Settings fontSize="small" /></ListItemIcon>{accountmenutext2}</MenuItem>
         <MenuItem onClick={handleClose}><ListItemIcon>{userData ? <Logout fontSize="small" /> : <Login fontSize="small" />}</ListItemIcon><AuthButton /></MenuItem>
       </Menu>
 
-      {/* ============ TOASTER ============ */}
-      {userData && <AuthToaster username={userData.username} />}
     </>
   );
 }

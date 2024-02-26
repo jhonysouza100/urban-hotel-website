@@ -32,6 +32,12 @@ const AppProvider = ({ children }) => {
     localStorage.setItem("selected-icon", newIcon);
   };
 
+  const [openDrawer, setOpenDrawer] = useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpenDrawer(newOpen);
+  };
+
   // obtiene datos de la autenticacion de usuario
   const {userData, isAuthenticated} = getAuthProfileData();
   useEffect(() => {
@@ -63,7 +69,7 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const data = { theme, icon, handleTheme, toggleTheme, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, languageTexts };
+  const data = { theme, icon, handleTheme, toggleTheme,toggleDrawer, openDrawer, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, languageTexts };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };
