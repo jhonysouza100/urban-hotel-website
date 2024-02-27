@@ -9,7 +9,7 @@ import '../css/01-navbar.css';
 
 function header() {
   let { userData, appTexts, handleTheme, toggleTheme, icon} = useContext(AppContext);
-  // userData = {username: "Jhony Souza", email: "jonysouza@gmail.com", picture: "img/admin1.webp"}
+  userData = {username: "Jhony Souza", email: "jonysouza@gmail.com", picture: "img/admin1.webp"}
   
   // data proveniente de la autenticacion de usuario
   const {navtext1, navtext2, navtext3, navtext4} = appTexts;
