@@ -21,8 +21,8 @@ export const getAuthProfileData = () => {
 };
 
 export const AuthButton = (props) => {
-  const {languageTexts} = useContext(AppContext);
-  const {authtext1, authtext2} = languageTexts;
+  const {appTexts} = useContext(AppContext);
+  const {authtext1, authtext2} = appTexts;
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
   ? (<div className={props.className} onClick={() => logout()}>{authtext1}</div>) 
@@ -31,8 +31,8 @@ export const AuthButton = (props) => {
 
 export const AuthToaster = (props) => {
   const {isAuthenticated} = useAuth0();
-  const {languageTexts} = useContext(AppContext);
-  const {authtoasttext1} = languageTexts;
+  const {appTexts} = useContext(AppContext);
+  const {authtoasttext1} = appTexts;
   useEffect(() => {
      // Muestra el mensaje de bienvenida solo si showWelcomeMessage es true
      if (isAuthenticated) {

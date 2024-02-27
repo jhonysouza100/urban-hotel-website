@@ -1,11 +1,10 @@
 import { useState } from "react";
-import links from "../data/links";
-import images from "../data/images.js";
+import {APP_LINKS, APP_IMAGES} from "../data/index";
 import '../css/scrollup.css';
 
 function scrollup() {
-  const {hotelWhatsapp} = links;
-  const { whatsappIcon } = images;
+  const {hotelWhatsapp} = APP_LINKS;
+  const { whatsappIcon } = APP_IMAGES;
   const [up, setUp] = useState("");
   const scrollUp = () => {
     // when the scroll is higher than 350 viewport innerHeight, add the show-scroll class to the a tag with the scrollup

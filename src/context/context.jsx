@@ -1,6 +1,6 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { getAuthProfileData } from "../hooks/useAuth";
-import texts from "../data/texts";
+import {APP_TEXTS} from "../data/index";
 
 // se declara un contexto
 const AppContext = createContext();
@@ -56,20 +56,20 @@ const AppProvider = ({ children }) => {
   
   // LANG
   const lang = useRef("spanish");
-  const [languageTexts, setLanguageTexts] = useState(texts[lang.current]);
+  const [appTexts, setAppTexts] = useState(APP_TEXTS[lang.current]);
 
   const handleLang = (arg) => {
-    if (texts[arg]) {
+    if (APP_TEXTS[arg]) {
       lang.current = arg;
-      setLanguageTexts(texts[arg]);
+      setAppTexts(APP_TEXTS[arg]);
     } else {
       console.error(`Language '${arg}' not supported. Switching to default language.`);
       lang.current = "spanish";
-      setLanguageTexts(texts.spanish); // Cambia al idioma predeterminado si el idioma no es compatible.
+      setAppTexts(APP_TEXTS["spanish"]); // Cambia al idioma predeterminado si el idioma no es compatible.
     }
   };
 
-  const data = { theme, icon, handleTheme, toggleTheme,toggleDrawer, openDrawer, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, languageTexts };
+  const data = { theme, icon, handleTheme, toggleTheme,toggleDrawer, openDrawer, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, appTexts };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };

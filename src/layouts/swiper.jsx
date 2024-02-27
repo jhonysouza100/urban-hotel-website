@@ -8,19 +8,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 // import required modules
 import { Pagination, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
-import images from "../data/images.js";
-import links from "../data/links.js";
+
+import {APP_LINKS, APP_IMAGES} from "../data/index";
 
 // sobrescribe estilos ccs para el swiper depues de render lazy
 import '../css/swiper.css';
 
 function swiper() {
 
-  const {languageTexts} = useContext(AppContext);
+  const {appTexts} = useContext(AppContext);
 
-  const {bookingLink} = links;
-  const {homeBgImg1, homeBgImg2, homeBgImg3} = images;
-  const {hometitle1, hometitle2, hometitle3, homedescription1, homebuttontitle1} = languageTexts;
+  const {bookingLink} = APP_LINKS;
+  const {homeBgImg1, homeBgImg2, homeBgImg3} = APP_IMAGES;
+  const {hometitle1, hometitle2, hometitle3, homedescription1, homebuttontitle1} = appTexts;
 
   return (
     <Swiper pagination={{ clickable: true }}

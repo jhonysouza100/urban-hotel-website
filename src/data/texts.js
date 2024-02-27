@@ -9,6 +9,7 @@ const texts = {
     accountmenutext1: "Mi cuenta",
     accountmenutext2: "Ajustes",
     accountmenutext3: "Configuracíon de la cuenta",
+    drawermenutext1: "Volver",
     authtoasttext1: "¡Bienvenido/a",
     hometitle1: "Iguazú Urban",
     hometitle2: "Hotel",

@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import AppContext from '../context/context';
+import { Link } from "react-router-dom";
 import Layout from "../layouts/layout.jsx";
 import Swiper from '../layouts/swiper.jsx';
-import images from "../data/images.js";
-import links from "../data/links.js";
-import { Link } from "react-router-dom";
+import Dropdown from "../components/dropdown";
+
+import {APP_LINKS, APP_IMAGES} from "../data/index";
 
 import '../css/02-home.css';
 import '../css/03-location.css';
@@ -12,27 +13,19 @@ import '../css/04-popular.css';
 import '../css/05-services.css';
 import '../css/06-explore.css';
 import '../css/07-join.css';
-import Dropdown from "../components/dropdown";
-
 
 
 function Main() {
   // trae del contexto: la funcion para manejar la galeria
-  const {handleGallery, handleLang, languageTexts} = useContext(AppContext);
+  const {handleGallery, handleLang, appTexts} = useContext(AppContext);
 
-  const {
-    homeBgImg1,
-    popularImg1,
-    popularImg2,
-    popularImg3,
-    popularImg4,
-  } = images; // importa las imagenes
+  const {homeBgImg1, popularImg1, popularImg2, popularImg3, popularImg4 } = APP_IMAGES; // importa las imagenes
 
   // importo las direcciones para los enlaces
-  const {facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = links;
+  const {facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = APP_LINKS;
   // importo los textos
   const {sociallinktitle1, locationtitle1, locationtitle2, locationbuttontitle1, locationdescription1, cardimgtext1, cardimgtext2, cardimgtext3, cardimgtext4, sectiontitle1, sectiontitle2,
-          servicetext1, servicetext2} = languageTexts;
+          servicetext1, servicetext2} = appTexts;
 
     // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
   const pholaroidImgs = [

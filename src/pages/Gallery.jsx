@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Lightbox from "yet-another-react-lightbox";
 import "../../node_modules/yet-another-react-lightbox/dist/styles.css";
 import {useUnsplash} from '../hooks/useUnsplash.js';
-import gallery from "../data/gallery.js";
+import {APP_GALLERY} from "../data/index";
 import Footer from "../components/footer.jsx";
 import '../css/gallery.css';
 
@@ -12,7 +12,7 @@ function Gallery() {
   // contexto para el tipo de galeria seleccionado
   const {gallerySelected, handleGallery} = useContext(AppContext);
   // importa un objeto de imagenes por cada tipo de galeria
-  const {BREAKFAST, ROOM, POOL, IGUAZU} = gallery; // [] array de imagenes
+  const {BREAKFAST, ROOM, POOL, IGUAZU} = APP_GALLERY; // [] array de imagenes
   // establece las variables para las imagenes de la galeria
   const [images, setImages] = useState(null);
 

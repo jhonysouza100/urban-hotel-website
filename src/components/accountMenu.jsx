@@ -12,9 +12,10 @@ import { Login } from '@mui/icons-material';
 import { AuthButton } from '../hooks/useAuth';
 import AppContext from '../context/context';
 
-export default function AccountMenu() {
-  const { toggleDrawer, userData, languageTexts} = useContext(AppContext);
-  const {accountmenutext1, accountmenutext2, accountmenutext3} = languageTexts;
+export default function AccountMenu(props) {
+  const { toggleDrawer, appTexts} = useContext(AppContext);
+  const {accountmenutext1, accountmenutext2, accountmenutext3} = appTexts;
+  const { userData } = props;
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
