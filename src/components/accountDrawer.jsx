@@ -12,7 +12,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { Avatar, Button, Card, Stack, Typography } from '@mui/material';
 import { ArrowBackIos } from '@mui/icons-material';
 
-export default function accountDrawer(props) {
+export default function AccountDrawer(props) {
   const {toggleDrawer, openDrawer, appTexts} = useContext(AppContext);
   const {drawermenutext1} = appTexts;
   const { userData} = props;  
