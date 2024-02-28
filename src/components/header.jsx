@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import AppContext from "../context/context.jsx";
 import AccountMenu from "./accountMenu.jsx";
-import AccountDrawer from "./accountDrawer.jsx";
+import DrawerMenu from "./drawerMenu.jsx";
 import {APP_IMAGES} from "../data/index";
 import { Stack } from "@mui/material";
 import { AuthToaster } from "../hooks/useAuth.jsx";
@@ -81,6 +81,7 @@ function header() {
         <img className="nav-logo" src={logoImg} alt="logo img" />
         </div>
 
+        {/* NAV LIST & ACCOUNT MENU */}
         <Stack direction="row" spacing={{ xs: 2, sm: 3, md: 4, lg: "4rem" }}>
           
         <Stack direction="row" justifyContent="center" alignItems="center" spacing={2}className={`navmenu`} id="navmenu" onClick={handleClick}>
@@ -107,7 +108,7 @@ function header() {
         </Stack>
       </nav>
 
-      <AccountDrawer userData={userData} />
+      <DrawerMenu userData={userData} />
 
       {/* ============ TOASTER ============ */}
       {userData && <AuthToaster username={userData.username} />}

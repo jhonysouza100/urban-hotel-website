@@ -1,16 +1,10 @@
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
+import { useContext, useState } from 'react';
+import AppContext from '../context/context';
+import { AuthButton } from '../hooks/useAuth';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
-import { useContext, useState } from 'react';
 import { Login } from '@mui/icons-material';
-import { AuthButton } from '../hooks/useAuth';
-import AppContext from '../context/context';
+import { Avatar, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from '@mui/material';
 
 export default function AccountMenu(props) {
   const { toggleDrawer, appTexts} = useContext(AppContext);
@@ -37,7 +31,12 @@ export default function AccountMenu(props) {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <Avatar src={userData ? userData.picture : null} sx={{ width: 32, height: 32 }} />
+          <Avatar src={userData ? userData.picture : null}
+           sx={{ 
+            width: { xs: 32, md: 40 }, // Tamaño condicional basado en el ancho de la pantalla
+            height: { xs: 32, md: 40 }, // Tamaño condicional basado en el ancho de la pantalla
+          }} />
+
         </IconButton>
       </Tooltip>
     

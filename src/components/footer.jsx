@@ -5,7 +5,7 @@ import Scrollup from "./scrollup.jsx";
 import '../css/08-footer.css';
 
 function footer() {
-  const {appTexts} = useContext(AppContext)
+  const {appTexts} = useContext(AppContext);
   const {instagramLink, facebookLink, googleMapsLink, hotelEmail, hotelWhatsapp, cataratasArg, cataratasBr, cataratasLuna, aeropuertoIg, documentacionBr, copyrightLink} = APP_LINKS;
   const {hometitle1, hometitle2, hometitle3, sociallinktitle1, footertext1, footertitle1, footertitle2, footertitle3, footerdesc1, footerdesc2, footerdesc3, footerdesc4, footerdesc5, footerdesc6, footerdesc7, footerdesc8} = appTexts;
   return (
