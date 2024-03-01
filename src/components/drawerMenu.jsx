@@ -1,24 +1,21 @@
 import { useContext } from 'react';
 import AppContext from '../context/context';
 import TabMenu from './tabMenu';
-import { ArrowBackIos } from '@mui/icons-material';
-import { Avatar, Box, Button, Card, Drawer, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Card, Drawer, Stack, Typography } from '@mui/material';
+import BackButton from './backButton';
 
 export default function DrawerMenu(props) {
-  const {toggleDrawer, openDrawer, appTexts} = useContext(AppContext);
-  const {drawermenutext1} = appTexts;
+  const {toggleDrawer, openDrawer} = useContext(AppContext);
   const { userData} = props;  
 
   const DrawerList = (
     <Box sx={{ width: {xs: "100vw", md: "75vw", lg: "50vw"}}} role="presentation" padding={2}>
 
       {/* < BACK BUTTON */}
-      <Button variant="text" startIcon={<ArrowBackIos />} onClick={toggleDrawer(false)} sx={{ mb: 2, '&:hover': { backgroundColor: 'transparent' }, '&:active': { backgroundColor: 'transparent' }, '& .MuiTouchRipple-root': { display: 'none' } }}>
-        {drawermenutext1}
-      </Button>
+      <BackButton action={toggleDrawer(false)} />
 
       {/* USER PROFILE CARD */}
-      <Card style={{ maxWidth: 350 }}>
+      <Card style={{ maxWidth: 350 }} sx={{my: 1}}>
         <Stack direction="row" spacing={2} p={2}>
           <Avatar src={userData ? userData.picture : null} />
           <Box>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Layout from "../layouts/layout.jsx";
 import Swiper from '../layouts/swiper.jsx';
 import Dropdown from "../components/dropdown";
+import NavMenuMain from "../components/navMenuMain";
 
 import {APP_LINKS, APP_IMAGES} from "../data/index";
 
@@ -16,33 +17,42 @@ import '../css/07-join.css';
 
 
 function Main() {
+  console.log("render main")
   // trae del contexto: la funcion para manejar la galeria
   const {handleGallery, handleLang, appTexts} = useContext(AppContext);
-
+  
   const {homeBgImg1, popularImg1, popularImg2, popularImg3, popularImg4 } = APP_IMAGES; // importa las imagenes
-
+  
   // importo las direcciones para los enlaces
   const {facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = APP_LINKS;
   // importo los textos
-  const {sociallinktitle1, locationtitle1, locationtitle2, locationbuttontitle1, locationdescription1, cardimgtext1, cardimgtext2, cardimgtext3, cardimgtext4, sectiontitle1, sectiontitle2,
-          servicetext1, servicetext2} = appTexts;
-
+  const {navtext1, navtext2, navtext3, navtext4, sociallinktitle1, locationtitle1, locationtitle2, locationbuttontitle1, locationdescription1, cardimgtext1, cardimgtext2, cardimgtext3, cardimgtext4, sectiontitle1, sectiontitle2,
+    servicetext1, servicetext2} = appTexts;
+    
     // crea un arreglo de imagenes para renderizar es las fotos con sus tipos
-  const pholaroidImgs = [
+    const pholaroidImgs = [
     { src: popularImg1, title: cardimgtext1, type: "BREAKFAST" },
     { src: popularImg2, title: cardimgtext2, type: "ROOM" },
     { src: popularImg3, title: cardimgtext3, type: "POOL" },
     { src: popularImg4, title: cardimgtext4, type: "IGUAZU" },
   ];
 
+  const links = [ {href: "#home", text: navtext1},
+                  {href: "#location", text: navtext2},
+                  {href: "#popular", text: navtext3},
+                  {href: "#services", text: navtext4},
+                ]
+  
+
   return (
-    <Layout>
+    <Layout navcontent={<NavMenuMain links={links} />}>
       <main className="main">
         {/*==================== HOME ====================*/}
         <section className="home" id="home">
 
           <Swiper />
 
+          {/* LANG MENU */}
           <Dropdown />
 
           {/* social component */}

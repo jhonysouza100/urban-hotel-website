@@ -53,7 +53,7 @@ export default function TabMenu() {
   const isWideScreen = useMediaQuery('(min-width:600px)');
   
   return (
-    <Box my={2} sx={{ width: '100%', ...(isWideScreen && { flexGrow: 1, display: 'flex', height: 224, }),}}> {/* Cambia la disposision basandoce en el ancho de la pantalla */}
+    <Box py={1} sx={{ width: '100%', ...(isWideScreen && { flexGrow: 1, display: 'flex', height: 224, }),}}> {/* Cambia la disposision basandoce en el ancho de la pantalla */}
       <Tabs value={tabValue} onChange={handleTabs} aria-label="basic tabs example" orientation={isWideScreen ? 'vertical' : 'horizontal'}> {/* Ajusta la orientación basándote en el ancho de la pantalla */}
         <Tab label={tabmenutitle1}{...a11yProps(0)} icon={<CommentIcon />} />
         <Tab label={tabmenutitle2}  {...a11yProps(1)} icon={<RoomServiceIcon />} />

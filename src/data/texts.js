@@ -9,7 +9,7 @@ const texts = {
     accountmenutext1: "Mi cuenta",
     accountmenutext2: "Ajustes",
     accountmenutext3: "Configuracíon de la cuenta",
-    drawermenutext1: "Volver",
+    backbuttontext1: "Volver",
     tabmenutitle1: "Notas",
     tabmenutitle2: "Reservas",
     tabmenutitle3: "Pagos",

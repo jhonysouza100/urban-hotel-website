@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/context.jsx';
-import { Link } from 'react-router-dom';
 import Lightbox from "yet-another-react-lightbox";
 import "../../node_modules/yet-another-react-lightbox/dist/styles.css";
 import {useUnsplash} from '../hooks/useUnsplash.js';
 import {APP_GALLERY} from "../data/index";
-import Footer from "../components/footer.jsx";
+import Layout from '../layouts/layout.jsx';
+import NavMenuGallery from '../components/navMenuGallery.jsx';
 import '../css/gallery.css';
+import { Grow, Zoom } from '@mui/material';
 
 function Gallery() {
   // contexto para el tipo de galeria seleccionado
@@ -87,34 +88,34 @@ function Gallery() {
     // Llamada a la función para scroll al principio de la página al cargar el componente
     scrollToTop();
 
-
   }, [gallerySelected]);
 
   // REACT LIGHTBOX GALLERY
   const [index, setIndex] = useState(-1);
 	
   return (
-    <div className='gallery-container'>
+    <Layout navcontent={<NavMenuGallery />}>
+      <div className='gallery-container'>
 
-      {/* VOlVER */}
-      <div className="gallery-button section"><Link rel='prefetch' to={'/'} className='button'><i className="ri-arrow-left-line"></i>Volver</Link></div>
+        {/* // COMPONENT REACt LIGHTBOX GALLERY */}
+        <Lightbox
+        index={index} // index 0, 1, 2...
+        open={index >= 0} // true/fasle
+        close={() => setIndex(-1)}
+        slides={images}
+        />
 
-      {/* // COMPONENT REACt LIGHTBOX GALLERY */}
-      <Lightbox
-      index={index} // index 0, 1, 2...
-       open={index >= 0} // true/fasle
-       close={() => setIndex(-1)}
-       slides={images}
-       />
+        {/* GALLERY */}
+        <main className='images-gallery'>
+          {/* // IMAGES */}
+          {/* {images && images.map((el, index) => (<Grow component="a" in={true} style={{ transitionDelay: `${index * 500}ms`, transformOrigin: '0 0 0' }} {...({ timeout: 1000 })}
+          onClick={() => setIndex(index)} key={crypto.randomUUID()}><a><img src={el.src} alt={el.alt} /></a></Grow>))} */}
+          {images && images.map((el, index) => (<Zoom in={true} component="a" style={{ transitionDelay: `${index * 100}ms` }} {...({ timeout: 500 })} 
+          onClick={() => setIndex(index)} key={crypto.randomUUID()}><a><img src={el.src} alt={el.alt} /></a></Zoom>))}
+        </main>
 
-      {/* GALLERY */}
-      <section className='images-gallery'>
-        {/* // IMAGES */}
-        {images && images.map((el, index) => (<a onClick={() => setIndex(index)} key={crypto.randomUUID()}><img src={el.src} alt={el.alt} /></a>))}
-      </section>
-
-			<Footer />
-    </div>
+      </div>
+    </Layout>
   );
 }
 
