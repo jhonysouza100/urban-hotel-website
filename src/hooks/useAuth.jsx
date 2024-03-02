@@ -31,11 +31,10 @@ export const AuthButton = (props) => {
 
 export const AuthToaster = (props) => {
   const {isAuthenticated} = useAuth0();
+  const isToaster = JSON.parse(localStorage.getItem("toaster!"));
   const {appTexts} = useContext(AppContext);
   const {authtoasttext1} = appTexts;
   useEffect(() => {
-    const isToaster = localStorage.getItem("toaster!");
-    console.log(isToaster)
     if (isToaster && isAuthenticated) {
       localStorage.setItem("toaster!", false);
       toast(`${authtoasttext1} ${props.username}!`);
