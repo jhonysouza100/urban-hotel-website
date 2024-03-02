@@ -35,7 +35,7 @@ export default function AccountMenu(props) {
            sx={{ 
             width: { xs: 32, md: 40 }, // Tamaño condicional basado en el ancho de la pantalla
             height: { xs: 32, md: 40 }, // Tamaño condicional basado en el ancho de la pantalla
-          }} />
+          }} alt='profile-image' />
 
         </IconButton>
       </Tooltip>

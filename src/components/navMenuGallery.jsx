@@ -5,9 +5,6 @@ import AccountMenu from "./accountMenu";
 
 export default function NavMenuGallery({userData})  {
 
-  // userData = {username: "Jhony Souza", email: "jonysouza@gmail.com", picture: "img/admin1.webp"}
-
-  
   return (
     <>
       {/* NAV LIST & ACCOUNT MENU */}

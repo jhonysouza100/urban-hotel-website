@@ -20,7 +20,7 @@ function Main() {
   // trae del contexto: la funcion para manejar la galeria
   const {handleGallery, handleLang, appTexts} = useContext(AppContext);
   
-  const {homeBgImg1, popularImg1, popularImg2, popularImg3, popularImg4 } = APP_IMAGES; // importa las imagenes
+  const {locationImg1, popularImg1, popularImg2, popularImg3, popularImg4 } = APP_IMAGES; // importa las imagenes
   
   // importo las direcciones para los enlaces
   const {facebookLink, hotelWhatsapp, instagramLink, googleMapsLink} = APP_LINKS;
@@ -86,7 +86,7 @@ function Main() {
             </div>
             <div className="location-image">
               <img loading="lazy"
-                src={homeBgImg1}
+                src={locationImg1}
                 className="location-img"
                 alt="location-img"
               />

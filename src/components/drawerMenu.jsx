@@ -17,7 +17,7 @@ export default function DrawerMenu(props) {
       {/* USER PROFILE CARD */}
       <Card style={{ maxWidth: 350 }} sx={{my: 1}}>
         <Stack direction="row" spacing={2} p={2}>
-          <Avatar src={userData ? userData.picture : null} />
+          <Avatar src={userData ? userData.picture : null} alt='profile-image' />
           <Box>
             <Typography component="div" size="2" weight="bold">{userData ? userData.username : null}</Typography>
             <Typography component="div" size="2" color="gray">{userData ? userData.email : null}</Typography>

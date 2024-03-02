@@ -2,6 +2,7 @@ import whatsappIcon from "/public/img/whatsapp.svg";
 import homeBgImg1 from "/public/img/home-bg-1.webp";
 import homeBgImg2 from "/public/img/home-bg-2.webp";
 import homeBgImg3 from "/public/img/home-bg-3.webp";
+import locationImg1 from "/public/img/location-bg-1.webp";
 import popularImg1 from "/public/img/gallery-img-1.webp";
 import popularImg2 from "/public/img/gallery-img-2.webp";
 import popularImg3 from "/public/img/gallery-img-3.webp";
@@ -14,6 +15,7 @@ const images = {
   homeBgImg1,
   homeBgImg2,
   homeBgImg3,
+  locationImg1,
   popularImg1,
   popularImg2,
   popularImg3,

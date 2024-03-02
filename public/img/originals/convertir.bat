@@ -1,3 +1,3 @@
 ren *.jpg *.webp
-ren *.jpg *.webp
+ren *.jpeg *.webp
 ren *.png *.ico
