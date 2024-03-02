@@ -35,6 +35,7 @@ export const AuthToaster = (props) => {
   const {authtoasttext1} = appTexts;
   useEffect(() => {
     const isToaster = localStorage.getItem("toaster!");
+    console.log(isToaster)
     if (isToaster && isAuthenticated) {
       localStorage.setItem("toaster!", false);
       toast(`${authtoasttext1} ${props.username}!`);

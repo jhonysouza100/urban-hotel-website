@@ -17,7 +17,6 @@ import '../css/07-join.css';
 
 
 function Main() {
-  console.log("render main")
   // trae del contexto: la funcion para manejar la galeria
   const {handleGallery, handleLang, appTexts} = useContext(AppContext);
   
