@@ -85,7 +85,7 @@ function Main() {
               </a>
             </div>
             <div className="location-image">
-              <img
+              <img loading="lazy"
                 src={homeBgImg1}
                 className="location-img"
                 alt="location-img"
@@ -101,7 +101,7 @@ function Main() {
             {pholaroidImgs.map(el => (
               <article className="popular-card" key={crypto.randomUUID()}>
                 <div className="popular-image">
-                  <img src={el.src} className="popular-img" alt="popular-img"/>
+                  <img loading="lazy" src={el.src} className="popular-img" alt="popular-img"/>
                   <Link to={"/galeria"} rel='prefetch' onClick={() => handleGallery(el.type)} className="popular-button"><h2 className="popular-title">{el.title}</h2></Link>
                   {/* <div className="shadow" /> */}
                 </div>
@@ -140,7 +140,7 @@ function Main() {
         {/* <section className="explore section" id="explore">
           <div className="explore-container">
             <div className="explore-image">
-              <img
+              <img loading="lazy"
                 src={exploreImg1}
                 className="explore-img"
                 alt="explore-img"
@@ -159,7 +159,7 @@ function Main() {
                 </p>
               </div>
               <div className="explore-user">
-                <img
+                <img loading="lazy"
                   src={exploreImg2}
                   className="explore-profile"
                   alt="profile-img"
@@ -194,7 +194,7 @@ function Main() {
               </form>
             </div>
             <div className="join-image">
-              <img src={joinImg1} className="join-img" alt="join-img" />
+              <img loading="lazy" src={joinImg1} className="join-img" alt="join-img" />
               <div className="shadow" />
             </div>
           </div>

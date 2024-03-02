@@ -20,7 +20,7 @@ function scrollup() {
         href={hotelWhatsapp}
         className="scrollup-btn"
       >
-        <img
+        <img loading="lazy"
           className="whatsapp"
           src={whatsappIcon}
           alt="whatsapp-img"

@@ -35,7 +35,7 @@ export default function NavMenuMain({userData, links})  {
     <>
       {/* ============ theme ? logo button ============ */}
       <div className="theme-button" onClick={toggleTheme}>
-      <img className="nav-logo" src={logoImg} alt="logo img" />
+      <img loading="lazy" className="nav-logo" src={logoImg} alt="logo-img" />
       </div>
 
       {/* NAV LIST & ACCOUNT MENU */}

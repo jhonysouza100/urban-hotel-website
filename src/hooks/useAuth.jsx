@@ -25,18 +25,18 @@ export const AuthButton = (props) => {
   const {authtext1, authtext2} = appTexts;
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<div className={props.className} onClick={() => {logout(); localStorage.setItem("toaster!", true);}}>{authtext1}</div>) 
-  : (<div className={props.className} onClick={() => {loginWithRedirect(); localStorage.setItem("toaster!", true);}}>{authtext2}</div>);
+  ? (<div className={props.className} onClick={() => {logout(); localStorage.setItem("toaster-ready", true);}}>{authtext1}</div>) 
+  : (<div className={props.className} onClick={() => {loginWithRedirect(); localStorage.setItem("toaster-ready", true);}}>{authtext2}</div>);
 };
 
 export const AuthToaster = (props) => {
   const {isAuthenticated} = useAuth0();
-  const isToaster = JSON.parse(localStorage.getItem("toaster!"));
+  const toasterReady = JSON.parse(localStorage.getItem("toaster-ready"));
   const {appTexts} = useContext(AppContext);
   const {authtoasttext1} = appTexts;
   useEffect(() => {
-    if (isToaster && isAuthenticated) {
-      localStorage.setItem("toaster!", false);
+    if (toasterReady && isAuthenticated) {
+      localStorage.setItem("toaster-ready", false);
       toast(`${authtoasttext1} ${props.username}!`);
     }
   }, [isAuthenticated]);

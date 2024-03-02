@@ -111,7 +111,7 @@ function Gallery() {
           {/* {images && images.map((el, index) => (<Grow component="a" in={true} style={{ transitionDelay: `${index * 500}ms`, transformOrigin: '0 0 0' }} {...({ timeout: 1000 })}
           onClick={() => setIndex(index)} key={crypto.randomUUID()}><a><img src={el.src} alt={el.alt} /></a></Grow>))} */}
           {images && images.map((el, index) => (<Zoom in={true} component="a" style={{ transitionDelay: `${index * 100}ms` }} {...({ timeout: 500 })} 
-          onClick={() => setIndex(index)} key={crypto.randomUUID()}><a><img src={el.src} alt={el.alt} /></a></Zoom>))}
+          onClick={() => setIndex(index)} key={crypto.randomUUID()}><a><img loading="lazy" src={el.src} alt={el.alt} /></a></Zoom>))}
         </main>
 
       </div>
