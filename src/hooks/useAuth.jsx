@@ -25,17 +25,19 @@ export const AuthButton = (props) => {
   const {authtext1, authtext2} = appTexts;
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   return isAuthenticated 
-  ? (<div className={props.className} onClick={() => logout()}>{authtext1}</div>) 
-  : (<div className={props.className} onClick={() => loginWithRedirect()}>{authtext2}</div>);
+  ? (<div className={props.className} onClick={() => {logout(); localStorage.setItem("toaster!", true);}}>{authtext1}</div>) 
+  : (<div className={props.className} onClick={() => {loginWithRedirect(); localStorage.setItem("toaster!", true);}}>{authtext2}</div>);
 };
 
 export const AuthToaster = (props) => {
   const {isAuthenticated} = useAuth0();
+  const isToaster = localStorage.getItem("toaster!");
   const {appTexts} = useContext(AppContext);
   const {authtoasttext1} = appTexts;
   useEffect(() => {
-     // Muestra el mensaje de bienvenida solo si showWelcomeMessage es true
-     if (isAuthenticated) {
+    // Muestra el mensaje de bienvenida solo si showWelcomeMessage es true
+    if (isToaster && isAuthenticated) {
+      localStorage.setItem("toaster!", false);
       toast(`${authtoasttext1} ${props.username}!`);
     }
   }, [isAuthenticated]);

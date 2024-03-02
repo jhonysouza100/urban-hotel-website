@@ -76,7 +76,7 @@ export default function AccountMenu(props) {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem onClick={() =>{ handleClose; toggleDrawer(true)(); }} disabled={userData ? false : true}><Avatar src={userData ? userData.picture : null} /> {accountmenutext1}</MenuItem>
+        <MenuItem onClick={() =>{ handleClose; toggleDrawer(true)(); }} disabled={userData ? false : true}><Avatar alt='profile-image' src={userData ? userData.picture : null} /> {accountmenutext1}</MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}><ListItemIcon><Settings fontSize="small" /></ListItemIcon>{accountmenutext2}</MenuItem>
         <MenuItem onClick={handleClose}><ListItemIcon>{userData ? <Logout fontSize="small" /> : <Login fontSize="small" />}</ListItemIcon><AuthButton /></MenuItem>

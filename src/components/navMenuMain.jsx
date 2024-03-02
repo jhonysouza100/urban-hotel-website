@@ -6,7 +6,7 @@ import AccountMenu from "./accountMenu";
 
 export default function NavMenuMain({userData, links})  {
 
-  userData = {username: "Jhony Souza", email: "jonysouza@gmail.com", picture: "img/admin1.webp"}
+  // userData = {username: "Jhony Souza", email: "jonysouza@gmail.com", picture: "img/admin1.webp"}
 
   const {handleTheme, toggleTheme, themeIcon} = useContext(AppContext);
 

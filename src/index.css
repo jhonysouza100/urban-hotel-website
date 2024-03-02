@@ -38,7 +38,8 @@
   /* --nav-color: hsla(0, 0%, 0%, .3); */
   --nav-color: hsla(0, 0%, 100%, .75); /* color solido para el navmenu */
   --nav-filter: blur(24px);
-  --nav-transparent: #00000030;
+  --nav-transparent: #00000000;
+  /* --nav-transparent: #00000030; */
 
   /* colores verde */
   --color-verde: #2c3e20;
