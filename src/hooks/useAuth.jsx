@@ -31,11 +31,10 @@ export const AuthButton = (props) => {
 
 export const AuthToaster = (props) => {
   const {isAuthenticated} = useAuth0();
-  const isToaster = localStorage.getItem("toaster!");
   const {appTexts} = useContext(AppContext);
   const {authtoasttext1} = appTexts;
   useEffect(() => {
-    // Muestra el mensaje de bienvenida solo si showWelcomeMessage es true
+    const isToaster = localStorage.getItem("toaster!");
     if (isToaster && isAuthenticated) {
       localStorage.setItem("toaster!", false);
       toast(`${authtoasttext1} ${props.username}!`);
