@@ -3,13 +3,32 @@ import AppContext from '../context/context.jsx';
 import Lightbox from "yet-another-react-lightbox";
 import "../../node_modules/yet-another-react-lightbox/dist/styles.css";
 import {useUnsplash} from '../hooks/useUnsplash.js';
-import {APP_GALLERY} from "../data/index";
-import Layout from '../layouts/layout.jsx';
-import NavMenuGallery from '../components/navMenuGallery.jsx';
-import '../css/gallery.css';
+import {APP_GALLERY} from "../assets/index";
+import Layout from '../layouts/layout';
+import {BackButton, Dashboard} from "../exports";
 import { Grow, Zoom } from '@mui/material';
+import { Stack } from "@mui/material";
+import { Link } from "react-router-dom";
+import '../css/gallery.css';
 
-function Gallery() {
+const NavMenuGallery = ({userData}) => {
+
+  return (
+    <>
+      {/* NAV LIST & ACCOUNT MENU */}
+      <Stack direction="row" alignItems="center" justifyContent="space-between" width={"100%"} spacing={{ xs: 2, sm: 3, md: 4, lg: "4rem" }}>
+        
+        <Link rel='prefetch' to={'/'}><BackButton /></Link>
+
+        {/* ============= USER AVATAR MENU ============ */}
+        <Dashboard userData={userData} />
+
+      </Stack>
+    </>
+  )
+}
+
+export default function Gallery() {
   // contexto para el tipo de galeria seleccionado
   const {gallerySelected, handleGallery} = useContext(AppContext);
   // importa un objeto de imagenes por cada tipo de galeria
@@ -118,5 +137,3 @@ function Gallery() {
     </Layout>
   );
 }
-
-export default Gallery;

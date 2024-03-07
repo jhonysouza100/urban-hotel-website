@@ -1,15 +1,12 @@
 import { Children, cloneElement, useEffect, useRef } from "react";
-import DrawerMenu from "./drawerMenu.jsx";
 import { AuthToaster } from "../hooks/useAuth.jsx";
-import '../css/01-navbar.css';
+import '../css/01-header.css';
 
-function header({children,userData}) {
+
+export default function Header({children,userData}) {
 
   // Pasar 'userData' como prop a los elementos hijos
-  const childrenWithProps = Children.map(children, child =>
-    cloneElement(child, { userData })
-  );
-  
+  const childrenWithProps = Children.map(children, child => cloneElement(child, { userData }));
   
   const isScroll = useRef(false);
   // =============== ON SCROLL ===============
@@ -55,9 +52,10 @@ function header({children,userData}) {
     <header className={`header`} id="header">
       
       {/* <NavMenu userData={userData} /> */}
-      {childrenWithProps}
-
-      <DrawerMenu userData={userData} />
+      <nav className="nav container">
+        {/* NAVMENU con contenido dinamico */}
+        <>{childrenWithProps}</>
+      </nav>
 
       {/* ============ TOASTER ============ */}
       {userData && <AuthToaster username={userData.username} />}
@@ -65,5 +63,3 @@ function header({children,userData}) {
     </header>
   );
 }
-
-export default header;

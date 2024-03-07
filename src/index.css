@@ -138,11 +138,6 @@ img {
   height: auto;
 }
 
-i {
-  font-weight: var(--font-regular);
-  font-size: 1.25rem;
-}
-
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -191,14 +186,20 @@ h3.section-title {
   -webkit-backdrop-filter: var(--nav-filter); /* for safari */
   backdrop-filter: var(--nav-filter);
 }
-.button i {
-  font-size: 1.25rem;
+.button svg {
   transition: transform .4s;
-  font-weight: initial;
 }
-.button:hover i {
+.button:hover svg {
   /* transform: translateX(.25rem); */
   transform: scale(1.2);
+}
+
+.custom-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.custom-svg-checkbox {
+  min-width: 24px;
 }
 
 /*=============== SHADOW ===============*/

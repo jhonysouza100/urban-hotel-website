@@ -1,9 +1,8 @@
 import { useContext, useRef, useState } from "react";
 import AppContext from "../context/context";
-import "/node_modules/flag-icons/css/flag-icons.min.css";
 import '../css/dropdown.css';
 
-function Dropdown() {
+export default function LangSelect() {
   const {handleLang} = useContext(AppContext);
   const [dropmenuIcon, setDropmenuIcon] = useState("ri-arrow-down-s-fill"); // state del dropIcon del tema claro/oscuro
   const optSelected = useRef("ar");
@@ -40,5 +39,3 @@ function Dropdown() {
     </div>
   );
 }
-
-  export default Dropdown;

@@ -1,8 +1,9 @@
 import { useState } from "react";
-import {APP_LINKS, APP_IMAGES} from "../data/index";
+import { RiArrowUpSLine } from "@remixicon/react";
+import {APP_LINKS, APP_IMAGES} from "../assets/index";
 import '../css/scrollup.css';
 
-function scrollup() {
+export default function ScrollUp() {
   const {hotelWhatsapp} = APP_LINKS;
   const { whatsappIcon } = APP_IMAGES;
   const [up, setUp] = useState("");
@@ -27,10 +28,8 @@ function scrollup() {
         />
       </a>
       <a href="#" className="scrollup-btn" aria-label="Contact">
-        <i className="ri-arrow-up-s-line" />
+        <RiArrowUpSLine className="custom-svg" />
       </a>
     </div>
   );
 }
-
-export default scrollup;

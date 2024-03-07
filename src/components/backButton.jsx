@@ -9,11 +9,8 @@ export default function BackButton(props) {
   const {backbuttontext1} = appTexts;
 
   return (
-    <>
-      {/* < BACK BUTTON */}
       <Button variant="text" startIcon={<ArrowBackIos />} onClick={action} sx={{'&:hover': { backgroundColor: 'transparent' }, '&:active': { backgroundColor: 'transparent' }, '& .MuiTouchRipple-root': { display: 'none' } }}>
       {backbuttontext1}
       </Button>
-    </>
   );
 }

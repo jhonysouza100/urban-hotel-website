@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
-import AppContext from '../context/context';
-import { AuthButton } from '../hooks/useAuth';
-import Settings from '@mui/icons-material/Settings';
+import AppContext from '../../context/context';
+import { AuthButton } from '../../hooks/useAuth';
+import DrawerMenu from './drawer';
 import Logout from '@mui/icons-material/Logout';
-import { Login } from '@mui/icons-material';
 import { Avatar, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from '@mui/material';
+import { Login } from '@mui/icons-material';
+import Settings from '@mui/icons-material/Settings';
 
 export default function AccountMenu(props) {
   const { toggleDrawer, appTexts} = useContext(AppContext);
@@ -82,6 +83,8 @@ export default function AccountMenu(props) {
         <MenuItem onClick={handleClose}><ListItemIcon>{userData ? <Logout fontSize="small" /> : <Login fontSize="small" />}</ListItemIcon><AuthButton /></MenuItem>
       </Menu>
 
+      <DrawerMenu userData={userData} />
+      
     </>
   );
 }

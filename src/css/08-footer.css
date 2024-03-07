@@ -39,18 +39,21 @@
 }
 
 .footer-info {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   transition: transform 0.3s ease-out 0s;
 }
 
-.footer-description, .footer-info a, .footer-social-link {
+.footer-description, .footer-info a, .footer-social-link, .footer-info svg {
   color: var(--text-color-light);
   font-style: normal;
 }
 
-.footer-info a {
+.footer-info a, .footer-info svg {
   font-size: small;
   transition: color 0.3s ease-out 0s;
 }
@@ -59,7 +62,7 @@
   transform: translateX(.25rem);
 }
 
-.footer-info:hover a {
+.footer-info:hover > * {
   color: var(--main-color);
 }
 
@@ -69,7 +72,6 @@
 }
 
 .footer-social-link {
-  font-size: 1.25rem;
   transition: color .4s, transform .4s;
 }
 .footer-social-link:hover {

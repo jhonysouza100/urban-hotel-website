@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import AppContext from '../context/context';
-import TabMenu from './tabMenu';
+import AppContext from '../../../context/context';
+import TabMenu from './tab';
 import { Avatar, Box, Card, Drawer, Stack, Typography } from '@mui/material';
-import BackButton from './backButton';
+import BackButton from '../../BackButton';
 
 export default function DrawerMenu(props) {
   const {toggleDrawer, openDrawer} = useContext(AppContext);
@@ -32,10 +32,8 @@ export default function DrawerMenu(props) {
   );
 
   return (
-    <div>
-      <Drawer open={openDrawer} onClose={toggleDrawer(false)} anchor='right' disableScrollLock={true}>
-        {DrawerList}
-      </Drawer>
-    </div>
+    <Drawer open={openDrawer} onClose={toggleDrawer(false)} anchor='right' disableScrollLock={true}>
+      {DrawerList}
+    </Drawer>
   );
 }

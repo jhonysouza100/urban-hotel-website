@@ -1,6 +1,6 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { getAuthProfileData } from "../hooks/useAuth";
-import {APP_TEXTS} from "../data/index";
+import {APP_TEXTS} from "../assets/index";
 
 // se declara un contexto
 const AppContext = createContext();

@@ -9,12 +9,13 @@ import 'swiper/css/effect-fade';
 // import required modules
 import { Pagination, EffectFade, Autoplay, Keyboard } from 'swiper/modules';
 
-import {APP_LINKS, APP_IMAGES} from "../data/index";
+import {APP_LINKS, APP_IMAGES} from "../assets/index";
 
 // sobrescribe estilos ccs para el swiper depues de render lazy
 import '../css/swiper.css';
+import { RiInformationLine } from '@remixicon/react';
 
-function swiper() {
+export default function swiper() {
 
   const {appTexts} = useContext(AppContext);
 
@@ -60,7 +61,7 @@ function swiper() {
                       </p>
                       <div className="home-button">
                         <a href={bookingLink} className="button" target="_blank">
-                          {homebuttontitle1} <i className="ri-information-line" />
+                          {homebuttontitle1} <RiInformationLine className="custom-svg" />
                         </a>
                       </div>
                     </div>
@@ -94,7 +95,7 @@ function swiper() {
                       </p>
                       <div className="home-button">
                         <a href={bookingLink} className="button" target="_blank">
-                          {homebuttontitle1} <i className="ri-information-line" />
+                          {homebuttontitle1} <RiInformationLine className="custom-svg" />
                         </a>
                       </div>
                     </div>
@@ -126,15 +127,13 @@ function swiper() {
                       </p>
                       <div className="home-button">
                         <a href={bookingLink} className="button" target="_blank">
-                          {homebuttontitle1} <i className="ri-information-line" />
+                          {homebuttontitle1} <RiInformationLine className="custom-svg" />
                         </a>
                       </div>
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
-          </Swiper>
+    </Swiper>
   );
 }
-
-export default swiper;

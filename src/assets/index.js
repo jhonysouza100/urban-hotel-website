@@ -1,6 +1,7 @@
-import APP_IMAGES from "./images";
-import APP_LINKS from "./links";
-import APP_TEXTS from "./texts";
+
+import APP_TEXTS from './texts'
+import APP_IMAGES from './images'
+import APP_LINKS from './links'
 
 const APP_GALLERY = {
   BREAKFAST: {
