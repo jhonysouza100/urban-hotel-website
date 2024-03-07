@@ -6,27 +6,30 @@ import BackButton from '../../BackButton';
 
 export default function DrawerMenu(props) {
   const {toggleDrawer, openDrawer} = useContext(AppContext);
-  const { userData} = props;  
+  const { userData} = props; 
 
   const DrawerList = (
-    <Box sx={{ width: {xs: "100vw", md: "75vw", lg: "50vw"}}} role="presentation" padding={2}>
+    <Box sx={{width: { xs: "100vw", md: "75vw", lg: "50vw"}, height: "100%"}} role="presentation" padding={2}>
 
       {/* < BACK BUTTON */}
       <BackButton action={toggleDrawer(false)} />
 
-      {/* USER PROFILE CARD */}
-      <Card style={{ maxWidth: 350 }} sx={{my: 1}}>
-        <Stack direction="row" spacing={2} p={2}>
-          <Avatar src={userData ? userData.picture : null} alt='profile-image' />
-          <Box>
-            <Typography component="div" size="2" weight="bold">{userData ? userData.username : null}</Typography>
-            <Typography component="div" size="2" color="gray">{userData ? userData.email : null}</Typography>
-          </Box>
-        </Stack>
-      </Card>
+      <Stack spacing={3} sx={{my: 2, height: "calc(100% - 56px)", overflowY: "auto"}}>
 
-      {/* TAB MENU _|_|_ */}
-      <TabMenu />
+        {/* USER PROFILE CARD */}
+        <Card sx={{ maxWidth: {xs: 280, sm: 320}}}>
+          <Stack direction="row" spacing={2} p={2}>
+            <Avatar src={userData ? userData.picture : null} alt='profile-image' />
+            <Box sx={{ maxWidth: {xs: 180, sm: 220}}}>
+              <Typography component="h3" size="2" sx={{fontWeight: 500}}>{userData ? userData.username : null}</Typography>
+              <Typography component="p" size="2" color="gray" noWrap={true}>{userData ? userData.email : null}</Typography>
+            </Box>
+          </Stack>
+        </Card>
+
+        {/* TAB MENU _|_|_ */}
+        <TabMenu />
+      </Stack>
 
     </Box>
   );
