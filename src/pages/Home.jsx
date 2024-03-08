@@ -17,7 +17,7 @@ import '../css/07-join.css';
 
 const NavMenuHome = ({userData, links}) => {
 
-  // userData = {username: "Jhony Souza", email: "jhonatansouzameza100@gmail.com", picture: "img/admin1.webp"}
+  userData = {username: "Jhony Souza", email: "jhonatansouzameza100@gmail.com", picture: "img/admin1.webp"}
 
   const {handleTheme, toggleTheme, themeIcon} = useContext(AppContext);
 

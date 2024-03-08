@@ -53,12 +53,12 @@ export default function TabMenu() {
   const isWideScreen = useMediaQuery('(min-width:600px)');
   
   return (
-    <Box sx={{ display: 'flex', flexDirection: "column", justifyContent: "space-between", height: "100%", ...(isWideScreen && { flexDirection: "row-reverse", justifyContent: "flex-end" }),}}> {/* Cambia la disposision basandoce en el ancho de la pantalla */}
+    <Box sx={{ display: 'flex', flexDirection: "column", justifyContent: "space-between", height: "380px", ...(isWideScreen && { flexDirection: "row-reverse", justifyContent: "flex-end" }),}}> {/* Cambia la disposision basandoce en el ancho de la pantalla */}
       
       <Box>
-      <CustomTabPanel value={tabValue} index={0}><Box>Próximamente podras escribir comentarios y calificar el hotel con estrellas.</Box></CustomTabPanel>
-      <CustomTabPanel value={tabValue} index={1}><Alert severity="warning">{tabmenutextalert1}</Alert></CustomTabPanel>
-      <CustomTabPanel value={tabValue} index={2}><Box>Próximamente</Box></CustomTabPanel>
+        <CustomTabPanel value={tabValue} index={0}><Box>Próximamente podras escribir comentarios y calificar el hotel con estrellas.</Box></CustomTabPanel>
+        <CustomTabPanel value={tabValue} index={1}><Alert severity="warning">{tabmenutextalert1}</Alert></CustomTabPanel>
+        <CustomTabPanel value={tabValue} index={2}><Box>Próximamente</Box></CustomTabPanel>
       </Box>
 
       <Tabs value={tabValue} onChange={handleTabs} aria-label="basic tabs example" orientation={isWideScreen ? 'vertical' : 'horizontal'}> {/* Ajusta la orientación basándote en el ancho de la pantalla */}

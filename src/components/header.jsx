@@ -9,8 +9,10 @@ export default function Header({children,userData}) {
   const childrenWithProps = Children.map(children, child => cloneElement(child, { userData }));
   
   const isScroll = useRef(false);
+  
   // =============== ON SCROLL ===============
   const scrollHeader = () => { window.scrollY >= 50 ? isScroll.current = true : isScroll.current = false; updateHeaderBackground(); updateActiveSections(); };
+
  // =============== Update Header Class ===============
   const updateHeaderBackground = () => {
     const HEADER = document.getElementById("header");
@@ -19,6 +21,7 @@ export default function Header({children,userData}) {
       HEADER.classList.toggle("is-scroll", Boolean(isScroll.current));
     }
   };
+
   // =============== SCROLL SECTIONS ACTIVE LINK ===============
   const updateActiveSections = () => {
     const SECTIONS = document.querySelectorAll("section[id]");

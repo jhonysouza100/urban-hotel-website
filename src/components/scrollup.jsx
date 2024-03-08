@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RiArrowUpSLine } from "@remixicon/react";
-import {APP_LINKS, APP_IMAGES} from "../assets/index";
+import {APP_LINKS, APP_IMAGES} from "../assets";
 import '../css/scrollup.css';
 
 export default function ScrollUp() {

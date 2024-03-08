@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AppContext from "../context/context";
-import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import {APP_LINKS} from "../assets/index";
+import { RiFacebookLine, RiInstagramLine, RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react";
 import '../css/08-footer.css';
 
 export default function Footer() {

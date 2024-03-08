@@ -14,13 +14,13 @@ export default function DrawerMenu(props) {
       {/* < BACK BUTTON */}
       <BackButton action={toggleDrawer(false)} />
 
-      <Stack spacing={3} sx={{my: 2, height: "calc(100% - 56px)", overflowY: "auto"}}>
+      <Stack spacing={3} sx={{my: 2}}>
 
         {/* USER PROFILE CARD */}
         <Card sx={{ maxWidth: {xs: 280, sm: 320}}}>
           <Stack direction="row" spacing={2} p={2}>
             <Avatar src={userData ? userData.picture : null} alt='profile-image' />
-            <Box sx={{ maxWidth: {xs: 180, sm: 220}}}>
+            <Box sx={{ maxWidth: {xs: 180, sm: 220} }}>
               <Typography component="h3" size="2" sx={{fontWeight: 500}}>{userData ? userData.username : null}</Typography>
               <Typography component="p" size="2" color="gray" noWrap={true}>{userData ? userData.email : null}</Typography>
             </Box>
@@ -29,6 +29,7 @@ export default function DrawerMenu(props) {
 
         {/* TAB MENU _|_|_ */}
         <TabMenu />
+        
       </Stack>
 
     </Box>
