@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import CommentIcon from '@mui/icons-material/Comment';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import PaymentIcon from '@mui/icons-material/Payment';
-import { Alert, Box, Tab, Tabs, Typography, useMediaQuery } from '@mui/material';
+import Comment from './tabs'
+import { Alert, Box, Stack, Tab, Tabs, Typography, useMediaQuery } from '@mui/material';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,10 +54,10 @@ export default function TabMenu() {
   const isWideScreen = useMediaQuery('(min-width:600px)');
   
   return (
-    <Box sx={{ display: 'flex', flexDirection: "column", justifyContent: "space-between", height: "380px", ...(isWideScreen && { flexDirection: "row-reverse", justifyContent: "flex-end" }),}}> {/* Cambia la disposision basandoce en el ancho de la pantalla */}
-      
-      <Box>
-        <CustomTabPanel value={tabValue} index={0}><Box>Próximamente podras escribir comentarios y calificar el hotel con estrellas.</Box></CustomTabPanel>
+    <Stack flex="1" spacing={{ xs: 1, sm: 2, md: 4 }} direction={{xs: 'column', sm: 'row-reverse'}} justifyContent={{xs: 'space-between', sm: 'flex-end'}} >
+      {/* alignItems="stretch"  useFlexGap flexWrap="wrap" */}
+      <Box flex="1">
+        <CustomTabPanel value={tabValue} index={0}><Comment /></CustomTabPanel>
         <CustomTabPanel value={tabValue} index={1}><Alert severity="warning">{tabmenutextalert1}</Alert></CustomTabPanel>
         <CustomTabPanel value={tabValue} index={2}><Box>Próximamente</Box></CustomTabPanel>
       </Box>
@@ -67,6 +68,6 @@ export default function TabMenu() {
         <Tab disabled label={tabmenutitle3}{...a11yProps(2)} icon={<PaymentIcon />} />
       </Tabs>
 
-    </Box>
+    </Stack>
   );
 }

@@ -14,7 +14,7 @@ export default function DrawerMenu(props) {
       {/* < BACK BUTTON */}
       <BackButton action={toggleDrawer(false)} />
 
-      <Stack spacing={3} sx={{my: 2}}>
+      <Stack spacing={3} sx={{my: 2}} height="calc(100% - 45px) ">
 
         {/* USER PROFILE CARD */}
         <Card sx={{ maxWidth: {xs: 280, sm: 320}}}>
