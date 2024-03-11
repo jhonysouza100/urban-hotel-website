@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import CommentIcon from '@mui/icons-material/Comment';
 import RoomServiceIcon from '@mui/icons-material/RoomService';
 import PaymentIcon from '@mui/icons-material/Payment';
-import Comment from './tabs'
 import { Alert, Box, Stack, Tab, Tabs, Typography, useMediaQuery } from '@mui/material';
+import Review from './tabs/reviews';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,7 +57,7 @@ export default function TabMenu() {
     <Stack flex="1" spacing={{ xs: 1, sm: 2, md: 4 }} direction={{xs: 'column', sm: 'row-reverse'}} justifyContent={{xs: 'space-between', sm: 'flex-end'}} >
       {/* alignItems="stretch"  useFlexGap flexWrap="wrap" */}
       <Box flex="1">
-        <CustomTabPanel value={tabValue} index={0}><Comment /></CustomTabPanel>
+        <CustomTabPanel value={tabValue} index={0}><Review /></CustomTabPanel>
         <CustomTabPanel value={tabValue} index={1}><Alert severity="warning">{tabmenutextalert1}</Alert></CustomTabPanel>
         <CustomTabPanel value={tabValue} index={2}><Box>Próximamente</Box></CustomTabPanel>
       </Box>

@@ -1,12 +1,15 @@
-import { useState } from "react";
-import {  Button, Rating, Stack, Typography } from "@mui/material";
+import { useContext, useState } from "react";
+import AppContext from "../../../../../../context/context";
+import {  Button, Rating, Stack } from "@mui/material";
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 
 const MUITextArea = () => {
+  const {appTexts}  = useContext(AppContext);
+  let {reviewplaceholdertext1} = appTexts;
   return <TextareaAutosize 
   aria-label="empty textarea" 
-  placeholder="Write a comment…"
+  placeholder={reviewplaceholdertext1}
   maxRows={5} 
   minRows={3}
   // defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -66,7 +69,9 @@ const TextareaAutosize = styled(BaseTextareaAutosize)(
 );
 
 
-export default function index() {
+export default function Review() {
+  const {appTexts}  = useContext(AppContext);
+  let {reviewbuttontext1} = appTexts;
   const [rating, setRating] = useState(5);
   return (
     <Stack spacing={3} direction="column" >
@@ -79,7 +84,7 @@ export default function index() {
             setRating(newValue);
           }}
         />
-        <Button size="1" variant="contained" >Comment</Button>
+        <Button size="1" variant="contained" >{reviewbuttontext1}</Button>
       </Stack>
     </Stack>
   );

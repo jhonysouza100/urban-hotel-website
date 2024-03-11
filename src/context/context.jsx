@@ -55,7 +55,7 @@ const AppProvider = ({ children }) => {
   }
   
   // LANG
-  const lang = useRef("spanish");
+  const lang = useRef("ES");
   const [appTexts, setAppTexts] = useState(APP_TEXTS[lang.current]);
 
   const handleLang = (arg) => {
@@ -64,8 +64,8 @@ const AppProvider = ({ children }) => {
       setAppTexts(APP_TEXTS[arg]);
     } else {
       console.error(`Language '${arg}' not supported. Switching to default language.`);
-      lang.current = "spanish";
-      setAppTexts(APP_TEXTS["spanish"]); // Cambia al idioma predeterminado si el idioma no es compatible.
+      lang.current = "ES";
+      setAppTexts(APP_TEXTS["ES"]); // Cambia al idioma predeterminado si el idioma no es compatible.
     }
   };
 

@@ -80,7 +80,7 @@ const NavMenuHome = ({userData, links}) => {
 
 export default function Main() {
   // trae del contexto: la funcion para manejar la galeria
-  const {handleGallery, handleLang, appTexts} = useContext(AppContext);
+  const {handleGallery, appTexts} = useContext(AppContext);
   
   const {locationImg1, popularImg1, popularImg2, popularImg3, popularImg4 } = APP_IMAGES; // importa las imagenes
   
