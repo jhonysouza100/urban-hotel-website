@@ -198,6 +198,9 @@ export default function Main() {
             </div>
           </div>
         </section>
+        <section className="rviews section" id="reviews">
+          
+        </section>
         {/*==================== EXPLORE ====================*/}
         {/* <section className="explore section" id="explore">
           <div className="explore-container">
