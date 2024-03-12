@@ -40,7 +40,16 @@ export default function LangSelect() {
   };
 
   return (
-    <Box sx={{position: "absolute", top: "100px", right: "1rem", zIndex: "99"}}>
+    <Box sx={{
+      position: "absolute",
+      top: "100px",
+      right: "1rem",
+      zIndex: "99",
+      '@media (min-width:600px)': {
+        right: "auto",  // O ajusta según tus necesidades
+        left: "1rem",   // O ajusta según tus necesidades
+      },
+    }}>
       <ButtonGroup 
         variant="text" 
         ref={anchorRef} 

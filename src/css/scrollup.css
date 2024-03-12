@@ -22,6 +22,7 @@
   padding: 6px;
   border-radius: .25rem;
   display: inline-flex;
+  justify-content: center;
   transition: bottom .4s, transform .4s;
 }
 .scrollup-btn:hover {
