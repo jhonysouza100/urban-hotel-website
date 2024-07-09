@@ -1,6 +1,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { getAuthProfileData } from "../hooks/useAuth";
 import {APP_TEXTS} from "../assets/index";
+import { usePost } from "../hooks/useFetch";
 
 // se declara un contexto
 const AppContext = createContext();
@@ -39,11 +40,12 @@ const AppProvider = ({ children }) => {
   };
 
   // obtiene datos de la autenticacion de usuario
-  const {userData, isAuthenticated} = getAuthProfileData();
+  const {userData, isAuthenticated} = getAuthProfileData(); // ./hooks/useAuth.js
+  // Este efecto se ejecutará después de que getAuthProfileData haya actualizado el estado, enviando la data del usuario al backend
   useEffect(() => {
-    // Este efecto se ejecutará después de que getAuthProfileData haya actualizado el estado
     // console.log(userData);
     if(userData) {
+      // Error: No se puede llamar a React Hook "usePost" dentro de una devolución de llamada. Los React Hooks deben llamarse en un componente de función React o en una función React Hook personalizada.
       // usePost(userData);
     }
   }, [userData]);
@@ -56,12 +58,12 @@ const AppProvider = ({ children }) => {
   
   // LANG
   const lang = useRef("ES");
-  const [appTexts, setAppTexts] = useState(APP_TEXTS[lang.current]);
+  const [appTexts, setAppTexts] = useState(APP_TEXTS[lang.current]); // useState(APP_TEXTS["ES"])
 
   const handleLang = (arg) => {
-    if (APP_TEXTS[arg]) {
+    if (APP_TEXTS[arg]) { // si existe el idioma
       lang.current = arg;
-      setAppTexts(APP_TEXTS[arg]);
+      setAppTexts(APP_TEXTS[arg]); // appTexts = "ES"
     } else {
       console.error(`Language '${arg}' not supported. Switching to default language.`);
       lang.current = "ES";
@@ -69,7 +71,7 @@ const AppProvider = ({ children }) => {
     }
   };
 
-  const data = { theme, themeIcon, handleTheme, toggleTheme,toggleDrawer, openDrawer, gallerySelected, handleGallery,userData, isAuthenticated, handleLang, appTexts };
+  const data = { theme, themeIcon, handleTheme, toggleTheme, toggleDrawer, openDrawer, gallerySelected, handleGallery, userData, isAuthenticated, handleLang, appTexts };
 
   return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
 };

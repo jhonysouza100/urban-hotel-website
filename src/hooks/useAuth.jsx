@@ -29,15 +29,15 @@ export const AuthButton = (props) => {
   : (<div className={props.className} onClick={() => {loginWithRedirect(); localStorage.setItem("toaster-ready", true);}}>{authtext2}</div>);
 };
 
-export const AuthToaster = (props) => {
+export const AuthToaster = (user) => {
   const {isAuthenticated} = useAuth0();
-  const toasterReady = JSON.parse(localStorage.getItem("toaster-ready"));
+  const toasterReady = JSON.parse(localStorage.getItem("toaster-ready")); // "toaster-ready": "true"
   const {appTexts} = useContext(AppContext);
   const {authtoasttext1} = appTexts;
   useEffect(() => {
     if (toasterReady && isAuthenticated) {
       localStorage.setItem("toaster-ready", false);
-      toast(`${authtoasttext1} ${props.username}!`);
+      toast(`${authtoasttext1} ${user.username}!`);
     }
   }, [isAuthenticated]);
   return (<Toaster />);
